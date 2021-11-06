@@ -75,10 +75,10 @@ const Ankara = () => {
 				</a>
 
 				<div className="flex flex-auto justify-center">
-					<InstagramFeed
+					{/* <InstagramFeed
 							token="IGQVJWSjYtRmpCRmVjcElKd2pZANGZAaXzB4LVM2MC1sMEF1bEd3TnNjbVdNM0M3ZA2FZAUEdTT2h5T0ZAULTF0UXZAwQW9Kam5iUTJlbGZA5d0FlaFRfWllxQjN0WEo0aGJSSjZAHdDdBdEVNMXhsSFM4UzlrMQZDZD"
 							counter="4"
-						/>
+						/> */}
 				</div>
 			</div>
 			{/* <p className="text-black text-sm text-center w-64">
