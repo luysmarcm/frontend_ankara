@@ -1,0 +1,58 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+/* @import url('http://fonts.cdnfonts.com/css/photograph-signature'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap'); */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family:"Cinzel Decorative",
+  "Photograph Signature";
+  src: url(/public/fonts/cinzel-decorative.woff2), url(/public/fonts/photograph-signature.woff);
+
+
+}
+.column div {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 200px;
+  margin: 0 0 0 25px;
+  padding: 0;
+}
+
+.column div span {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 200px;
+  margin: 10;
+  padding: 5;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+  
+
+}
+
+figure:hover+span {
+  bottom: -200px;
+  opacity: 1;
+}
+
+.hover01 figure img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+
