@@ -36,9 +36,9 @@ const Identidades = () => {
 				</p>
 			</div>
 			<div>
-				<div className="  grid grid-cols-1 lg:grid-cols-2 gap-5 overflow-hidden justify-items-center ">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-5 overflow-hidden justify-items-center ">
 					{identidades.map((identidad) => (
-						<CardIdentidades key={identidades.id} identidad={identidad} />
+						<CardIdentidades key={identidad.id} identidad={identidad} />
 					))}
 				</div>
 			</div>

@@ -27,33 +27,32 @@ const Feed = (props) => {
 		case "CAROUSEL_ALBUM":
 			post = (
 				<a href={permalink} target="_blank">
-				
-						<Image
-							loader={myLoader}
-							width={820}
-							height={820}
-							src={media_url}
-							alt={caption}
-							objectFit="cover"
-							className="relative rounded-xl overflow-hidden shadow-lg "
-						/>
-					
+					<Image
+						loader={myLoader}
+						width={820}
+						height={820}
+						src={media_url}
+						alt={caption}
+						objectFit="cover"
+						className="relative rounded-xl overflow-hidden shadow-lg "
+						unoptimized={true}
+					/>
 				</a>
 			);
 			break;
 		default:
 			post = (
 				<a href={permalink} target="_blank">
-					
-						<Image
-							loader={myLoader}
-							width={820}
-							height={820}
-							src={media_url}
-							alt={caption}
-							objectFit="cover"
-							className="relative rounded-xl overflow-hidden shadow-lg"
-						/>
+					<Image
+						loader={myLoader}
+						width={820}
+						height={820}
+						src={media_url}
+						alt={caption}
+						objectFit="cover"
+						className="relative rounded-xl overflow-hidden shadow-lg"
+						unoptimized={true}
+					/>
 				</a>
 			);
 	}

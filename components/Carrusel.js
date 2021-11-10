@@ -42,7 +42,7 @@ const Carrusel = ({ imagenes }) => {
 	return (
 		<div ref={sliderRef} className="keen-slider">
 			{imagenes.map((imagene) => (
-				<div key={imagenes.id} className="bg-cover keen-slider__slide">
+				<div key={imagene.id} className="bg-cover keen-slider__slide">
 					<Image
 						src={imagene.imagen}
 						alt={imagene.alt}

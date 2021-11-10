@@ -30,7 +30,7 @@ const NuestrasMarcas = () => {
 				<div className="p-3 md:p-20 lg:p-32 flex justify-center overflow-hidden">
 					<div className="w-full grid grid-cols-1 gap-5 even:grid-flow-col-dense rounded-xl">
 						{marcas.map((marca) => (
-							<CardMarcas key={marcas.id} marca={marca} />
+							<CardMarcas key={marca.id} marca={marca} />
 						))}
 					</div>
 				</div>

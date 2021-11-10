@@ -7,7 +7,7 @@ const CardIdentidades = ({identidad}) => {
 			<div className="p-3 md:p-20 space-y-5">
 				<div className="max-w-md mx-auto rounded-xl overflow-hidden md:max-w-2xl transition ease-in-out duration-300">
 					<div className="md:flex flex-col relative">
-						<figure class="group identidad">
+						<figure className="group identidad">
 							<div className="relative rounded-xl">
 								<Image
 									src={imagen}

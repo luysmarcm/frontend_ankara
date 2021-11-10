@@ -114,7 +114,7 @@ const NuestrosClientes = () => {
 					<div ref={sliderRef} className="keen-slider">
 						{clientes.map((cliente) => (
 							<div className="keen-slider__slide">
-								<CardClientes key={clientes.id} cliente={cliente} />
+								<CardClientes key={cliente.id} cliente={cliente} />
 							</div>
 						))}
 					</div>

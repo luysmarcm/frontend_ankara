@@ -48,7 +48,7 @@ const Nosotros = () => {
 			<div className="p-10 lg:p-14">
 				<div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ">
 					{nosotros.map((nosotro) => (
-						<CardNosotros key={nosotros.id} nosotro={nosotro} />
+						<CardNosotros key={nosotro.id} nosotro={nosotro} />
 					))}
 				</div>
 			</div>
