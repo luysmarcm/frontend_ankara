@@ -5,7 +5,6 @@ import Image from "next/image";
 
 const Carrusel = ({ imagenes }) => {
 
-	const { imagen, alt } = imagenes;
 
 	const [pause, setPause] = useState(false);
 	const timer = React.useRef();
