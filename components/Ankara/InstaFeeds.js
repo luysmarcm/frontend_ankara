@@ -8,13 +8,18 @@ const InstaFeeds = ({ ...props }) => {
 	useEffect(() => {
 		async function fetchInstagramPost() {
 			try {
-				axios
-					.get(
-						`https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink,caption&limit=${props.limit}&access_token=IGQVJYNEQwYVBHQXRCWXRuM3BjdllibTk2N3huVE11OTNhLTVqa1E4RENhSzMxWHlmUzNwRTlvUFBNNS1SNU9BLTRxNHNsc01iVDEtYU51eF9aQnRlTTZAWSWdpREdUOG5jbmxxT2FTejRjRU1vUUhldAZDZD`
-					)
-					.then((resp) => {
-						setFeedsData(resp.data.data);
+
+				fetch(
+					`https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink,caption&limit=${props.limit}&access_token=IGQVJYNEQwYVBHQXRCWXRuM3BjdllibTk2N3huVE11OTNhLTVqa1E4RENhSzMxWHlmUzNwRTlvUFBNNS1SNU9BLTRxNHNsc01iVDEtYU51eF9aQnRlTTZAWSWdpREdUOG5jbmxxT2FTejRjRU1vUUhldAZDZD`
+				)
+					.then((res) => {
+						return res.json();
+					})
+					.then((data) => {
+						console.log(data.data);
+						setFeedsData(data.data)
 					});
+				
 			} catch (err) {
 				console.log("error", err);
 			}
@@ -23,7 +28,7 @@ const InstaFeeds = ({ ...props }) => {
 		fetchInstagramPost();
 	}, [props.limit]);
 
-	console.log(feeds);
+	console.log(feeds, "feeds");
 
 	return (
 		<section className="p-5  md:p-20 lg:p-32 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
