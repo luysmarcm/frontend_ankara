@@ -5,24 +5,25 @@ const CardIdentidades = ({identidad}) => {
     const {nombre, descripcion, imagen } = identidad;
     return (
 			<div className="p-3 md:p-20 space-y-5">
-				<div className="group hover:bg-white max-w-md mx-auto rounded-xl overflow-hidden md:max-w-2xl transition ease-in-out duration-300">
-					<div className="md:flex relative">
-						<Image
-							src={imagen}
-							alt="imagen"
-							width={630}
-							height={320}
-							className="rounded-xl"
-						/>
-					</div>
-
-					<div className="group p-10 space-y-3 -translate-y-6 overflow-hidden transition ease-in-out duration-300">
-						<h2 className="text-gris  group-hover:text-black text-center font-lato text-2xl lg:text-2xl  font-bold">
-							{nombre}
-						</h2>
-						<p className="hover:mt-2 hover:text-black hover:bg-white group-hover:text-gray-900 text-gris">
-							{descripcion}
-						</p>
+				<div className="max-w-md mx-auto rounded-xl overflow-hidden md:max-w-2xl transition ease-in-out duration-300">
+					<div className="md:flex flex-col relative">
+						<figure class="group identidad">
+							<div className="relative rounded-xl">
+								<Image
+									src={imagen}
+									alt={nombre}
+									width={630}
+									height={320}
+									className="rounded-xl"
+								/>
+							</div>
+							<figcaption className="rounded-xl p-5 lg:p-10 space-y-4 text-center bg-white opacity-80 w-full hover:-translate-y-2 duration-700 ease-in-out ">
+								<h2 className="text-black  group-hover:text-black text-center font-lato text-2xl lg:text-2xl  font-bold">
+									{nombre}
+								</h2>
+								<p className="lg:text-sm text-sm">{descripcion}</p>
+							</figcaption>
+						</figure>
 					</div>
 				</div>
 			</div>

@@ -35,9 +35,8 @@ const nosotros = [
 
 const Nosotros = () => {
 
-	//const {nombre, titulo, description, imagen} = nosotros
 	return (
-		<div id="nosotros" className="p-3 md:p-20 lg:py-20">
+		<section id="nosotros" className="p-3 md:p-20 lg:py-20 pb-20">
 			<div className="flex justify-center">
 				<span className="text-primary text-4xl md:text-5xl lg:text-7xl font-cd ">
 					Ankara{" "}
@@ -53,7 +52,7 @@ const Nosotros = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

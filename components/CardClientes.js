@@ -10,7 +10,7 @@ const CardClientes = ({cliente}) => {
 					<div className="p-5 flex md:flex justify-center">
 						<Image
 							src={imagen}
-							alt="imagen"
+							alt={nombre}
 							width={100}
 							height={100}
 							className="block mx-auto h-24 rounded-full sm:mx-0 sm:flex-shrink-0 justify-center"

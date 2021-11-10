@@ -21,13 +21,13 @@ const marcas = [
 
 const NuestrasMarcas = () => {
     return (
-			<section id="marcas" className="p-3 md:p-20 lg:py-20">
+			<section id="marcas" className="p-3 md:p-20 lg:py-20 pb-20">
 				<div className="p-10 flex flex-col items-center">
 					<span className="text-black text-center text-3xl md:text-4xl lg:text-5xl font-lato font-bold ">
 						Nuestras Marcas
 					</span>
 				</div>
-				<div className="p-5 md:p-20 lg:p-32 flex justify-center overflow-hidden">
+				<div className="p-3 md:p-20 lg:p-32 flex justify-center overflow-hidden">
 					<div className="w-full grid grid-cols-1 gap-5 even:grid-flow-col-dense rounded-xl">
 						{marcas.map((marca) => (
 							<CardMarcas key={marcas.id} marca={marca} />

@@ -10,6 +10,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+ font-family: 'Lato', sans-serif
+}
+
 @font-face {
   font-family:"Cinzel Decorative",
   "Photograph Signature";
@@ -17,42 +21,63 @@ html {
 
 
 }
-.column div {
+
+.nosotros {
   position: relative;
-  float: left;
-  width: 300px;
-  height: 200px;
-  margin: 0 0 0 25px;
-  padding: 0;
-}
-
-.column div span {
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 200px;
-  margin: 10;
-  padding: 5;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-  opacity: 0;
   overflow: hidden;
+}
+
+/* .nosotros * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+} */
+
+.nosotros figcaption {
+  position: absolute;
+  	-webkit-transition: all 0.4s;
+  	transition: all 0.9s;
+}
+
+.nosotros figcaption:before {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+
+.nosotros:hover figcaption,
+.nosotros.hover figcaption {
+  bottom: 6px;
+
+ 
+}
+
+.identidad {
+  position: relative;
+  overflow: hidden;
+}
+
+/* .identidad * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.60s ease;
+  transition: all 0.60s ease;
+} */
+
+.identidad figcaption {
+  position: absolute;
   
-
 }
 
-figure:hover+span {
-  bottom: -200px;
-  opacity: 1;
+.identidad figcaption:before {
+  position: absolute;
+  content: '';
+  z-index: 2;
+  left: 0;
 }
 
-.hover01 figure img {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+.identidad:hover figcaption,
+.identidad.hover figcaption {
+  bottom: 6px;
 }
-
-

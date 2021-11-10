@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CardClientes from "./CardClientes";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import Image from "next/image";
 
 const clientes = [
 	{
@@ -98,19 +97,19 @@ const NuestrosClientes = () => {
 	}, [pause, slider]);
 
 	return (
-		<section className="p-3 bg-secundary md:p-20 lg:py-20">
-			<div className="p-10 flex flex-col items-center space-y-10">
+		<section className="p-3 bg-secundary md:p-20 lg:py-20 pb-20">
+			<div className="py-20 p-3  flex flex-col items-center space-y-5">
 				<span className="text-white	text-center text-3xl md:text-4xl lg:text-5xl font-lato font-bold  ">
 					Que dicen nuestros clientes
 				</span>
-				<p className="text-white text-sm md:text-xl lg:text-1xl text-center lg:w-3/5">
+				<p className="text-white text-lg md:text-xl lg:text-1xl text-center lg:w-3/5">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the.
 				</p>
 			</div>
 
-			<div className="p-16 flex justify-center">
+			<div className="p-3 md:p-20 lg:p-5  flex justify-center">
 				<div className="w-full  ">
 					<div ref={sliderRef} className="keen-slider">
 						{clientes.map((cliente) => (
