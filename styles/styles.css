@@ -2,9 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
-/* @import url('http://fonts.cdnfonts.com/css/photograph-signature'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap'); */
-
 
 html {
   scroll-behavior: smooth;
@@ -26,13 +23,6 @@ body{
   position: relative;
   overflow: hidden;
 }
-
-/* .nosotros * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-} */
 
 .nosotros figcaption {
   position: absolute;
@@ -58,12 +48,6 @@ body{
   overflow: hidden;
 }
 
-/* .identidad * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.60s ease;
-  transition: all 0.60s ease;
-} */
 
 .identidad figcaption {
   position: absolute;
