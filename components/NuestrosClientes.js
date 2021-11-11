@@ -113,8 +113,8 @@ const NuestrosClientes = () => {
 				<div className="w-full  ">
 					<div ref={sliderRef} className="keen-slider">
 						{clientes.map((cliente) => (
-							<div className="keen-slider__slide">
-								<CardClientes key={cliente.id} cliente={cliente} />
+							<div className="keen-slider__slide" key={cliente.id}>
+								<CardClientes cliente={cliente} />
 							</div>
 						))}
 					</div>
