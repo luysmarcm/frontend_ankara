@@ -41,11 +41,11 @@ const Carrusel = ({ imagenes }) => {
 
 	return (
 		<div ref={sliderRef} className="keen-slider">
-			{imagenes.map((imagene) => (
-				<div key={imagene.id} className="bg-cover keen-slider__slide">
+			{imagenes.map((imagen) => (
+				<div key={imagen.id} className="bg-cover keen-slider__slide">
 					<Image
-						src={imagene.imagen}
-						alt={imagene.alt}
+						src={imagen.imagen}
+						alt={imagen.alt}
 						layout="responsive"
 						width={1024}
 						height={480}

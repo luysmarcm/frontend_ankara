@@ -1,7 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -12,56 +11,21 @@ body{
 }
 
 @font-face {
-  font-family:"Cinzel Decorative",
-  "Photograph Signature";
-  src: url(/public/fonts/cinzel-decorative.woff2), url(/public/fonts/photograph-signature.woff);
-
-
+  font-family:'Cinzel Decorative', cursive,
+  "Photograph Signature", "Lato";
+  src: url(/public/fonts/cinzel-decorative.woff2), url(/public/fonts/photograph-signature.woff), url(/public/fonts/Lato.woff2);
 }
 
-.nosotros {
-  position: relative;
-  overflow: hidden;
+.imagen{
+  transition: all 500ms linear;
 }
 
-.nosotros figcaption {
-  position: absolute;
-  	-webkit-transition: all 0.4s;
-  	transition: all 0.9s;
-}
-
-.nosotros figcaption:before {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-}
-
-.nosotros:hover figcaption,
-.nosotros.hover figcaption {
-  bottom: 6px;
-
- 
-}
-
-.identidad {
-  position: relative;
-  overflow: hidden;
+.imagen .hijo{
+  transition: all 500ms;
+  transform: translateY(100%);
 }
 
 
-.identidad figcaption {
-  position: absolute;
-  
-}
-
-.identidad figcaption:before {
-  position: absolute;
-  content: '';
-  z-index: 2;
-  left: 0;
-}
-
-.identidad:hover figcaption,
-.identidad.hover figcaption {
-  bottom: 6px;
+.imagen:hover .hijo{
+  transform: translateY(0);
 }

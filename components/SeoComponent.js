@@ -22,6 +22,13 @@ const SeoComponent = ({ title, description }) => (
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="http://fonts.cdnfonts.com/css/photograph-signature" rel="stylesheet"/>
 	</Head>
 );
 export default SeoComponent;

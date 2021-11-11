@@ -38,17 +38,17 @@ const Nosotros = () => {
 	return (
 		<section id="nosotros" className="p-3 md:p-20 lg:py-20 pb-20">
 			<div className="flex justify-center">
-				<span className="text-primary text-4xl md:text-5xl lg:text-7xl font-cd ">
+				<h1 className="text-primary text-4xl font-cd md:text-5xl lg:text-7xl">
 					Ankara{" "}
-					<span className="text-primary text-5xl lg:text-6xl font-medium font-ps">
+					<span className="text-primary font-ps text-4xl lg:text-6xl font-medium">
 						es..
 					</span>
-				</span>
+				</h1>
 			</div>
 			<div className="p-10 lg:p-14">
 				<div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ">
-					{nosotros.map((nosotro) => (
-						<CardNosotros key={nosotro.id} nosotro={nosotro} />
+					{nosotros.map((item) => (
+						<CardNosotros key={item.id} info={item} />
 					))}
 				</div>
 			</div>
