@@ -13,8 +13,8 @@ const CardNosotros = ({info}) => {
 						<Image
 							src={imagen}
 							alt={titulo}
-							width={300}
-							height={300}
+							width={672}
+							height={672}
 							layout="responsive"
                             className="rounded-xl"
 						/>

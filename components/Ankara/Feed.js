@@ -12,7 +12,7 @@ const Feed = (props) => {
 	switch (media_type) {
 		case "VIDEO":
 			post = (
-				<a href={permalink}>
+				<a href={permalink} rel="noopener">
 					<video
 						width={500}
 						height={500}
@@ -26,7 +26,7 @@ const Feed = (props) => {
 			break;
 		case "CAROUSEL_ALBUM":
 			post = (
-				<a href={permalink} target="_blank">
+				<a href={permalink} target="_blank" rel="noopener">
 					<Image
 						loader={myLoader}
 						width={820}
@@ -42,7 +42,7 @@ const Feed = (props) => {
 			break;
 		default:
 			post = (
-				<a href={permalink} target="_blank">
+				<a href={permalink} target="_blank" rel="noopener">
 					<Image
 						loader={myLoader}
 						width={820}

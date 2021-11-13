@@ -23,7 +23,7 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 					<link
-						href="http://fonts.cdnfonts.com/css/photograph-signature"
+						href="https://fonts.cdnfonts.com/css/photograph-signature"
 						rel="stylesheet"
 					/>
 					<link

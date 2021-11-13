@@ -10,6 +10,7 @@ const Ankara = () => {
 						target="_blank"
 						href="https://www.instagram.com/ankaravenezuela/"
 						className="flex items-center"
+						rel="noopener"
 					>
 						<Image
 							src="/imagen/ins.png"

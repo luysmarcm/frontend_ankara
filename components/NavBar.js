@@ -40,32 +40,32 @@ const NavBar = ({ navigation }) => {
 					className="lg:hidden"
 				>
 					{isSideMenuOpen ? (
-						<div className="w-8 h-8 px-2 text-white" alt="close">
-							<div as="button">
-								<svg
-									style={{ width: "30px", height: "30px" }}
-									viewBox="0 0 20 20"
-								>
-									<path
-										fill="currentColor"
-										d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14"
-									/>
-								</svg>
-							</div>
+						<div as="button" alt="close" className="w-8 h-8 px-2 text-white">
+							<svg
+								style={{ width: "30px", height: "30px" }}
+								viewBox="0 0 20 20"
+							>
+								<path
+									fill="currentColor"
+									d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14"
+								/>
+							</svg>
 						</div>
 					) : (
-						<div className="w-8 h-8 px-2 text-white menu" alt="close">
-							<div as="button">
-								<svg
-									style={{ width: "30px", height: "30px" }}
-									viewBox="0 0 20 20"
-								>
-									<path
-										fill="currentColor"
-										d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14"
-									/>
-								</svg>
-							</div>
+						<div
+							className="w-8 h-8 px-2 text-white menu"
+							as="button"
+							alt="open"
+						>
+							<svg
+								style={{ width: "30px", height: "30px" }}
+								viewBox="0 0 20 20"
+							>
+								<path
+									fill="currentColor"
+									d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14"
+								/>
+							</svg>
 						</div>
 					)}
 				</button>
@@ -79,7 +79,7 @@ const NavBar = ({ navigation }) => {
 									className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
 									aria-current={item.current ? "page" : undefined}
 								>
-									{item.name}
+									<li>{item.name}</li>
 								</a>
 							))}
 						</ul>

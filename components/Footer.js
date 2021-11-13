@@ -37,6 +37,7 @@ const Footer = ({navigation}) => {
 								href="https://www.instagram.com/ankaravenezuela/"
 								rel="noopener noreferrer"
 								className="text-primary  lg:text-5xl font-bold mr-4"
+								rel="noopener"
 							>
 								<Image
 									src="/imagen/ins.png"
@@ -51,7 +52,8 @@ const Footer = ({navigation}) => {
 								target="_blank"
 								href="https://www.tiktok.com/@ankaravenezuela?"
 								rel="noopener noreferrer"
-								className="text-primary text-5xl  font-bold  "
+								className="text-primary text-5xl  font-bold"
+								rel="noopener"
 							>
 								<Image
 									src="/imagen/tic.png"
