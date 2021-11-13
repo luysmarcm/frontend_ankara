@@ -8,7 +8,7 @@ const nosotros = [
 		titulo: "Maquillaje",
 		description:
 			"Crea maquillajes de impacto con efecto duradero y resalta tus ojos con colores vibrantes y brillantes ideales para el día o la noche.",
-		imagen: "/imagen/image2.png",
+		imagen: "/imagen/image1.png",
 	},
 	{
 		id: 2,
@@ -41,9 +41,9 @@ const Nosotros = () => {
 			className="place-items-center p-3 md:p-20 lg:py-32 pb-20"
 		>
 			<div className="flex justify-center pb-10 pt-10 ">
-				<h1 className="text-primary text-6xl font-cd md:text-5xl lg:text-7xl">
+				<h1 className="text-primary text-6xl font-cd lg:text-7xl">
 					Ankara{" "}
-					<span className="text-primary font-ps text-5xl lg:text-6xl font-medium">
+					<span className="font-lato text-5xl font-medium">
 						es..
 					</span>
 				</h1>

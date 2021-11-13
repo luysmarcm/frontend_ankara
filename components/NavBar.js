@@ -34,13 +34,14 @@ const NavBar = ({ navigation }) => {
 					))}
 				</div>
 				<button
+					aria-label="Abrir menu"
 					onClick={() => {
 						showSideMenu();
 					}}
 					className="lg:hidden"
 				>
 					{isSideMenuOpen ? (
-						<div as="button" alt="close" className="w-8 h-8 px-2 text-white">
+						<div alt="close" className="w-8 h-8 px-2 text-white">
 							<svg
 								style={{ width: "30px", height: "30px" }}
 								viewBox="0 0 20 20"
@@ -52,11 +53,7 @@ const NavBar = ({ navigation }) => {
 							</svg>
 						</div>
 					) : (
-						<div
-							className="w-8 h-8 px-2 text-white menu"
-							as="button"
-							alt="open"
-						>
+						<div className="w-8 h-8 px-2 text-white menu" alt="open">
 							<svg
 								style={{ width: "30px", height: "30px" }}
 								viewBox="0 0 20 20"
@@ -73,14 +70,15 @@ const NavBar = ({ navigation }) => {
 					<div className="fixed w-full md:w-1/2 lg:hidden bg-black left-0 top-16">
 						<ul className="flex flex-col p-10 text-2xl font-bold space-y-3">
 							{navigation.map((item) => (
-								<a
-									key={item.name}
-									href={item.href}
-									className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
-									aria-current={item.current ? "page" : undefined}
-								>
-									<li>{item.name}</li>
-								</a>
+								<li key={item.name}>
+									<a
+										href={item.href}
+										className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
+										aria-current={item.current ? "page" : undefined}
+									>
+										{item.name}
+									</a>
+								</li>
 							))}
 						</ul>
 					</div>

@@ -73,14 +73,15 @@ const Footer = ({navigation}) => {
 
 						<ul className="grid grid-cols-1 place-items-center lg:place-content-start lg:grid-cols-2 text-xl lg:text-2xl text-white ">
 							{navigation.map((item) => (
-								<a
-									key={item.name}
-									href={item.href}
-									className="px-3 py-2 rounded-md text-md lg:text-lg hover:text-primary"
-									aria-current={item.current ? "page" : undefined}
-								>
-									{item.name}
-								</a>
+								<li key={item.name}>
+									<a
+										href={item.href}
+										className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
+										aria-current={item.current ? "page" : undefined}
+									>
+										{item.name}
+									</a>
+								</li>
 							))}
 						</ul>
 					</div>

@@ -43,13 +43,15 @@ const Carrusel = ({ imagenes }) => {
 		<div ref={sliderRef} className="keen-slider">
 			{imagenes.map((imagen) => (
 				<div key={imagen.id} className="bg-cover keen-slider__slide">
-					<Image
-						src={imagen.imagen}
-						alt={imagen.alt}
-						layout="responsive"
-						width={1024}
-						height={480}
-					/>
+					<div className="relative">
+						<Image
+							src={imagen.imagen}
+							alt={imagen.alt}
+							layout="responsive"
+							width={1024}
+							height={480}
+						/>
+					</div>
 				</div>
 			))}
 		</div>
