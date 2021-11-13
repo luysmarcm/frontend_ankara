@@ -5,8 +5,8 @@ const CardClientes = ({cliente}) => {
 
     const {nombre, comentario, imagen, profecion} = cliente
     return (
-			<section className="space-y-5 lg:p-10">
-				<div className="max-w-md mx-auto bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden md:max-w-2xl">
+			
+				<div className="bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden md:max-w-2xl">
 					<div className="p-5 flex md:flex justify-center">
 						<Image
 							src={imagen}
@@ -26,7 +26,7 @@ const CardClientes = ({cliente}) => {
 						</p>
 					</div>
 				</div>
-			</section>
+	
 		);
 }
 

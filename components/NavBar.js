@@ -1,81 +1,94 @@
-import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+// import {useRouter} from "next/router";
+import { useState } from "react";
 import Image from "next/image";
-import Logo from "../public/imagen/logo.svg"
+import Logo from "../public/imagen/logo.svg";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
 const NavBar = ({ navigation }) => {
+	const [isSideMenuOpen, setisSideMenuOpen] = useState(false);
+
+	const showSideMenu = () => {
+		isSideMenuOpen ? setisSideMenuOpen(false) : setisSideMenuOpen(true);
+	};
+	// const router = useRouter();
+	// console.log(router);
 	return (
-		<Disclosure as="nav" className="bg-fondo  fixed z-50 w-full">
-			{({ open }) => (
-				<>
-					<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-						<div className="relative flex items-center justify-between h-16">
-							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-								<Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-									<span className="sr-only">Open main menu</span>
-									{open ? (
-										<XIcon className="block h-6 w-6" aria-hidden="true" />
-									) : (
-										<MenuIcon className="block h-6 w-6" aria-hidden="true" />
-									)}
-								</Disclosure.Button>
-							</div>
-							<div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-								<div
-									style={{ width: "35px" }}
-									className="flex-shrink-0 flex items-center"
+		<nav className="bg-black px-8 py-4 flex items-center justify-between fixed z-50 w-full">
+			<div className="relative flex items-center justify-between w-full">
+				<div style={{ width: "35px" }}>
+					<Image src={Logo} alt="Logo" />
+				</div>
+				<div className="hidden lg:flex lg:flex-row space-x-4">
+					{navigation.map((item) => (
+						<a
+							key={item.name}
+							href={item.href}
+							className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
+							aria-current={item.current ? "page" : undefined}
+						>
+							{item.name}
+						</a>
+					))}
+				</div>
+				<button
+					onClick={() => {
+						showSideMenu();
+					}}
+					className="lg:hidden"
+				>
+					{isSideMenuOpen ? (
+						<div className="w-8 h-8 px-2 text-white" alt="close">
+							<div as="button">
+								<svg
+									style={{ width: "30px", height: "30px" }}
+									viewBox="0 0 20 20"
 								>
-									<Image src={Logo} alt="Logo" />
-								</div>
-								<div className="hidden sm:block sm:ml-6">
-									<div className="flex space-x-4">
-										{navigation.map((item) => (
-											<a
-												key={item.name}
-												href={item.href}
-												className={classNames(
-													item.current
-														? "bg-primary text-fondo"
-														: "text-white hover:text-primary",
-													"px-3 py-2 rounded-md text-sm font-lato font-bold"
-												)}
-												aria-current={item.current ? "page" : undefined}
-											>
-												{item.name}
-											</a>
-										))}
-									</div>
-								</div>
+									<path
+										fill="currentColor"
+										d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14"
+									/>
+								</svg>
 							</div>
 						</div>
-					</div>
-
-					<Disclosure.Panel className="sm:hidden">
-						<div className="px-2 pt-2 pb-3 space-y-1">
+					) : (
+						<div className="w-8 h-8 px-2 text-white menu" alt="close">
+							<div as="button">
+								<svg
+									style={{ width: "30px", height: "30px" }}
+									viewBox="0 0 20 20"
+								>
+									<path
+										fill="currentColor"
+										d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14"
+									/>
+								</svg>
+							</div>
+						</div>
+					)}
+				</button>
+				{isSideMenuOpen ? (
+					<div className="fixed w-full md:w-1/2 lg:hidden bg-black left-0 top-16">
+						<ul className="flex flex-col p-10 text-2xl font-bold space-y-3">
 							{navigation.map((item) => (
 								<a
 									key={item.name}
 									href={item.href}
-									className={classNames(
-										item.current
-											? "bg-primary text-fondo"
-											: "text-white hover:text-primary",
-										"block px-3 py-2 rounded-md text-base font-quick font-bold"
-									)}
+									className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
 									aria-current={item.current ? "page" : undefined}
 								>
 									{item.name}
 								</a>
 							))}
-						</div>
-					</Disclosure.Panel>
-				</>
-			)}
-		</Disclosure>
+						</ul>
+					</div>
+				) : (
+					""
+				)}
+			</div>
+		</nav>
 	);
 };
 

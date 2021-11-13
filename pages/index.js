@@ -20,9 +20,10 @@ export default function Home() {
 			<SeoComponent
 				title="Ankara"
 				description="Siéntete en confianza, segura y con mucha actitud en nuestro espacio exclusivo, donde nuestros profesionales te brindarán la mejor atención y calidad en cada uno de nuestros servicios."
+				image="/imagen/logo.svg"
 			/>
 			<main>
-				<Banner/>
+				<Banner />
 				<Nosotros />
 				<Identidades />
 				<NuestrasMarcas />

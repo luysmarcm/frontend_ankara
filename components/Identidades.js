@@ -6,26 +6,25 @@ const identidades = [
 		id: 1,
 		nombre: "Ankara Studio",
 		descripcion:
-			"Siéntete en confianza, segura y con mucha actitud en nuestro espacio exclusivo, donde nuestros profesionales te brindarán la mejor atención y calidad en cada uno de nuestros servicios.",
+			"Certifícate como un/a profesional en el fascinante mundo del makeup junto a formadores que te capacitarán y brindarán todas las herramientas necesarias para convertir tu pasión en una profesión.",
 		imagen: "/imagen/studio.png",
 	},
 	{
 		id: 2,
 		nombre: "Ankara for me",
 		descripcion:
-			"Siéntete en confianza, segura y con mucha actitud en nuestro espacio exclusivo, donde nuestros profesionales te brindarán la mejor atención y calidad en cada uno de nuestros servicios.",
+			"Si un cambio de look es lo que necesitas, este es el lugar ideal para renovarte y dejarte consentir por profesionales que te harán sentir única/o. Ven y disfruta del espacio que tú mereces.",
 		imagen: "/imagen/forme.png",
 	},
 ];
 
 const Identidades = () => {
-	
 	return (
 		<section
 			id="identidades"
-			className=" bg-gris place-items-center p-3 md:p-20 lg:py-20 pb-20"
+			className=" bg-gris place-items-center p-3 md:p-20 lg:py-32 pb-20"
 		>
-			<div className="py-20 p-3 flex flex-col items-center space-y-5 ">
+			<div className="pb-10 p-3 flex flex-col items-center space-y-5 pt-10">
 				<span className="text-black text-3xl md:text-4xl lg:text-5xl font-lato font-bold ">
 					Identidades
 				</span>
@@ -36,7 +35,7 @@ const Identidades = () => {
 				</p>
 			</div>
 			<div>
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-5 overflow-hidden justify-items-center ">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 					{identidades.map((identidad) => (
 						<CardIdentidades key={identidad.id} identidad={identidad} />
 					))}

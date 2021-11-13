@@ -97,27 +97,24 @@ const NuestrosClientes = () => {
 	}, [pause, slider]);
 
 	return (
-		<section className="p-3 bg-secundary md:p-20 lg:py-20 pb-20">
-			<div className="py-20 p-3  flex flex-col items-center space-y-5">
-				<span className="text-white	text-center text-3xl md:text-4xl lg:text-5xl font-lato font-bold  ">
-					Que dicen nuestros clientes
-				</span>
-				<p className="text-white text-lg md:text-xl lg:text-1xl text-center lg:w-3/5">
+		<section className="bg-secundary place-items-center p-3 md:p-20 lg:py-32 pb-20">
+			<div className="pb-10 pt-10 p-3 flex flex-col items-center space-y-5">
+				<h2 className="text-white	text-center text-3xl md:text-4xl lg:text-5xl font-bold  ">
+					¿Qué dicen nuestros aliados?
+				</h2>
+				<p className="text-white text-lg md:text-xl lg:text-1xl text-center max-w-3xl">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the.
 				</p>
 			</div>
-
-			<div className="p-3 md:p-20 lg:p-5  flex justify-center">
-				<div className="w-full  ">
-					<div ref={sliderRef} className="keen-slider">
-						{clientes.map((cliente) => (
-							<div className="keen-slider__slide" key={cliente.id}>
-								<CardClientes cliente={cliente} />
-							</div>
-						))}
-					</div>
+			<div className="flex justify-center">
+				<div ref={sliderRef} className="keen-slider">
+					{clientes.map((cliente) => (
+						<div className="keen-slider__slide" key={cliente.id}>
+							<CardClientes cliente={cliente} />
+						</div>
+					))}
 				</div>
 			</div>
 		</section>

@@ -1,27 +1,33 @@
-import React from 'react'
-import Image from 'next/image';
-import InstaFeeds from './InstaFeeds'
+import React from "react";
+import Image from "next/image";
+import InstaFeeds from "./InstaFeeds";
 
 const Ankara = () => {
-
     return (
-			<section className="bg-gris py-20">
-				<div className="flex flex-col items-center ">
-					<div className="flex items-baseline space-x-2">
-						<a
-							target="_blank"
-							href="https://www.instagram.com/ankaravenezuela/"
-						>
-							<Image src="/imagen/ins.png" alt="Logo" width={25} height={25} />
-						</a>
-						<span className="inline-block align-middle text-primary text-3xl lg:text-5xl font-lato font-bold italic">
+			<section className="bg-gris place-items-center p-3 md:p-20 lg:py-32 pb-20">
+				<div className="flex justify-center mb-8 pt-10">
+					<a
+						target="_blank"
+						href="https://www.instagram.com/ankaravenezuela/"
+						className="flex items-center"
+					>
+						<Image
+							src="/imagen/ins.png"
+							alt="Logo"
+							width={40}
+							height={40}
+							layout="fixed"
+						/>
+
+						<h2 className="inline-block align-middle text-primary text-3xl lg:text-5xl font-bold italic ml-2">
 							ankaravenezuela
-						</span>
-					</div>
-					<InstaFeeds limit={4} />
+						</h2>
+					</a>
 				</div>
+
+				<InstaFeeds limit={4} />
 			</section>
 		);
-}
+};
 
-export default Ankara
+export default Ankara;

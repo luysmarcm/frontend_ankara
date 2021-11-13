@@ -21,7 +21,7 @@ const imagenes = [
 
 const Banner = () => {
     return (
-			<section id="inicio" className="py-16 lg:py-0">
+			<section id="inicio" className="mt-16 lg:py-0">
 					<Carrusel  imagenes={imagenes} />		
 			</section>
 		);

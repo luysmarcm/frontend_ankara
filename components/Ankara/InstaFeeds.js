@@ -19,11 +19,11 @@ const InstaFeeds = ({...props}) => {
 
 
     return (
-        <section className='p-5  md:p-20 lg:p-32 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-around">
             {feeds.map((feed) => (
                 <Feed key={feed.id} feed={feed} />
             ))}
-        </section>
+        </div>
     );
 };
 

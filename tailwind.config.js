@@ -20,6 +20,12 @@ module.exports = {
 			backgroundImage: (theme) => ({
 				banner: "url('/images/banner.png')",
 			}),
+			maxWidth: {
+				max: "1920px",
+			},
+			minWidth: {
+				min: "280px",
+			},
 		},
 	},
 	variants: {
