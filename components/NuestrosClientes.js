@@ -99,10 +99,10 @@ const NuestrosClientes = () => {
 	return (
 		<section className="bg-secundary place-items-center p-3 md:p-20 lg:py-32 pb-20">
 			<div className="pb-10 pt-10 p-3 flex flex-col items-center space-y-5">
-				<h2 className="text-white	text-center text-3xl md:text-4xl lg:text-5xl font-bold  ">
+				<h2 className="text-black	text-center text-3xl md:text-4xl lg:text-5xl font-bold  ">
 					¿Qué dicen nuestros aliados?
 				</h2>
-				<p className="text-white text-lg md:text-xl lg:text-1xl text-center max-w-3xl">
+				<p className="text-black text-lg md:text-xl lg:text-1xl text-center max-w-3xl">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the.

@@ -20,7 +20,7 @@ const Ankara = () => {
 							layout="fixed"
 						/>
 
-						<h2 className="inline-block align-middle text-primary text-3xl lg:text-5xl font-bold italic ml-2">
+						<h2 className="inline-block align-middle text-black text-3xl lg:text-5xl font-bold italic ml-2">
 							ankaravenezuela
 						</h2>
 					</a>

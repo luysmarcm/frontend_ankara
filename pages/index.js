@@ -5,16 +5,11 @@ import SeoComponent from "../components/SeoComponent";
 import Identidades from "../components/Identidades";
 import NuestrasMarcas from "../components/NuestrasMarcas";
 import NuestrosClientes from "../components/NuestrosClientes";
-import Footer from "../components/Footer";
 import Ankara from "../components/Ankara/Ankara.js"
 import Layout from "../components/Layout/Index";
 
 
 export default function Home() {
-
-	
-
-
 	return (
 		<Layout>
 			<SeoComponent

@@ -1,29 +1,32 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
-body{
- font-family: 'Lato', sans-serif
+body {
+	font-family: "Lato", sans-serif;
 }
 
-.imagen{
-  transition: all 500ms linear;
+.imagen {
+	transition: all 500ms linear;
 }
 
-.imagen .hijo{
-  transition: all 500ms;
-  transform: translateY(100%);
+.imagen .hijo {
+	transition: all 500ms;
+	transform: translateY(100%);
 }
 
-
-.imagen:hover .hijo{
-  transform: translateY(0);
+.imagen:hover .hijo {
+	transform: translateY(0);
 }
 
-.menu{
-  transition: all 500ms linear;
+.menu {
+	transition: all 500ms linear;
+}
+
+.textShadow {
+	text-shadow: 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
