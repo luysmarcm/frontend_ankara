@@ -16,7 +16,7 @@ const CardNosotros = ({info}) => {
 						height={672}
 						layout="responsive"
 						className="rounded-xl"
-						quality={100}
+						objectFit="cover"
 					/>
 				</div>
 				<div className="absolute text-black bottom-0 bg-secundary bg-opacity-90 hijo px-3 py-2 text-sm">

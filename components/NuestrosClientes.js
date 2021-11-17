@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CardClientes from "./CardClientes";
+import CardClientes from "./Card/CardClientes";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 

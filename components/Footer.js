@@ -4,12 +4,12 @@ import Image from "next/image";
 const Footer = ({navigation}) => {
     return (
 			<footer className="bg-black body-font px-20 ">
-				<div className="relative max-w-sm">
+				<div className="relative max-w-xs">
 					<Image
 						src="/imagen/ankara.svg"
 						alt="Logo"
-						width={128}
-						height={75}
+						width={60}
+						height={30}
 						layout="responsive"
 						priority
 					/>
@@ -68,7 +68,7 @@ const Footer = ({navigation}) => {
 
 					<div>
 						<div className="text-white text-2xl lg:text-3xl italic text-center">
-							Navegacion
+							Navegación
 						</div>
 
 						<ul className="grid grid-cols-1 place-items-center lg:place-content-start lg:grid-cols-2 text-xl lg:text-2xl text-white ">
@@ -86,7 +86,7 @@ const Footer = ({navigation}) => {
 						</ul>
 					</div>
 				</div>
-				<div className="flex justify-center p-5">
+				<div className="flex justify-center p-8 ">
 					<span className="text-white text-lg text-center">
 						Copyright Ankara C.A.
 					</span>

@@ -1,5 +1,5 @@
 import React from "react";
-import CardIdentidades from "./CardIdentidades";
+import CardIdentidades from "../components/Card/CardIdentidades"
 
 const identidades = [
 	{
@@ -22,7 +22,7 @@ const Identidades = () => {
 	return (
 		<section
 			id="identidades"
-			className=" bg-gris place-items-center p-3 md:p-20 lg:py-32 pb-20"
+			className=" bg-gris place-items-center p-3 md:p-20 lg:py-32 pb-20 lg:pb-32 lg:pt-32 space-y-5"
 		>
 			<div className="pb-10 p-3 flex flex-col items-center space-y-5 pt-10">
 				<span className="text-black text-3xl md:text-4xl lg:text-5xl font-lato font-bold ">

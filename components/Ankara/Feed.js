@@ -59,9 +59,6 @@ const Feed = (props) => {
 	}
 
 	return (
-		// <div className="flex rounded-xl md:flex lg:w-full justify-around transition duration-500 transform hover:-translate-y-1 hover:scale-110 ">
-		// 	{post}
-		// </div>
 		<div className="relative overflow-hidden rounded-xl space-y-5 drop-shadow-xl transition duration-500 transform hover:-translate-y-1 hover:scale-110">
 			{post}
 		</div>

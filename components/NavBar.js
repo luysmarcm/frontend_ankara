@@ -13,8 +13,6 @@ const NavBar = ({ navigation }) => {
 	const showSideMenu = () => {
 		isSideMenuOpen ? setisSideMenuOpen(false) : setisSideMenuOpen(true);
 	};
-	// const router = useRouter();
-	// console.log(router);
 	return (
 		<nav className="bg-black px-8 py-4 flex items-center justify-between fixed z-50 w-full">
 			<div className="relative flex items-center justify-between w-full">

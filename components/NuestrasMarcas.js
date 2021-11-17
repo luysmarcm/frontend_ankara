@@ -1,5 +1,5 @@
 import React from "react";
-import CardMarcas from "./CardMarcas";
+import CardMarcas from "./Card/CardMarcas";
 
 const marcas = [
 	{
@@ -13,7 +13,10 @@ const marcas = [
 
 const NuestrasMarcas = () => {
 	return (
-		<section id="marcas" className="p-3 md:p-20 lg:py-20 pb-20">
+		<section
+			id="marcas"
+			className="p-3 md:p-20 lg:py-20 pb-20 lg:pb-32 lg:pt-32 space-y-5"
+		>
 			<div className="pb-10 p-5 pt-10 lg:pt-0 flex flex-col items-center">
 				<span className="text-black text-center text-3xl md:text-4xl lg:text-5xl font-lato font-bold ">
 					Nuestras Marcas

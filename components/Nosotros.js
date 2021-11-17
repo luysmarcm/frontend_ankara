@@ -1,5 +1,5 @@
 import React from 'react'
-import CardNosotros from "./CardNosotros";
+import CardNosotros from "./Card/CardNosotros"
 
 const nosotros = [
 	{
@@ -37,7 +37,7 @@ const Nosotros = () => {
 	return (
 		<section
 			id="nosotros"
-			className="place-items-center p-3 md:p-20 lg:py-32 pb-20"
+			className="place-items-center p-3 md:p-20 lg:py-32 pb-20 lg:pb-32 lg:pt-32 space-y-5"
 		>
 			<div className="flex justify-center pb-10 pt-10 ">
 				<h1 className="text-black text-5xl font-cd md:text-6xl lg:text-7xl">
