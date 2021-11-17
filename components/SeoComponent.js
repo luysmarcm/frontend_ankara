@@ -17,12 +17,24 @@ const SeoComponent = ({ title, description, image }) => (
 		<meta property="og:image" content={`${image}`} />
 		<meta property="og:image:width" content="684" />
 		<meta property="og:image:height" content="328" />
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-HQ9MBTPK2Y"
+		></script>
+		<script>
+			{`
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'G-HQ9MBTPK2Y');
+			`}
+		</script>
 		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css"
 		/>
-		
 	</Head>
 );
 export default SeoComponent;
