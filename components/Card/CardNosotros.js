@@ -19,7 +19,7 @@ const CardNosotros = ({info}) => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="absolute text-white bottom-0 bg-secundary bg-opacity-90 hijo px-3 py-2 text-md sm:text-lg">
+				<div className="absolute text-black bottom-0 bg-secundary bg-opacity-90 hijo px-3 py-2 text-md sm:text-lg">
 					{description}
 				</div>
 			</div>

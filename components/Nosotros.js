@@ -2,34 +2,34 @@ import React from "react";
 import CardNosotros from "./Card/CardNosotros";
 
 const nosotros = [
-    {
-        id: 1,
-        titulo: "Maquillaje",
-        description:
-            "Crea maquillajes de impacto con efecto duradero y resalta tus ojos con colores vibrantes y brillantes ideales para el día o la noche.",
-        imagen: "/imagen/1.jpg",
-    },
-    {
-        id: 2,
-        titulo: "Cuidado Personal",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut leo vitae nisi cursus vestibulum in vitae augue. ",
-        imagen: "/imagen/2.jpg",
-    },
-    {
-        id: 3,
-        titulo: "Barbershop	",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut leo vitae nisi cursus vestibulum in vitae augue. ",
-        imagen: "/imagen/3.jpg",
-    },
-    {
-        id: 4,
-        titulo: "Innovacion",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut leo vitae nisi cursus vestibulum in vitae augue.",
-        imagen: "/imagen/4.jpg",
-    },
+	{
+		id: 1,
+		titulo: "Maquillaje",
+		description:
+			"Variedad, calidad y mucho brillo encontrarás en Ankara. Encuentra tus productos de maquillaje favoritos y prepárate para realzar tu belleza.",
+		imagen: "/imagen/1.jpg",
+	},
+	{
+		id: 2,
+		titulo: "Cuidado Personal",
+		description:
+			"Si de cuidar tu piel se trata, en ANKARA nos encargamos de brindarte productos de calidad para el cuerpo y el rostro. ¡Regálale suavidad y salud a tu piel con ANKARA!",
+		imagen: "/imagen/2.jpg",
+	},
+	{
+		id: 3,
+		titulo: "Barbershop	",
+		description:
+			"Para ellos, que aman cuidar su imagen, ofrecemos productos y accesorios para el cuidado de la barba y el cabello, ¡porque ellos, lo merecen!",
+		imagen: "/imagen/3.jpg",
+	},
+	{
+		id: 4,
+		titulo: "Aparatos Estéticos ",
+		description:
+			"Te ayudamos a innovar tu Spa o emprendimiento con aparatos de última generación para los diferentes tratamientos estéticos.",
+		imagen: "/imagen/4.jpg",
+	},
 ];
 
 const Nosotros = () => {

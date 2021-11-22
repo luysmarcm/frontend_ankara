@@ -4,46 +4,46 @@ import {useKeenSlider} from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 const clientes = [
-    {
-        id: 1,
-        comentario:
-            "BeautyZone was extremely creative and forward thinking. They are also very quick and efficient when executing changes for us.",
-        nombre: "Evelyn Martinez",
-        profesion: "Fashion Designer",
-        imagen: "/imagen/avatar.png",
-    },
-    {
-        id: 2,
-        comentario:
-            "BeautyZone was extremely creative and forward thinking. They are also very quick and efficient when executing changes for us.",
-        nombre: "Evelyn Martinez",
-        profesion: "Fashion Designer",
-        imagen: "/imagen/avatar.png",
-    },
-    {
-        id: 3,
-        comentario:
-            "BeautyZone was extremely creative and forward thinking. They are also very quick and efficient when executing changes for us.",
-        nombre: "Evelyn Martinez",
-        profesion: "Fashion Designer",
-        imagen: "/imagen/image2.png",
-    },
-    {
-        id: 4,
-        comentario:
-            "BeautyZone was extremely creative and forward thinking. They are also very quick and efficient when executing changes for us.",
-        nombre: "Evelyn Martinez",
-        profesion: "Fashion Designer",
-        imagen: "/imagen/image1.png",
-    },
-    {
-        id: 5,
-        comentario:
-            "BeautyZone was extremely creative and forward thinking. They are also very quick and efficient when executing changes for us.",
-        nombre: "Evelyn Martinez",
-        profesion: "Fashion Designer",
-        imagen: "/imagen/image3.png",
-    },
+	{
+		id: 1,
+		comentario:
+			"Simplemente mágico, único y verdadero. Amo a ANKARA Venezuela y ANKARA Studio",
+		nombre: "Ender Torres",
+		profesion: "Maquillador Profesional",
+		imagen: "/imagen/avatar.png",
+	},
+	{
+		id: 2,
+		comentario:
+			"BeautyZone was extremely creative and forward thinking. They are also very quick and efficieny.",
+		nombre: "Evelyn Martinez",
+		profesion: "Fashion Designer",
+		imagen: "/imagen/avatar.png",
+	},
+	{
+		id: 3,
+		comentario:
+			"BeautyZone was extremely creative and forward thinking. They are also very quick and efficieny.",
+		nombre: "Evelyn Martinez",
+		profesion: "Fashion Designer",
+		imagen: "/imagen/image2.png",
+	},
+	{
+		id: 4,
+		comentario:
+			"BeautyZone was extremely creative and forward thinking. They are also very quick and efficieny.",
+		nombre: "Evelyn Martinez",
+		profesion: "Fashion Designer",
+		imagen: "/imagen/image1.png",
+	},
+	{
+		id: 5,
+		comentario:
+			"BeautyZone was extremely creative and forward thinking. They are also very quick and efficieny.",
+		nombre: "Evelyn Martinez",
+		profesion: "Fashion Designer",
+		imagen: "/imagen/image3.png",
+	},
 ];
 
 const NuestrosClientes = () => {
