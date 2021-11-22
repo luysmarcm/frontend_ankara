@@ -1,32 +1,33 @@
 import React from "react";
 import Image from "next/image";
 
-const CardMarcas = ({ marca }) => {
-	const { nombre, description, imagen } = marca;
+const CardMarcas = ({marca}) => {
+    const {nombre, description, imagen} = marca;
 
-	return (
-		<section className="bg-morado rounded-xl lg:flex lg:even:flex-row-reverse overflow-hidden">
-			<Image
-				src={imagen}
-				alt={nombre}
-				width={804}
-				height={827}
-				// layout="responsive"
-				objectFit="cover"
-				priority
-				className="relative md:w-3/12 w-11/12"
-			/>
+    return (
+        <section className='bg-morado rounded-xl lg:flex lg:even:flex-row-reverse overflow-hidden'>
+            <div className='relative flex-1'>
+                <Image
+                    src={imagen}
+                    alt={nombre}
+                    width={804}
+                    height={827}
+                    layout='responsive'
+                    priority
+                    className='block'
+                />
+            </div>
 
-			<div className="p-6 md:p-14 lg:p-20 space-y-4 ">
-				<h2 className="uppercase tracking-wide text-2xl lg:text-1xl md:text-3xl text-white text-center  font-bold lg:text-left">
-					{nombre}
-				</h2>
-				<p className="mt-2 text-white text-base md:text-xl text-center lg:text-base lg:text-left">
-					{description}
-				</p>
-			</div>
-		</section>
-	);
+            <div className='space-y-4 lg:w-7/12 xl:w-8/12 p-12 my-auto'>
+                <h2 className='uppercase tracking-wide text-3xl lg:text-4xl text-white text-center font-bold lg:text-left'>
+                    {nombre}
+                </h2>
+                <p className='mt-2 text-white text-lg md:text-xl text-center lg:text-xl lg:text-left'>
+                    {description}
+                </p>
+            </div>
+        </section>
+    );
 };
 
 export default CardMarcas;

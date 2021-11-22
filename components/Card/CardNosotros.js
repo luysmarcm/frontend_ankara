@@ -5,7 +5,7 @@ const CardNosotros = ({info}) => {
     const {titulo, imagen, description} = info;
     return (
 			<div className="relative imagen overflow-hidden rounded-xl space-y-5">
-				<h2 className="text-black font-lato text-2xl lg:text-2xl italic font-bold">
+				<h2 className="text-black text-2xl lg:text-2xl italic font-bold">
 					{titulo}
 				</h2>
 				<div className="relative">
@@ -19,7 +19,7 @@ const CardNosotros = ({info}) => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="absolute text-black bottom-0 bg-secundary bg-opacity-90 hijo px-3 py-2 text-sm">
+				<div className="absolute text-white bottom-0 bg-secundary bg-opacity-90 hijo px-3 py-2 text-md sm:text-lg">
 					{description}
 				</div>
 			</div>

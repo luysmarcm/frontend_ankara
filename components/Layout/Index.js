@@ -13,7 +13,7 @@ const Layout = (props) => {
 	return (
 		<>
 			<Header navigation={navigation} />
-			<div className="max-w-full m-auto overflow-hidden w-full">
+			<div className="max-w-max m-auto overflow-hidden w-full">
 				{props.children}
 			</div>
 			<Footer navigation={navigation} />

@@ -4,8 +4,8 @@ import InstaFeeds from "./InstaFeeds";
 
 const Ankara = () => {
     return (
-			<section className="bg-gris place-items-center p-3 md:p-20 lg:py-32 pb-20 lg:pb-32 lg:pt-32 space-y-5">
-				<div className="flex justify-center mb-8 pt-10">
+			<section className="bg-gris place-items-center py-24 px-3 sm:px-16 md:py-32 lg:py-36 lg:px-20 space-y-5">
+				<div className="flex justify-center mb-12">
 					<a
 						target="_blank"
 						href="https://www.instagram.com/ankaravenezuela/"

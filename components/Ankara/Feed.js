@@ -59,7 +59,7 @@ const Feed = (props) => {
 	}
 
 	return (
-		<div className="relative overflow-hidden rounded-xl space-y-5 drop-shadow-xl transition duration-500 transform hover:-translate-y-1 hover:scale-110">
+		<div className="relative overflow-hidden rounded-xl space-y-5 drop-shadow-xl transition duration-500 transform">
 			{post}
 		</div>
 	);

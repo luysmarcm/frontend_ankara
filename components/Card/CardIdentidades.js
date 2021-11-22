@@ -15,10 +15,10 @@ const CardIdentidades = ({ identidad }) => {
 					/>
 				</div>
 				<div className="absolute text-black bottom-0 bg-white bg-opacity-90 hijo px-3 py-3 text-sm space-y-3">
-					<h2 className="text-black text-xl lg:text-1xl italic font-bold">
+					<h2 className="text-black text-xl md:text-2xl italic font-bold">
 						{nombre}
 					</h2>
-					<p className="text-sm lg:text-sm">{descripcion}</p>
+					<p className="text-md md:text-lg">{descripcion}</p>
 				</div>
 			</div>
 		
