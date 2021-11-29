@@ -7,28 +7,28 @@ const nosotros = [
 		titulo: "Maquillaje",
 		description:
 			"Variedad, calidad y mucho brillo encontrarás en Ankara. Encuentra tus productos de maquillaje favoritos y prepárate para realzar tu belleza.",
-		imagen: "/imagen/1.jpg",
+		imagen: "/imagen/maquillaje.jpg",
 	},
 	{
 		id: 2,
 		titulo: "Cuidado Personal",
 		description:
 			"Si de cuidar tu piel se trata, en ANKARA nos encargamos de brindarte productos de calidad para el cuerpo y el rostro. ¡Regálale suavidad y salud a tu piel con ANKARA!",
-		imagen: "/imagen/2.jpg",
+		imagen: "/imagen/cuidado.jpg",
 	},
 	{
 		id: 3,
 		titulo: "Barbershop	",
 		description:
 			"Para ellos, que aman cuidar su imagen, ofrecemos productos y accesorios para el cuidado de la barba y el cabello, ¡porque ellos, lo merecen!",
-		imagen: "/imagen/3.jpg",
+		imagen: "/imagen/barber.jpg",
 	},
 	{
 		id: 4,
 		titulo: "Aparatos Estéticos ",
 		description:
 			"Te ayudamos a innovar tu Spa o emprendimiento con aparatos de última generación para los diferentes tratamientos estéticos.",
-		imagen: "/imagen/4.jpg",
+		imagen: "/imagen/aparatos.jpg",
 	},
 ];
 
