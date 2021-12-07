@@ -105,11 +105,11 @@ const NuestrosClientes = () => {
 					<h2 className="text-black text-center text-3xl md:text-4xl lg:text-5xl font-bold">
 						¿Qué dicen nuestros aliados?
 					</h2>
-					<p className="text-black text-lg md:text-xl lg:text-1xl text-center max-w-3xl mx-auto">
+					{/* <p className="text-black text-lg md:text-xl lg:text-1xl text-center max-w-3xl mx-auto">
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry. Lorem Ipsum has been the industry's standard dummy text
 						ever since the.
-					</p>
+					</p> */}
 				</div>
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4  justify-center">
 					{/* <div ref={sliderRef} className="keen-slider"> */}
