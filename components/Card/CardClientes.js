@@ -9,11 +9,8 @@ const CardClientes = ({cliente}) => {
 					<Image
 						src={imagen}
 						alt={nombre}
-						// layout="responsive"
 						width={128}
 						height={128}
-						// width={128}
-						// height={120}
 						className="block mx-auto h-24 rounded-full sm:mx-0 sm:flex-shrink-0 justify-center"
 					/>
 				</div>
