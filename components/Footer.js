@@ -45,7 +45,7 @@ const Footer = ({navigation}) => {
                             rel='noopener'
                         >
                             <Image
-                                src='/imagen/ins.png'
+                                src='/imagen/instagram.png'
                                 alt='Instagram'
                                 width={50}
                                 height={50}
@@ -61,7 +61,7 @@ const Footer = ({navigation}) => {
                             rel='noopener'
                         >
                             <Image
-                                src='/imagen/tic.png'
+                                src='/imagen/tiktok.png'
                                 alt='Tik Tok'
                                 width={50}
                                 height={50}

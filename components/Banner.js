@@ -12,11 +12,11 @@ const imagenes = [
 		alt: "Ankara for me",
 		imagen: "/imagen/banner2.png",
 	},
-	// {
-	// 	id: 3,
-	// 	alt: "Convierte tu pasion, en una profecion",
-	// 	imagen: "/imagen/3.png",
-	// },
+	{
+		id: 3,
+		alt: "Ankara Studio",
+		imagen: "/imagen/banner3.png",
+	},
 ];
 
 const Banner = () => {

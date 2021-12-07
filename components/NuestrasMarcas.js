@@ -2,13 +2,13 @@ import React from "react";
 import CardMarcas from "./Card/CardMarcas";
 
 const marcas = [
-    {
-        id: 1,
-        nombre: "AMELOW",
-        description:
-            "El lujo y el misticismo del color morado, el optimismo y la alegría del amarillo, se unieron para darle vida a Amelow, una marca sofisticada que te llenará de intensas emociones gracias a su amplia de esmaltes para uñas, y todo lo que necesitas para lucir una manicura y pedicura llena de glamour.",
-        imagen: "/imagen/image9.png",
-    },
+	{
+		id: 1,
+		nombre: "AMELOW",
+		description:
+			"El lujo y el misticismo del color morado, el optimismo y la alegría del amarillo, se unieron para darle vida a Amelow, una marca sofisticada que te llenará de intensas emociones gracias a su amplia de esmaltes para uñas, y todo lo que necesitas para lucir una manicura y pedicura llena de glamour.",
+		imagen: "/imagen/amelow.png",
+	},
 ];
 
 const NuestrasMarcas = () => {

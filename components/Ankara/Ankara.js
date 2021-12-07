@@ -13,7 +13,7 @@ const Ankara = () => {
 						rel="noopener"
 					>
 						<Image
-							src="/imagen/ins.png"
+							src="/imagen/instagram.png"
 							alt="Logo"
 							width={40}
 							height={40}

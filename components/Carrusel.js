@@ -48,8 +48,8 @@ const Carrusel = ({ imagenes }) => {
 							src={imagen.imagen}
 							alt={imagen.alt}
 							layout="responsive"
-							width={1024}
-							height={480}
+							width={1920}
+							height={900}
 						/>
 					</div>
 				</div>
