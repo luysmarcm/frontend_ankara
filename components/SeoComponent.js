@@ -18,10 +18,10 @@ const SeoComponent = ({ title, description, image }) => (
 		<meta property="og:image:width" content="176" />
 		<meta property="og:image:height" content="167" />
 		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-		<link
+		{/* <link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css"
-		/>
+		/> */}
 		
 	</Head>
 );
