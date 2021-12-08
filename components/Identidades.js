@@ -31,8 +31,8 @@ const Identidades = () => {
 					<p className="text-black text-lg md:text-xl lg:text-1xl text-center max-w-3xl">
 						Durante una década nos hemos enfocado en brindarte la mejor
 						experiencia, y ofrecerte variedad de productos de calidad que te
-						llenarán de bienestar y realzarán tu belleza. ¿Conoce más de lo que
-						en ANKARA tenemos para ti?
+						llenarán de bienestar y realzarán tu belleza. ¡Conoce más de lo que
+						en ANKARA tenemos para ti!
 					</p>
 				</div>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
