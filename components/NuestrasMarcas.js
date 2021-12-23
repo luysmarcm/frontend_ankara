@@ -20,7 +20,6 @@ const NuestrasMarcas = () => {
             <h2 className='pb-10 text-black text-center text-4xl lg:text-5xl font-bold '>
                 Nuestras Marcas
             </h2>
-
             <div className='w-full grid grid-cols-1 gap-5 even:grid-flow-col-dense rounded-xl'>
                 {marcas.map((marca) => (
                     <CardMarcas key={marca.id} marca={marca} />

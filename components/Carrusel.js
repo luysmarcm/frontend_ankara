@@ -4,8 +4,7 @@ import Image from "next/image";
 
 
 const Carrusel = ({ imagenes }) => {
-
-
+	
 	const [pause, setPause] = useState(false);
 	const timer = React.useRef();
 	const [sliderRef, slider] = useKeenSlider({
