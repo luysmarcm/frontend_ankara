@@ -11,7 +11,7 @@ const nosotros = [
 	},
 	{
 		id: 2,
-		titulo: "Cuidado Personal",
+		titulo: "Cuidado personal",
 		description:
 			"Si de cuidar tu piel se trata, en ANKARA nos encargamos de brindarte productos de calidad para el cuerpo y el rostro. ¡Regálale suavidad y salud a tu piel con ANKARA!",
 		imagen: "/imagen/cuidado.jpg",
@@ -25,7 +25,7 @@ const nosotros = [
 	},
 	{
 		id: 4,
-		titulo: "Aparatos Estéticos ",
+		titulo: "Aparatos estéticos ",
 		description:
 			"Te ayudamos a innovar tu Spa o emprendimiento con aparatos de última generación para los diferentes tratamientos estéticos.",
 		imagen: "/imagen/aparatos.jpg",
