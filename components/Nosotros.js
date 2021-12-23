@@ -41,7 +41,7 @@ const Nosotros = () => {
             <h1 className='text-black text-5xl pb-10 font-cd md:text-6xl lg:text-7xl text-center'>
                 Ankara{" "}
                 <span className='font-lato text-3xl lg:text-5xl font-medium'>
-                    es..
+                    es...
                 </span>
             </h1>
 
