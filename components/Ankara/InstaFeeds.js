@@ -6,15 +6,15 @@ const InstaFeeds = ({...props}) => {
 
     useEffect(() => {
         fetch(
-            `https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink,caption&limit=${props.limit}&access_token=IGQVJXdE54dktZAc2otTzY2eF9VY3ZAsUUtDeEJDMERITm92T3cyV1EtYWlOZAW5keVJ5b3E5aUduNWJHQnZAxeFVuc2V1NG80VzZA3Vnh3SHdQSFJzeGlNNWhMbkRBNHlxMU9RVHh6YnV6bE5BRHB4WG03MwZDZD`
-        )
-            .then((res) => res.json())
-            .then((resp) => {
-                setFeedsData(resp.data);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
+					`https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink,caption&limit=${props.limit}&access_token=IGQVJXejdCbGVjajNEUzBjdHo2ZAGFnWllzNVdCSmFoR2tQcjFKcnhOMXdqZAnM2OFNrN2xQZAU02VFNUSU51S0pZAZAGFzTy1IeWtkS2lPZAWctM2JYOUhIQXJHdGJ6X2dIdE9WS1lFUjJ4M3hRa3ZAKaHVUegZDZD`
+				)
+					.then((res) => res.json())
+					.then((resp) => {
+						setFeedsData(resp.data);
+					})
+					.catch((err) => {
+						console.log(err.message);
+					});
     }, [props.limit]);
 
 
