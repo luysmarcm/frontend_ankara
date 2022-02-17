@@ -11,6 +11,9 @@ module.exports = {
 				gris: "#D3D1D1",
 				morado: "#4B2771",
 				b: "#F1D2BB",
+				fondo: "#F6F6F6",
+				rosado: "#FACBC6",
+				rosado2: "#F5867D",
 			},
 			fontFamily: {
 				lato: ["Lato"],
@@ -18,7 +21,7 @@ module.exports = {
 				cd: ["Cinzel Decorative"],
 			},
 			backgroundImage: (theme) => ({
-				banner: "url('/images/banner.png')",
+				heading: "url('/imagen/heading.png')",
 			}),
 			maxWidth: {
 				max: "1920px",

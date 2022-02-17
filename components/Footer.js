@@ -1,7 +1,26 @@
 import React from "react";
 import Image from "next/image";
 
-const Footer = ({navigation}) => {
+const links = [
+	{
+		title: "Inicio",
+		path: "/",
+	},
+	{
+		title: "Nosotros",
+		path: "/nosotros",
+	},
+	{
+		title: "Tiendas",
+		path: "/tiendas",
+	},
+	{
+		title: "Blog",
+		path: "/blog",
+	},
+];
+
+const Footer = () => {
     return (
         <footer className='bg-black px-6 pt-16 md:px-20 '>
             <div className='relative max-w-xs mx-auto md:mx-0'>
@@ -77,16 +96,16 @@ const Footer = ({navigation}) => {
                     </div>
 
                     <ul className='grid grid-cols-1 place-items-center lg:place-content-start lg:grid-cols-2 text-xl lg:text-2xl text-white '>
-                        {navigation.map((item) => (
-                            <li key={item.name} className="py-1 lg:py-0">
+                        {links.map((item) => (
+                            <li key={item.title} className="py-1 lg:py-0">
                                 <a
-                                    href={item.href}
+                                    href={item.path}
                                     className='px-3 rounded-md text-md lg:text-lg text-white hover:text-primary'
-                                    aria-current={
-                                        item.current ? "page" : undefined
-                                    }
+                                    // aria-current={
+                                    //     item.current ? "page" : undefined
+                                    // }
                                 >
-                                    {item.name}
+                                    {item.title}
                                 </a>
                             </li>
                         ))}
