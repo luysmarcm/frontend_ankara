@@ -1,5 +1,6 @@
 import CardValores from 'components/Card/CardValores';
-import HeadingPage from 'components/HeadingPage'
+import HeadingPage from 'components/HeadingPage';
+import HeadingTienda from "components/HeadingPage";
 import Layout from 'components/Layout/Index'
 import SeoComponent from 'components/SeoComponent'
 import React from 'react'

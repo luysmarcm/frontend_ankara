@@ -1,38 +1,49 @@
 import React from 'react'
 import GalleryTienda from './GalleryTienda';
+import Image from "next/image";
+import { loader } from "utils/loader";
+import MapTienda from './MapTienda';
 
-const InfoTienda = () => {
+const InfoTienda = ({tienda}) => {
+
+	const { nombre, ciudad, telefono, direccion, galeria, horario, coordenadas } =
+		tienda;
   return (
 		<section className="px-6 py-10 lg:px-16">
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-				{/* {media_gallery.length <= 0 ? (
+				<div className="w-full md:w-3/5 lg:w-full">
 					<Image
-						src="/imagen/fondoimagen.png"
-						alt={name}
-						width={500}
+						src={loader(galeria[0].formats.small.url)}
+						alt={nombre}
+						width={750}
 						height={500}
 						layout="responsive"
 						priority
 						objectFit="cover"
-						className="rounded-md"
+						className="object-center rounded-md"
 						unoptimized
 					/>
-				) : (
-					<GalleryProducto producto={producto} />
-				)} */}
-				<GalleryTienda />
-
+				</div>
 				<div className="flex flex-col space-y-4	 lg:space-y-6 text-black">
 					<h2 className="text-black text-2xl lg:text-4xl font-bold">
-						C.C. Cosmos Planta Baja
+						{nombre}
 					</h2>
-					<p className="font-bold text-sm lg:text-base">Direccion:</p>
-					<p className=" text-sm lg:text-base">
-						Calle 26 entre carreras 21 y 22 C.C Cosmos Piso 3
-					</p>
-					<p className="text-xl lg:text-3xl font-bold"></p>
-					<div className=" w-full border-t-2 border-white" />
+					<div className=" w-ful	l border-t-2 border-primary" />
+					<div className="space-y-3">
+						<p className="font-bold text-xl">Dirección:</p>
+						<p className=" text-xl">{direccion}</p>
+						<p className="font-bold text-xl ">Horario de Atencion: :</p>
+						<p className=" text-xl lg:text-xl">{horario}</p>
+						<p className="font-bold  text-4xl lg:text-xl">Contacto:</p>
+						<p className=" text-xl lg:text-base">{telefono}</p>
+					</div>
 				</div>
+			</div>
+			<div className="py-10">
+				<h2 className="text-black text-2xl lg:text-4xl font-bold text-center">
+					Encuentranos
+				</h2>
+				<MapTienda coordenadas={coordenadas} />
 			</div>
 		</section>
 	);

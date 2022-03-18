@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
+import { loader } from "utils/loader";
 
 const CardTiendas = ({tienda}) => {
 
-  const { nombre, ciudad, imagen, direccion } = tienda;
+  const { nombre, ciudad, direccion, galeria, slug, estado } = tienda;
   return (
 		<div className="bg-white rounded-xl overflow-hidden drop-shadow-xl flex flex-col flex-1 h-full">
 			<div>
 				<Image
-					src={imagen}
+					src={loader(galeria[0].formats.small.url)}
 					alt={nombre}
 					width={750}
 					height={500}
@@ -25,11 +27,11 @@ const CardTiendas = ({tienda}) => {
 				</h2>
 				<p>{ciudad}</p>
 				<p className=" text-black text-opacity-75">{direccion}</p>
-				{/* <Link href={`/catalogo/${url_key}`} passHref> */}
-				<button className="rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black">
-					Visitar tienda
-				</button>
-				{/* </Link> */}
+				<Link href={`/tiendas/${estado.slug}/${slug}`} passHref>
+					<button className="rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black">
+						Visitar tienda
+					</button>
+				</Link>
 			</div>
 		</div>
 	);

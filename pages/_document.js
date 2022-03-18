@@ -24,7 +24,7 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
 						rel="stylesheet"
 					/>
-					<script
+					{/* <script
 						async
 						src="https://www.googletagmanager.com/gtag/js?id=G-HQ9MBTPK2Y"
 					></script>
@@ -42,7 +42,7 @@ class MyDocument extends Document {
 							gtag("config", "G-HQ9MBTPK2Y");
                             `,
 						}}
-					/>
+					/> */}
 				</Head>
 				<body>
 					<Main />

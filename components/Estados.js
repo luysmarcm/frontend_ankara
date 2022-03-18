@@ -1,8 +1,23 @@
-const Estados = () => {
+import Select from "./Select";
+import Link from "next/link";
+
+const Estados = ({estados}) => {
+
+	console.log(estados)
   return (
 		<div className="flex justify-center">
 			<div className="w-48">
-				<select
+				{/* <Select
+					value={estados.id}
+					placeholder="Selecciona tu estado"
+					options={estados}
+					name="estadoId"
+					objKeyValue="id"
+					objKeyString="nombre"
+					// onChange={handleChange}
+				/> */}
+
+				{/* <select
 					className="
                     appearance-none
                     px-3
@@ -20,10 +35,18 @@ const Estados = () => {
                     m-0"
 				>
 					<option selected>Selecciona tu estado</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
-				</select>
+					{estados &&
+						estados.map((estado) => (
+							<Link
+								href={`/tiendas/${estado.slug}`}
+								key={estado.nombre}
+							>
+								<option key={estado._id}>{estado.nombre}</option>
+							</Link>
+						))}
+				</select> */}
+
+				
 			</div>
 		</div>
 	);
