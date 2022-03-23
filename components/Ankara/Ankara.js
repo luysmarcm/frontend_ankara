@@ -26,7 +26,7 @@ const Ankara = () => {
 					</a>
 				</div>
 
-				<InstaFeeds limit={4} />
+				{/* <InstaFeeds limit={4} /> */}
 			</section>
 		);
 };

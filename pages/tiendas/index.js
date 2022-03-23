@@ -16,8 +16,6 @@ const { loading, error, data } = useQuery(OBTENER_TIENDAS);
 
 if (loading) return null
 
-console.log(data.tiendas);
-console.log(data.estados);
   return (
 		<Layout>
 			<SeoComponent
@@ -26,8 +24,7 @@ console.log(data.estados);
 				image="/imagen/anka.png"
 			/>
 			<section className="mt-24 md:mt-40 lg:mt-16">
-				
-				<HeadingTienda estado={data.estados}/>
+				<HeadingTienda estado={data.estados} />
 				<div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
 					<Breadcrumb />
 					<div className="flex flex-row space-x-10">
@@ -36,7 +33,7 @@ console.log(data.estados);
 						{/* <Estados estados={data.estados} /> */}
 					</div>
 				</div>
-				<GridTiendas tiendas={data.tiendas} />
+				<GridTiendas tiendas={data.tiendas.data} />
 			</section>
 		</Layout>
 	);

@@ -11,19 +11,21 @@ const Tienda = (props) => {
 
 	const {tienda} = props
 
+	console.log(tienda.attributes.nombre);
+
 	return (
 		<Layout>
 			<SeoComponent
-				title={`Ankara | ${tienda.nombre}`}
-				description={`${tienda.nombre}`}
+				title={`Ankara | ${tienda.attributes.nombre}`}
+				description={`${tienda.attributes.nombre}`}
 				image="/imagen/anka.png"
 			/>
 			<section className="mt-24 md:mt-40 lg:mt-16">
-				<HeadingPage titulo={`${tienda.nombre}`} />
+				<HeadingPage titulo={`${tienda.attributes.nombre}`} />
 				<div className="flex flex-col place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
 					<Breadcrumb />
 				</div>
-				<InfoTienda tienda={tienda} />
+				<InfoTienda tienda={tienda.attributes} />
 			</section>
 		</Layout>
 	);
@@ -35,39 +37,48 @@ export default Tienda
 export async function getStaticProps({ params }) {
 	const { data, error } = await client.query({
 		query: gql`
-			query getTienda($slug: String) {
-				tienda: tiendas(where: { slug: $slug }, limit: 1) {
-					nombre
-					ciudad
-					telefono
-					direccion
-					horario
-					coordenadas
-					slug
-					galeria {
-						url
-						formats
-						width
-						height
-					}
-					estado {
-						nombre
-						slug
-					}
-					identidades {
-						nombre
-						descripcion
+			query getTienda($filters: TiendaFiltersInput) {
+				tienda: tiendas(filters: $filters) {
+					data {
+						attributes {
+							nombre
+							ciudad
+							coordenadas
+							direccion
+							telefono
+							slug
+							imagen {
+								data {
+									attributes {
+										url
+										name
+									}
+								}
+							}
+							estado {
+								data {
+									id
+									attributes {
+										nombre
+									}
+								}
+							}
+						}
 					}
 				}
 				estados {
-					id
-					nombre
-					slug
+					data {
+						attributes {
+							nombre
+							slug
+						}
+					}
 				}
 			}
 		`,
 		variables: {
-			slug: params.tienda,
+			filters: { slug: { eq:  params.tienda } } 
+			// slug: params.tienda,
 		},
 	});
 
@@ -76,7 +87,7 @@ export async function getStaticProps({ params }) {
 		props: {
 			params,
 			...data,
-			tienda: data.tienda[0],
+			tienda: data.tienda.data[0],
 		},
 		// revalidate: 120,
 	};
@@ -85,21 +96,32 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
 	const { data } = await client.query({
 		query: gql`
-			query getTiendas {
-				tiendas{
-					slug
-					estado {
-						slug
+			query getTienda {
+				tiendas {
+					data {
+						attributes {
+							slug
+							estado {
+								data {
+									attributes {
+										slug
+									}
+								}
+							}
+						}
 					}
 				}
 			}
 		`,
 	});
-	const paths = data.tiendas.map((tienda) => ({
-		params: { estado: tienda.estado.slug, tienda: tienda.slug },
+	const paths = data.tiendas.data.map((tienda) => ({
+		params: {
+			estado: tienda.attributes.estado.data.attributes.slug,
+			tienda: tienda.attributes.slug,
+		},
 	}));
 
-	// console.log(paths);
+	console.log(paths);
 	return {
 		paths,
 		fallback: true,

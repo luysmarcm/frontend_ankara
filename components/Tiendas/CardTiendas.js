@@ -5,12 +5,15 @@ import { loader } from "utils/loader";
 
 const CardTiendas = ({tienda}) => {
 
-  const { nombre, ciudad, direccion, galeria, slug, estado } = tienda;
+//  console.log(tienda.attributes.nombre);
+
+  const { nombre, ciudad, direccion, imagen, slug, estado } = tienda.attributes;
+//   console.log(estado.data.attributes.slug);
   return (
 		<div className="bg-white rounded-xl overflow-hidden drop-shadow-xl flex flex-col flex-1 h-full">
 			<div>
 				<Image
-					src={loader(galeria[0].formats.small.url)}
+					src={loader(imagen.data[0].attributes.url)}
 					alt={nombre}
 					width={750}
 					height={500}
@@ -27,7 +30,7 @@ const CardTiendas = ({tienda}) => {
 				</h2>
 				<p>{ciudad}</p>
 				<p className=" text-black text-opacity-75">{direccion}</p>
-				<Link href={`/tiendas/${estado.slug}/${slug}`} passHref>
+				<Link href={`/tiendas/${estado.data.attributes.slug}/${slug}`} passHref>
 					<button className="rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black">
 						Visitar tienda
 					</button>

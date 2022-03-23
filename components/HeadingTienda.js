@@ -2,10 +2,13 @@
 
 const HeadingTienda = ({estado}) => {
 
-	console.log(estado)
+	console.log(estado);
+
+	// console.log(estado.data.length);
+	// console.log(estado.data.length, "amndljabk");
   return (
 		<>
-			{estado.length >= 2 ? (
+			{/* {estado.data.length >= 2 ? (
 				<div className="relative bg-heading bg-contain bg-no-repeat bg-fixed h-full">
 					<div className="flex flex-col w-full p-14 lg:flex-row items-center justify-between">
 						<div className="flex w-full flex-col items-center">
@@ -17,7 +20,7 @@ const HeadingTienda = ({estado}) => {
 						</div>
 					</div>
 				</div>
-			) : (
+			) : ( */}
 				<div className="relative bg-heading bg-contain bg-no-repeat bg-fixed h-full">
 					<div className="flex flex-col w-full p-14 lg:flex-row items-center justify-between">
 						<div className="flex w-full flex-col items-center">
@@ -29,7 +32,7 @@ const HeadingTienda = ({estado}) => {
 						</div>
 					</div>
 				</div>
-			)}
+			 {/* )}  */}
 		</>
 	);
 }

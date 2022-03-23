@@ -6,14 +6,14 @@ import MapTienda from './MapTienda';
 
 const InfoTienda = ({tienda}) => {
 
-	const { nombre, ciudad, telefono, direccion, galeria, horario, coordenadas } =
+	const { nombre, ciudad, telefono, direccion, imagen, horario, coordenadas } =
 		tienda;
   return (
 		<section className="px-6 py-10 lg:px-16">
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
 				<div className="w-full md:w-3/5 lg:w-full">
 					<Image
-						src={loader(galeria[0].formats.small.url)}
+						src={loader(imagen.data[0].attributes.url)}
 						alt={nombre}
 						width={750}
 						height={500}

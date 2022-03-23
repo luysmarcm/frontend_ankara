@@ -17,29 +17,35 @@ import EstadosDrop from "components/EstadoDrop";
 const limit = 5;
 
 const getTiendasEstados = gql`
-	query getTiendasEstados(
-		$where: JSON
-		$limit: Int
-		$start: Int
-		$count: JSON
-	) {
-		tiendas(limit: $limit, start: $start, where: $where) {
-			id
-			nombre
-			direccion
-			ciudad
-			slug
-			galeria {
-				url
-				formats
-				width
-				height
-			}
-			estado {
-				slug
+	query getTiendasEstados($filters: TiendaFiltersInput) {
+		tiendas(filters: $filters) {
+			data {
+				attributes {
+					nombre
+					ciudad
+					coordenadas
+					direccion
+					telefono
+					slug
+					imagen {
+						data {
+							attributes {
+								url
+								name
+							}
+						}
+					}
+					estado {
+						data {
+							id
+							attributes {
+								nombre
+							}
+						}
+					}
+				}
 			}
 		}
-		tiendasCount(where: $count)
 	}
 `;
 
@@ -49,65 +55,61 @@ const Tiendas = (props) => {
 
 	 const { estados, estado, params } = props;
 
-		const router = useRouter();
-		const [search, setSearch] = useState("");
-		const pathname = `/tiendas/${params.estado}`;
+	 console.log(estado.attributes.nombre, "estado");
+	//  console.log(estados, "estadossss");
+	//  console.log(params.estado);
 
-		const {
-			start,
-			limit,
-			page,
-			paginas,
-			setPaginas,
-			setStart,
-			setPage,
-			nextPage,
-			prevPage,
-		} = usePagination(pathname);
+		// const router = useRouter();
+		// const [search, setSearch] = useState("");
+		// const pathname = `/tiendas/${params.estado}`;
+
+		// const {
+		// 	start,
+		// 	limit,
+		// 	page,
+		// 	paginas,
+		// 	setPaginas,
+		// 	setStart,
+		// 	setPage,
+		// 	nextPage,
+		// 	prevPage,
+		// } = usePagination(pathname);
 
 		const { data, loading, error } = useQuery(getTiendasEstados, {
 			variables: {
-				count: {
-					"estado.id": estado.id,
-					// _or: [{ tienda_contains: search }, { ciudad_contains: search }],
-				},
-				where: {
-					// _or: [{ tienda_contains: search }, { ciudad_contains: search }],
-					estado: {
-						id: estado.id,
-					},
-				},
-				limit,
-				start: start,
+				filters: { estado: { slug: { eq: params.estado} } },
 			},
-			onCompleted: (data) => {
-				setPaginas(Math.ceil(parseInt(data.tiendasCount) / limit));
-			},
+			// onCompleted: (data) => {
+			// 	setPaginas(Math.ceil(parseInt(data.tiendasCount) / limit));
+			// },
 		});
-		useEffect(() => {
-			setPage(router.query.page ? parseInt(router.query.page) : 1);
-		}, [router.query]);
+		// useEffect(() => {
+		// 	setPage(router.query.page ? parseInt(router.query.page) : 1);
+		// }, [router.query]);
 
 		if(loading) return null;
+
+	//  console.log(data.tiendas.data, "adnabdk");
+	// console.log(estado.attributes.nombre);
 	return (
 		<Layout>
 			<SeoComponent
-				title={`Ankara| Tiendas en ${estado.nombre}`}
-				description={`Tiendas en el estado ${estado.nombre}`}
+				title={`Ankara| Tiendas en ${estado.attributes.nombre}`}
+				description={`Tiendas en el estado ${estado.attributes.nombre}`}
 				image="/imagen/anka.png"
 			/>
 			<section className="mt-24 md:mt-40 lg:mt-16">
-				<HeadingTienda  estado={estado}/>
-				
+				{/* <HeadingTienda  estado={estado}/> */}
+
 				<div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
 					<Breadcrumb />
-					<div className="flex flex-row space-x-10">
+					<div className="flex flex-row space-x-10 h">
 						<Search />
-						<Estados estados={estados} />
+						{/* <Estados estados={estados} /> */}
 						{/* <EstadosDrop estados={estados} /> */}
 					</div>
 				</div>
-				<GridTiendas tiendas={data.tiendas} />
+				<GridTiendas tiendas={data.tiendas.data} />
 			</section>
 		</Layout>
 	);
@@ -119,42 +121,34 @@ export default Tiendas;
 export async function getStaticProps({ params, preview = null }) {
 	const { data, error } = await client.query({
 		query: gql`
-			query getTiendasEstados($where: JSON) {
-				# empresa {
-				# 	Direccion
-				# 	Correo
-				# 	Telefono
-				# 	Logo_header {
-				# 		url
-				# 		formats
-				# 		width
-				# 		height
-				# 	}
-				# 	Logo_footer {
-				# 		url
-				# 		formats
-				# 		width
-				# 		height
-				# 	}
-				# }
+			query getTiendasEstados($filters: EstadoFiltersInput) {
 				estados(sort: "nombre:asc") {
-					id
-					nombre
-					slug
+					data {
+						id
+						attributes {
+							nombre
+							slug
+						}
+					}
 				}
-				estado: estados(limit: 1, where: $where) {
-					id
-					nombre
-					slug
+
+				estado: estados(filters: $filters) {
+					data {
+						id
+						attributes {
+							nombre
+							slug
+						}
+					}
 				}
 			}
 		`,
 		variables: {
-			where: {
-				slug: params.estado,
-			},
+			filters: { slug: { eq: params.tienda } },
 		},
 	});
+
+	console.log(data);
 
 	if (!data && error) {
 		return {
@@ -171,7 +165,7 @@ export async function getStaticProps({ params, preview = null }) {
 			params,
 			preview,
 			...data,
-			estado: data.estado[0],
+			estado: data.estado.data[0],
 		},
 		revalidate: 120,
 	};
@@ -182,14 +176,21 @@ export async function getStaticPaths() {
 		query: gql`
 			query getTiendas {
 				estados {
-					slug
+					data {
+						attributes {
+							slug
+						}
+					}
 				}
 			}
 		`,
 	});
-	const paths = data.estados.map((estado) => ({
-		params: { estado: estado.slug },
+
+	// console.log(data);
+	const paths = data.estados.data.map((estado) => ({
+		params: { estado: estado.attributes.slug },
 	}));
+	console.log(paths);
 	return {
 		paths,
 		fallback: true,
