@@ -28,7 +28,7 @@ const NavBar = () => {
         setisSideMenuOpen(!isSideMenuOpen);
     };
     return (
-			<nav className="bg-black px-8 py-4 flex items-center justify-between fixed z-50 w-full">
+			<nav className="bg-black px-8 py-4 flex items-center justify-between w-full">
 				<div className="relative flex items-center justify-between w-full">
 					<div style={{ width: "35px" }}>
 						<Image src="/imagen/logo.png" alt="Logo" width="176" height="167" />

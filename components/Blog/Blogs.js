@@ -44,9 +44,9 @@ const Blogs = () => {
           ))}
         </div>
         <div>
-          <p className="text-black text-3xl font-bold mb-2">Buscar</p>
+          <p className="text-black text-sm lg:text-2xl font-bold capitalize mb-2">Buscar</p>
           <SearchBarBlog />
-          <p className="text-black text-3xl font-bold mb-2">Categorias</p>
+          <p className="text-black text-sm lg:text-2xl font-bold capitalize my-2">Categorias</p>
           <CategoryList />
         </div>
       </div>

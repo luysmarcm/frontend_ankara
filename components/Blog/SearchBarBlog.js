@@ -2,26 +2,47 @@ import Image from "next/image";
 
 const SearchBarBlog = () => {
   return (
-    <div className="flex w-3/4">
-      <input
-        type="text"
-        id="rounded-email"
-        className="h-8 rounded-lg border-transparent flex-1 appearance-none w-full px-4 bg-primary text-black placeholder-white shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-white 
-        focus:bg-gris 
-        focus: placerholder- black focus:border-transparent
-        mr-2"
-        placeholder="Buscar"
-      />
-      <button>
-        <Image
-          className="h-8 rounded-lg border-transparent flex-1 appearance-none w-full px-4 bg-primary shadow-sm text-base"
-          src="/imagen/searchicon.svg"
-          alt="Busqueda"
-          height={32}
-          width={32}
-        />
-      </button>
-    </div>
+    <div
+			// onSubmit={onSubmit}
+			className=" hidden lg:flex w-3/4"
+		>
+			<input
+				onChange=""
+				type="text"
+				placeholder="Buscar tienda"
+				name="buscar"
+				id="buscar"
+				className="block
+                    w-full 
+                    h-full
+                    p-2
+                    text-base
+                    font-normal
+                    text-black
+                    bg-rosado bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    placeholder-black
+                    m-0"
+			/>
+
+			<button className="bg-rosado2 rounded-r-md p-2 ">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					className="h-5 w-5 text-white"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
+						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+					/>
+				</svg>
+			</button>
+		</div>
   );
 }
 

@@ -23,7 +23,7 @@ if (loading) return null
 				description="Directorio de tiendas"
 				image="/imagen/anka.png"
 			/>
-			<section className="mt-24 md:mt-40 lg:mt-16">
+			<section>
 				<HeadingTienda />
 				<div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
 					<Breadcrumb />

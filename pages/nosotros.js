@@ -58,7 +58,7 @@ const nosotros = () => {
 				description="Nosotros"
 				image="/imagen/anka.png"
 			/>
-			<section className="mt-24 md:mt-40 lg:mt-16">
+			<section>
 				<HeadingPage titulo="Nosotros" />
 				<div className="bg-rosado bg-opacity-50"></div>
 				<div className="bg-rosado2 bg-opacity-70  text-black place-items-center py-24 px-3 sm:px-16 md:py-32 lg:py-10 lg:px-20 space-y-5">
