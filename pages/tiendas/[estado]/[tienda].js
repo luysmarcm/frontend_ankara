@@ -11,7 +11,7 @@ const Tienda = (props) => {
 
 	const {tienda} = props
 
-	console.log(tienda.attributes.nombre);
+	console.log(tienda.attributes);
 
 	return (
 		<Layout>
@@ -20,7 +20,7 @@ const Tienda = (props) => {
 				description={`${tienda.attributes.nombre}`}
 				image="/imagen/anka.png"
 			/>
-			<section className="mt-24 md:mt-40 lg:mt-16">
+			<section>
 				<HeadingPage titulo={`${tienda.attributes.nombre}`} />
 				<div className="flex flex-col place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
 					<Breadcrumb />

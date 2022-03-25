@@ -1,33 +1,33 @@
 import Link from "next/link";
+import { OBTENER_BLOGCATEGORY } from "query/query";
+import { useQuery } from "@apollo/client";
 
 const CategoryList = () => {
-  const data = [
-    {
-      author: "Walter White",
-    },
-    {
-      author: "Saul Goodman",
-    },
-    {
-      author: "Walter White",
-    },
-    {
-      author: "Hank Schrader",
-    },
-  ];
+  const { loading, error, data } = useQuery(OBTENER_BLOGCATEGORY);
+
+  if (loading) return null;
+
+  const categorias = data.categoriasBlogs.data;
   return (
-    <div>
-      <ul className="list-none text-black">
-        {data.map(function (el, i) {
-          return (
-            <li key={i} className="text-black font-light text-lg">
-              <Link href={`#`}>{el.author}</Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <p className="text-black text-sm lg:text-2xl font-bold capitalize my-2">
+        Categorias
+      </p>
+      <div>
+        <ul className="list-none text-black">
+          {categorias.map(function (categoria, i) {
+            return (
+              <li className="text-black font-light text-lg">
+                <Link key={i} href={`/blog/${categoria.attributes.slug}`}>
+                  <a>{categoria.attributes.nombre}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
-}
+};
 
 export default CategoryList;

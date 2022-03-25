@@ -2,9 +2,14 @@ import SeoComponent from "/components/SeoComponent";
 import Layout from "/components/Layout/Index";
 import HeadingPage from "components/HeadingPage";
 import Breadcrumb from "components/Breadcrumb";
-import Blogs from './../../components/Blog/Blogs';
+import Blog from "../../components/Blog/Blog";
+import { OBTENER_BLOGS } from 'query/query';
+import { useQuery } from "@apollo/client";
 
-const Blog = () => {
+const Blogs = () => {
+  const { loading, error, data } = useQuery(OBTENER_BLOGS);
+
+  if (loading) return null;
   return (
     <Layout>
       <SeoComponent
@@ -13,14 +18,14 @@ const Blog = () => {
         image="/imagen/anka.png"
       />
       <section>
-
-        <HeadingPage titulo="Blog"/>
+        <HeadingPage titulo="Blog" />
         <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
-        <Breadcrumb /></div>
-        <Blogs />
+          <Breadcrumb />
+        </div>
+        <Blog posts={data.blogs.data} />
       </section>
     </Layout>
   );
 };
 
-export default Blog;
+export default Blogs;
