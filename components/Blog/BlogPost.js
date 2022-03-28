@@ -3,6 +3,7 @@ import Image from "next/image";
 import SearchBarBlog from './SearchBarBlog';
 import CategoryList from './CategoryListBlog';
 import { loader } from "utils/loader";
+import UltimosPost from "./UltimosPost";
 
 const BlogPost = ({ post }) => {
   const { titulo, descripcion_larga, imagen_principal, fecha } = post;
@@ -35,6 +36,7 @@ const BlogPost = ({ post }) => {
         <div className="hidden lg:inline-block">
           <SearchBarBlog />
           <CategoryList />
+          <UltimosPost />
         </div>
       </div>
     </section>

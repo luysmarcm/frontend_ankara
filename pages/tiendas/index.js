@@ -1,4 +1,4 @@
-import Layout from 'components/Layout/Index'
+ import Layout from 'components/Layout/Index'
 import SeoComponent from 'components/SeoComponent'
 import Breadcrumb from 'components/Breadcrumb';
 import Search from 'components/Search';

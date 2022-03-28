@@ -5,6 +5,7 @@ import Layout from 'components/Layout/Index'
 import SeoComponent from 'components/SeoComponent'
 import InfoTienda from 'components/Tiendas/InfoTienda';
 import client from 'config/apollo-client';
+import MapTienda from './../../../components/Tiendas/MapTienda';
 
 
 const Tienda = (props) => {

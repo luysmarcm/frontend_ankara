@@ -51,7 +51,7 @@ const getTiendasEstados = gql`
 const Tiendas = (props) => {
   const { estados, estado, params } = props;
 
-  console.log(estado.attributes.nombre, "estado");
+  //console.log(estado.attributes.nombre, "estado");
   //  console.log(estados, "estadossss");
   //  console.log(params.estado);
 

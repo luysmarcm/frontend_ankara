@@ -4,7 +4,7 @@ import { gql } from "@apollo/client";
 import BlogPost from "components/Blog/BlogPost";
 import Layout from "./../../../components/Layout/Index";
 import SeoComponent from "./../../../components/SeoComponent";
-import { HeadingPage } from "components/HeadingPage";
+import HeadingPage from "components/HeadingPage";
 import Breadcrumb from "./../../../components/Breadcrumb";
 
 const Post = (props) => {
@@ -19,7 +19,7 @@ const Post = (props) => {
         image="/imagen/anka.png"
       />
       <section>
-        {/* <HeadingPage titulo={`${props.blog.attributes.titulo}`} /> */}
+        <HeadingPage titulo={`${blog.attributes.titulo}`} />
         <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
         </div>
