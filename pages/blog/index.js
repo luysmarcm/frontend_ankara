@@ -3,11 +3,82 @@ import Layout from "/components/Layout/Index";
 import HeadingPage from "components/HeadingPage";
 import Breadcrumb from "components/Breadcrumb";
 import Blog from "../../components/Blog/Blog";
-import { OBTENER_BLOGS } from 'query/query';
-import { useQuery } from "@apollo/client";
+import { OBTENER_BLOGS } from "query/query";
+import { gql, useQuery } from "@apollo/client";
+import Pagination from "components/Pagination/Pagination";
+import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
+import usePagination from "hooks/usePagination";
+
+const getPosts = gql`
+  query getPosts($start: Int, $limit: Int) {
+    blogs(pagination: { start: $start, limit: $limit }) {
+      meta {
+        pagination {
+          total
+          page
+          pageSize
+          pageCount
+        }
+      }
+      data {
+        attributes {
+          titulo
+          descripcion_corta
+          descripcion_larga
+          imagen_principal {
+            data {
+              attributes {
+                url
+                name
+              }
+            }
+          }
+          slug
+          categorias_blog {
+            data {
+              attributes {
+                nombre
+                slug
+              }
+            }
+          }
+          fecha
+        }
+      }
+    }
+  }
+`;
 
 const Blogs = () => {
-  const { loading, error, data } = useQuery(OBTENER_BLOGS);
+  const router = useRouter();
+
+  const {
+    start,
+    limit,
+    page,
+    paginas,
+    setPaginas,
+    setPage,
+    nextPage,
+    prevPage,
+  } = usePagination("/blog");
+
+  useEffect(() => {
+    setPage(router.query.page ? parseInt(router.query.page) : 1);
+  }, [router.query]);
+
+  const { loading, error, data } = useQuery(getPosts, {
+    variables: {
+      limit,
+      start: start,
+    },
+    onCompleted: (data) => {
+      setPaginas(Math.ceil(parseInt(data.blogs.meta.pagination.total) / limit));
+    },
+  });
+
+  console.log(data)
 
   if (loading) return null;
   return (
@@ -23,6 +94,12 @@ const Blogs = () => {
           <Breadcrumb />
         </div>
         <Blog posts={data.blogs.data} />
+        <Pagination
+          page={page}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          paginas={paginas}
+        />
       </section>
     </Layout>
   );

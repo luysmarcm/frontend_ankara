@@ -13,7 +13,7 @@ const Blog = ({posts}) => {
             <CardBlog key={i} post={post} />
           ))}
         </div>
-        <div>
+        <div className="hidden lg:block">
           <SearchBarBlog />
           <CategoryList />
         </div>
