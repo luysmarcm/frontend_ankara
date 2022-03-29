@@ -42,8 +42,8 @@ export const OBTENER_TIENDAS = gql`
 `;
 
 export const OBTENER_BLOGS = gql`
-  query obtenerBlogs {
-    blogs {
+  query obtenerBlogs($limit: Int, $sort: String) {
+    blogs(pagination: {limit: $limit}, sort: [$sort]) {
       data {
         attributes {
           titulo

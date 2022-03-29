@@ -20,7 +20,7 @@ const Post = (props) => {
       />
       <section>
         <HeadingPage titulo={`${blog.attributes.titulo}`} />
-        <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
+        <div className="flex flex-col-2 place-content-between px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
         </div>
         <BlogPost post={blog.attributes} />
