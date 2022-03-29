@@ -11,7 +11,7 @@ const BlogPost = ({ post }) => {
   return (
     <section id="BlogPost">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 drop-shadow-xl px-6 lg:px-16 mt-10">
-        <div className="grid col-span-2 drop-shadow-xl mr-8">
+        <div className="grid col-span-2 drop-shadow-xl lg:mr-8">
           <p className="text-sm text-black font-bold text-left mb-2">
             {fecha}
           </p>
