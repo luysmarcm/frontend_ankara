@@ -6,13 +6,13 @@ import Blog from "../../components/Blog/Blog";
 import { OBTENER_BLOGS } from "query/query";
 import { gql, useQuery } from "@apollo/client";
 import Pagination from "components/Pagination/Pagination";
-import {useEffect, useState} from "react";
-import {useRouter} from "next/router";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
 
 const getPosts = gql`
-  query getPosts($start: Int, $limit: Int) {
-    blogs(pagination: { start: $start, limit: $limit }) {
+  query getPosts($start: Int, $limit: Int, $filters: BlogFiltersInput) {
+    blogs(pagination: { start: $start, limit: $limit }, filters: $filters) {
       meta {
         pagination {
           total
@@ -52,6 +52,7 @@ const getPosts = gql`
 
 const Blogs = () => {
   const router = useRouter();
+  const [filters, setFilters] = useState("");
 
   const {
     start,
@@ -72,13 +73,17 @@ const Blogs = () => {
     variables: {
       limit,
       start: start,
+      filters: {
+        or: [
+          { categorias_blog: { nombre: { containsi: filters } } },
+          { titulo: { containsi: filters } },
+        ],
+      },
     },
     onCompleted: (data) => {
       setPaginas(Math.ceil(parseInt(data.blogs.meta.pagination.total) / limit));
     },
   });
-
-  console.log(data)
 
   if (loading) return null;
   return (
@@ -93,7 +98,7 @@ const Blogs = () => {
         <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
         </div>
-        <Blog posts={data.blogs.data} />
+        <Blog posts={data.blogs.data} search={filters} setSearch={setFilters} />
         <Pagination
           page={page}
           nextPage={nextPage}

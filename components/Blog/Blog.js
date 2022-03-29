@@ -2,9 +2,9 @@ import React from "react";
 import CardBlog from "./CardBlog";
 import CategoryList from "./CategoryListBlog";
 import SearchBarBlog from "./SearchBarBlog";
-import Pagination from 'components/Pagination/Pagination';
+import Pagination from "components/Pagination/Pagination";
 
-const Blog = ({posts}) => {
+const Blog = ({ posts, search, setSearch }) => {
 
   return (
     <section id="Blog">
@@ -15,7 +15,7 @@ const Blog = ({posts}) => {
           ))}
         </div>
         <div className="hidden lg:block">
-          <SearchBarBlog />
+          <SearchBarBlog search={search} setSearch={setSearch} />
           <CategoryList />
         </div>
       </div>
