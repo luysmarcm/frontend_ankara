@@ -53,6 +53,7 @@ const Posts = (props) => {
   /* console.log(props, "props"); */
   const router = useRouter();
   const pathname = `/blog/${params.categoria}`;
+  const [filters, setFilters] = useState("");
 
   const {
     start,
@@ -95,7 +96,7 @@ const Posts = (props) => {
         <div className="flex flex-col-2 place-content-between px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
         </div>
-        <Blog posts={data.blogs.data} />
+        <Blog posts={data.blogs.data} search={filters} setSearch={setFilters} />
         <Pagination
           page={page}
           nextPage={nextPage}

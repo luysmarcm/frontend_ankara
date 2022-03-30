@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = ({ setSearch }) => {
+const Search = ({ search, setSearch }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
@@ -18,7 +18,7 @@ const Search = ({ setSearch }) => {
   };
 
   return (
-    <div onSubmit={onSubmit} className=" hidden lg:flex">
+    <div onSubmit={onSubmit} className="hidden lg:flex">
       <input
         onKeyDown={keyHandleChange}
         onChange={handleChange}

@@ -9,6 +9,7 @@ import Pagination from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
+import LoadingStores from "./../../components/Tiendas/LoadingStores";
 
 const getTiendas = gql`
   query getTiendas($limit: Int, $start: Int, $filters: TiendaFiltersInput) {
@@ -98,8 +99,9 @@ const Tiendas = () => {
     },
   });
 
-  if (loading) return null;
-
+  if (loading) return Boolean;
+  console.log(loading, "loading");
+  console.log(data, "data");
   return (
     <Layout>
       <SeoComponent
@@ -115,13 +117,39 @@ const Tiendas = () => {
             <Search search={filters} setSearch={setFilters} />
           </div>
         </div>
-        <GridTiendas tiendas={data.tiendas.data} />
-        <Pagination
-          page={page}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          paginas={paginas}
-        />
+        {error && (
+          <div className="flex flex-col w-full p-10 lg:flex-row items-center">
+            <div className="flex w-full flex-col">
+              <div className="text-5xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
+                Ha ocurrido un error, refresque la pagina
+              </div>
+            </div>
+          </div>
+        )}
+        {loading && <LoadingStores />}
+        {data && data.tiendas.data.length === 0 && (
+          <div className="flex flex-col w-full p-10 lg:flex-row items-center">
+            <div className="flex w-full flex-col">
+              <div className="text-5xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
+                No se ha encontrado una coincidencia
+              </div>
+            </div>
+          </div>
+        )}
+        {data && data.tiendas.data.length !== 0 && (
+          <>
+            <GridTiendas tiendas={data.tiendas.data} />
+            {paginas >
+              1 ? (
+                <Pagination
+                  page={page}
+                  nextPage={nextPage}
+                  prevPage={prevPage}
+                  paginas={paginas}
+                />
+              ) : null }
+          </>
+        )}
       </section>
     </Layout>
   );
