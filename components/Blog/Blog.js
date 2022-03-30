@@ -5,7 +5,6 @@ import SearchBarBlog from "./SearchBarBlog";
 import Pagination from "components/Pagination/Pagination";
 
 const Blog = ({ posts, search, setSearch }) => {
-
   return (
     <section id="Blog">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 drop-shadow-xl px-6 lg:px-16 mt-10">

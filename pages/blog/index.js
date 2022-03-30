@@ -3,7 +3,6 @@ import Layout from "/components/Layout/Index";
 import HeadingPage from "components/HeadingPage";
 import Breadcrumb from "components/Breadcrumb";
 import Blog from "../../components/Blog/Blog";
-import { OBTENER_BLOGS } from "query/query";
 import { gql, useQuery } from "@apollo/client";
 import Pagination from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
