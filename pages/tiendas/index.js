@@ -10,6 +10,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
 import LoadingStores from "./../../components/Tiendas/LoadingStores";
+import Estados from "components/Estados";
+import EstadosDrop from "components/EstadoDrop";
+import ListEstado from "components/Tiendas/ListEstado";
 
 const getTiendas = gql`
   query getTiendas($limit: Int, $start: Int, $filters: TiendaFiltersInput) {
@@ -99,60 +102,64 @@ const Tiendas = () => {
     },
   });
 
-  if (loading) return Boolean;
-  console.log(loading, "loading");
-  console.log(data, "data");
   return (
-    <Layout>
-      <SeoComponent
-        title="Ankara | Tiendas"
-        description="Directorio de tiendas"
-        image="/imagen/anka.png"
-      />
-      <section>
-        <HeadingTienda />
-        <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
-          <Breadcrumb />
-          <div className="flex flex-row space-x-10">
-            <Search search={filters} setSearch={setFilters} />
-          </div>
-        </div>
-        {error && (
-          <div className="flex flex-col w-full p-10 lg:flex-row items-center">
-            <div className="flex w-full flex-col">
-              <div className="text-5xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
-                Ha ocurrido un error, refresque la pagina
-              </div>
-            </div>
-          </div>
-        )}
-        {loading && <LoadingStores />}
-        {data && data.tiendas.data.length === 0 && (
-          <div className="flex flex-col w-full p-10 lg:flex-row items-center">
-            <div className="flex w-full flex-col">
-              <div className="text-5xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
-                No se ha encontrado una coincidencia
-              </div>
-            </div>
-          </div>
-        )}
-        {data && data.tiendas.data.length !== 0 && (
-          <>
-            <GridTiendas tiendas={data.tiendas.data} />
-            {paginas >
-              1 ? (
-                <Pagination
-                  page={page}
-                  nextPage={nextPage}
-                  prevPage={prevPage}
-                  paginas={paginas}
-                />
-              ) : null }
-          </>
-        )}
-      </section>
-    </Layout>
-  );
+		<Layout>
+			<SeoComponent
+				title="Ankara | Tiendas"
+				description="Directorio de tiendas"
+				image="/imagen/anka.png"
+			/>
+			<section>
+				<HeadingTienda titulo="Tiendas" />
+				<div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
+					<Breadcrumb />
+					<div className="flex flex-row space-x-10">
+						<Search search={filters} setSearch={setFilters} />
+						<Estados/>
+					</div>
+				</div>
+				<div 
+        className="px-6 lg:px-16 my-12 grid md:grid-cols-3 lg:grid-cols-6 lg:space-x-4 gap-5"
+        >
+            <ListEstado/>
+				
+						{error && (
+							<div className="flex flex-col w-full p-10 lg:flex-row items-center">
+								<div className="flex w-full flex-col">
+									<div className="text-5xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
+										Ha ocurrido un error, refresque la pagina
+									</div>
+								</div>
+							</div>
+						)}
+						{loading && <LoadingStores />}
+						{data && data.tiendas.data.length === 0 && (
+							<div className="flex flex-col w-full p-10 lg:flex-row items-center">
+								<div className="flex w-full flex-col">
+									<div className="p-20 text-3xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
+										No se ha encontrado una coincidencia
+									</div>
+								</div>
+							</div>
+						)}
+						{data && data.tiendas.data.length !== 0 && (
+							<>
+								<GridTiendas tiendas={data.tiendas.data} />
+								{paginas > 1 ? (
+									<Pagination
+										page={page}
+										nextPage={nextPage}
+										prevPage={prevPage}
+										paginas={paginas}
+									/>
+								) : null}
+							</>
+						)}
+					</div>
+				
+			</section>
+		</Layout>
+	);
 };
 
 export default Tiendas;

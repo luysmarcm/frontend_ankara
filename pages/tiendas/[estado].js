@@ -5,6 +5,7 @@ import Search from "components/Search";
 import Estados from "components/Estados";
 import GridTiendas from "components/Tiendas/GridTiendas";
 import HeadingTienda from "components/HeadingTienda";
+import LoadingStores from "components/Tiendas/LoadingStores";
 
 import { useEffect, useState } from "react";
 import { gql, useQuery } from "@apollo/client";
@@ -12,103 +13,159 @@ import client from "config/apollo-client";
 import usePagination from "hooks/usePagination";
 import { useRouter } from "next/router";
 import EstadosDrop from "components/EstadoDrop";
-
-const limit = 5;
+import Pagination from "components/Pagination/Pagination";
 
 const getTiendasEstados = gql`
-  query getTiendasEstados($filters: TiendaFiltersInput) {
-    tiendas(filters: $filters) {
-      data {
-        attributes {
-          nombre
-          ciudad
-          coordenadas
-          direccion
-          telefono
-          slug
-          imagen {
-            data {
-              attributes {
-                url
-                name
-              }
-            }
-          }
-          estado {
-            data {
-              id
-              attributes {
-                nombre
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+	query getTiendasEstados($filters: TiendaFiltersInput, $limit: Int, $start: Int) {
+		tiendas(filters: $filters, pagination: { start: $start, limit: $limit }) {
+			meta {
+				pagination {
+					total
+					page
+					pageSize
+					pageCount
+				}
+			}
+			data {
+				attributes {
+					nombre
+					ciudad
+					coordenadas
+					direccion
+					telefono
+					slug
+					imagen {
+						data {
+							attributes {
+								url
+								name
+							}
+						}
+					}
+					estado {
+						data {
+							id
+							attributes {
+								nombre
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 `;
 
 const Tiendas = (props) => {
   const { estados, estado, params } = props;
 
+  console.log(estado.attributes.nombre);
+
   //console.log(estado.attributes.nombre, "estado");
   //  console.log(estados, "estadossss");
   //  console.log(params.estado);
 
-  // const router = useRouter();
-  // const [search, setSearch] = useState("");
-  // const pathname = `/tiendas/${params.estado}`;
+  const router = useRouter();
+  const [filters, setFilters] = useState("");
+  const pathname = `/tiendas/${params.estado}`;
 
-  // const {
-  // 	start,
-  // 	limit,
-  // 	page,
-  // 	paginas,
-  // 	setPaginas,
-  // 	setStart,
-  // 	setPage,
-  // 	nextPage,
-  // 	prevPage,
-  // } = usePagination(pathname);
+  const {
+  	start,
+  	limit,
+  	page,
+  	paginas,
+  	setPaginas,
+  	setStart,
+  	setPage,
+  	nextPage,
+  	prevPage,
+  } = usePagination(pathname);
+
+  useEffect(() => {
+		setPage(router.query.page ? parseInt(router.query.page) : 1);
+	}, [router.query]);
 
   const { data, loading, error } = useQuery(getTiendasEstados, {
-    variables: {
-      filters: { estado: { slug: { eq: params.estado } } },
-    },
-    // onCompleted: (data) => {
-    // 	setPaginas(Math.ceil(parseInt(data.tiendasCount) / limit));
-    // },
-  });
+		variables: {
+			filters: {
+				estado: { slug: { eq: params.estado } },
+				or: [
+					{ nombre: { containsi: filters } },
+					{ estado: { nombre: { containsi: filters } } },
+					{ ciudad: { containsi: filters } },
+					{ direccion: { containsi: filters } },
+				],
+			},
+		},
+		onCompleted: (data) => {
+			setPaginas(
+				Math.ceil(parseInt(data.tiendas.meta.pagination.total) / limit)
+			);
+		},
+	});
   // useEffect(() => {
   // 	setPage(router.query.page ? parseInt(router.query.page) : 1);
   // }, [router.query]);
 
-  if (loading) return null;
+//  if (loading) return null;
 
-  //  console.log(data.tiendas.data, "adnabdk");
+  // console.log(data.tiendas.data[0].attributes.estado.data[0].attributes.nombre  , "adnabdk");
   // console.log(estado.attributes.nombre);
+  console.log(estado);
   return (
-    <Layout>
-      <SeoComponent
-        title={`Ankara | Tiendas en ${estado.attributes.nombre}`}
-        description={`Tiendas en el estado ${estado.attributes.nombre}`}
-        image="/imagen/anka.png"
-      />
-      <section>
-        {/* <HeadingTienda  estado={estado}/> */}
+		<Layout>
+			<SeoComponent
+				title={`Ankara | Tiendas en ${estado.attributes.nombre}`}
+				description={`Tiendas en el estado ${estado.attributes.nombre}`}
+				image="/imagen/anka.png"
+			/>
+			<section>
+				<HeadingTienda titulo={estado.attributes.nombre} />
 
-        <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
-          <Breadcrumb />
-          <div className="flex flex-row space-x-10 h">
-            <Search />
-            {/* <Estados estados={estados} /> */}
-            {/* <EstadosDrop estados={estados} /> */}
-          </div>
-        </div>
-        <GridTiendas tiendas={data.tiendas.data} />
-      </section>
-    </Layout>
-  );
+				<div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
+					<Breadcrumb />
+					<div className="flex flex-row space-x-10 h">
+						<Search search={filters} setSearch={setFilters} />
+						{/* <Estados estados={estados} /> */}
+						{/* <EstadosDrop estados={estados} /> */}
+					</div>
+				</div>
+        
+				{error && (
+					<div className="flex flex-col w-full p-10 lg:flex-row items-center">
+						<div className="flex w-full flex-col">
+							<div className="p-20 text-3xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
+								Ha ocurrido un error, refresque la pagina
+							</div>
+						</div>
+					</div>
+				)}
+				{loading && <LoadingStores />}
+				{data && data.tiendas.data.length === 0 && (
+					<div className="flex flex-col w-full p-10 lg:flex-row items-center">
+						<div className="flex w-full flex-col">
+							<div className="p-20 text-3xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
+								No se ha encontrado una coincidencia
+							</div>
+						</div>
+					</div>
+				)}
+				{data && data.tiendas.data.length !== 0 && (
+					<>
+						<GridTiendas tiendas={data.tiendas.data} />
+						{paginas > 1 ? (
+							<Pagination
+								page={page}
+								nextPage={nextPage}
+								prevPage={prevPage}
+								paginas={paginas}
+							/>
+						) : null}
+					</>
+				)}
+			</section>
+		</Layout>
+	);
 };
 
 export default Tiendas;
@@ -139,7 +196,7 @@ export async function getStaticProps({ params, preview = null }) {
       }
     `,
     variables: {
-      filters: { slug: { eq: params.tienda } },
+      filters: { slug: { eq: params.estado } },
     },
   });
 

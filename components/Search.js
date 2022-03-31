@@ -3,9 +3,13 @@ import { useState } from "react";
 const Search = ({ search, setSearch }) => {
   const [value, setValue] = useState("");
 
+  // const handleChange = (e) => {
+  //   setValue(e.target.value);
+  // };
+
   const handleChange = (e) => {
-    setValue(e.target.value);
-  };
+		setSearch(e.target.value);
+	};
 
   const keyHandleChange = (e) => {
     if (e.keyCode == 13) setSearch(value);
@@ -20,9 +24,9 @@ const Search = ({ search, setSearch }) => {
   return (
     <div onSubmit={onSubmit} className="hidden lg:flex">
       <input
-        onKeyDown={keyHandleChange}
+        // onKeyDown={keyHandleChange}
         onChange={handleChange}
-        value={value}
+        // value={value}
         type="text"
         placeholder="Buscar tienda"
         name="buscar"

@@ -1,23 +1,30 @@
-import Select from "./Select";
+import { gql, useQuery } from "@apollo/client";
+import client from "config/apollo-client";
 import Link from "next/link";
 
-const Estados = ({estados}) => {
+const getEstados = gql`
+	query getEstados {
+		estados(sort: "nombre:asc") {
+			data {
+				attributes {
+					nombre
+					slug
+				}
+			}
+		}
+	}
+`;
 
-	console.log(estados)
-  return (
+const Estados = () => {
+	
+	const { data, loading } = useQuery(getEstados);
+
+	if (loading) return null;
+
+	return (
 		<div className="flex justify-center">
 			<div className="w-48">
-				{/* <Select
-					value={estados.id}
-					placeholder="Selecciona tu estado"
-					options={estados}
-					name="estadoId"
-					objKeyValue="id"
-					objKeyString="nombre"
-					// onChange={handleChange}
-				/> */}
-
-				{/* <select
+				<select
 					className="
                     appearance-none
                     px-3
@@ -35,21 +42,20 @@ const Estados = ({estados}) => {
                     m-0"
 				>
 					<option selected>Selecciona tu estado</option>
-					{estados &&
-						estados.map((estado) => (
+					{data.estados.data &&
+						data.estados.data.map((estado, i) => (
 							<Link
-								href={`/tiendas/${estado.slug}`}
-								key={estado.nombre}
+								passHref
+								href={`/tiendas/${estado.attributes.slug}`}
+								// key={estado.attributes.nombre}
 							>
-								<option key={estado._id}>{estado.nombre}</option>
+								<option key={i}>{estado.attributes.nombre}</option>
 							</Link>
 						))}
-				</select> */}
-
-				
+				</select>
 			</div>
 		</div>
 	);
-}
+};
 
-export default Estados
+export default Estados;
