@@ -12,7 +12,7 @@ const InfoTienda = ({ tienda }) => {
   return (
     <section>
       <section className="px-6 py-10 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
           <div className="w-full md:w-3/5 lg:w-full">
             <Image
               src={loader(imagen.data[0].attributes.url)}
@@ -47,7 +47,7 @@ const InfoTienda = ({ tienda }) => {
           </h2>
         </div>
       </section>
-      <div className="h-screen w-full">
+      <div className="h-96 md:h-screen w-full">
         <MapTienda coordenadas={coordenadas} />
       </div>
     </section>

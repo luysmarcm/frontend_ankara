@@ -7,7 +7,7 @@ const BlogMenu = ({ search, setSearch }) => {
       <p className="text-black text-sm lg:text-2xl font-bold capitalize my-2">
         Buscar
       </p>
-      <div className="w-3/4">
+      <div className="w-3/4 mb-2">
         <Search search={search} setSearch={setSearch} />
       </div>
       <CategoryList />

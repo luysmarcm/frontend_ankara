@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = ({ search, setSearch }) => {
+const SearchMobile = ({ search, setSearch }) => {
   const [value, setValue] = useState("");
 
   // const handleChange = (e) => {
@@ -22,7 +22,7 @@ const Search = ({ search, setSearch }) => {
   };
 
   return (
-    <div onSubmit={onSubmit} className="col-span-2 hidden md:flex">
+    <div onSubmit={onSubmit} className="col-span-2 flex md:hidden">
       <input
         // onKeyDown={keyHandleChange}
         onChange={handleChange}
@@ -55,4 +55,4 @@ const Search = ({ search, setSearch }) => {
   );
 };
 
-export default Search;
+export default SearchMobile;

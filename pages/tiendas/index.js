@@ -14,6 +14,7 @@ import Estados from "components/Estados";
 import ListEstado from "components/Tiendas/ListEstado";
 import DropDownEstados from "components/Tiendas/Dropdownestados";
 import DropDownEstadosMobile from "components/Tiendas/DropDownEstadosMobile";
+import SearchMobile from "components/SearchMobile";
 
 const getTiendas = gql`
   query getTiendas($limit: Int, $start: Int, $filters: TiendaFiltersInput) {
@@ -119,12 +120,13 @@ const Tiendas = () => {
             <Search search={filters} setSearch={setFilters} />
           </div>
         </div>
-        <div className="px-6 lg:px-16 my-6 grid md:grid-cols-3 lg:grid-cols-6 lg:space-x-4 gap-5">
+        <div className="px-6 lg:px-16 my-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 lg:space-x-4 gap-y-5 md:gap-5">
+          <SearchMobile search={filters} setSearch={setFilters} />
           <DropDownEstadosMobile />
           <ListEstado />
 
           {error && (
-            <div className="flex flex-col lg:col-start-2 lg:col-end-7 w-full p-10 lg:flex-row items-start">
+            <div className="flex flex-col w-full lg:col-start-2 lg:col-end-7 p-10 lg:flex-row items-start">
               <div className="flex w-full flex-col">
                 <div className="text-5xl relative  bg-center lg:h-auto text-black text-center space-y-3 ">
                   Ha ocurrido un error, refresque la pagina
@@ -134,9 +136,9 @@ const Tiendas = () => {
           )}
           {loading && <LoadingStores />}
           {data && data.tiendas.data.length === 0 && (
-            <div className="flex flex-col w-full col-start-2  col-end-7 p-10 lg:flex-row items-start">
+            <div className="flex flex-col w-full md:col-start-2 md:col-end-4 lg:col-end-7 p-10 lg:flex-row items-start">
               <div className="flex w-full flex-col">
-                <div className="p-20 text-3xl relative bg-center lg:h-auto text-black text-center space-y-3 ">
+                <div className="md:p-20 text-3xl relative bg-center lg:h-auto text-black text-center space-y-3 ">
                   No se ha encontrado una coincidencia
                 </div>
               </div>

@@ -23,18 +23,18 @@ const CardTiendas = ({ tienda }) => {
           unoptimized
         />
       </div>
-      <div className=" text-black text-left p-5 space-y-2 ">
+      <div className="flex flex-col text-black text-left p-5 space-y-2 h-full">
         <h2 className="tracking-wide text-sm lg:text-2xl font-bold capitalize">
           {nombre}
         </h2>
         <p>{ciudad}</p>
         <p className=" text-black text-opacity-75">{direccion}</p>
-        <Link href={`/tiendas/${estado.data.attributes.slug}/${slug}`} passHref>
-          <button className="rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black ">
-            Visitar tienda
+      </div>
+      <Link href={`/tiendas/${estado.data.attributes.slug}/${slug}`} passHref>
+          <button className="mx-5 mb-5 flex flex-start w-1/2 rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black ">
+            <span className="w-full text-center">Visitar tienda</span>
           </button>
         </Link>
-      </div>
     </div>
   );
 };
