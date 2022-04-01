@@ -49,7 +49,7 @@ const Estados = () => {
 								href={`/tiendas/${estado.attributes.slug}`}
 								// key={estado.attributes.nombre}
 							>
-								<option key={i}>{estado.attributes.nombre}</option>
+							<option key={i}>{estado.attributes.nombre}</option>
 							</Link>
 						))}
 				</select>

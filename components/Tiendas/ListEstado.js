@@ -15,14 +15,14 @@ const getEstados = gql`
 	}
 `;
 
-const ListEstado = () => {
+const ListEstado = ({estados}) => {
 
     const { data, loading } = useQuery(getEstados);
 
 
     if(loading) return null
 
-    console.log(data.estados.data)
+    console.log(data.estados.data,"estados")
 
   return (
 		<div className="bg-white bg-opacity-80 space-y-5 rounded-xl hidden md:block overflow-hidden ">

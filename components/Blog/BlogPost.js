@@ -34,7 +34,6 @@ const BlogPost = ({ post }) => {
         </div>
 
         <div className="hidden lg:block">
-          <SearchBarBlog />
           <CategoryList />
           <UltimosPost />
         </div>
