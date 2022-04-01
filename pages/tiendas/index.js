@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
 import LoadingStores from "./../../components/Tiendas/LoadingStores";
 import Estados from "components/Estados";
-import EstadosDrop from "components/EstadoDrop";
 import ListEstado from "components/Tiendas/ListEstado";
 
 const getTiendas = gql`

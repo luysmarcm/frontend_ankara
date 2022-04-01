@@ -15,7 +15,7 @@ const getEstados = gql`
 	}
 `;
 
-const ListEstado = ({estados}) => {
+const ListEstado = () => {
 
     const { data, loading } = useQuery(getEstados);
 
