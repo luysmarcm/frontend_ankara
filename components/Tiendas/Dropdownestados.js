@@ -28,7 +28,7 @@ const DropDownEstados = ({estado}) => {
       <div className="group relative">
         <button
           onClick={toggling}
-          className="bg-rosado text-black px-6 h-10 w-40 rounded-md focus:bg-rosado2 hover:bg-rosado2">
+          className="bg-rosado text-black px-6 h-10 w-48 capitalize rounded-md focus:bg-rosado2 hover:bg-rosado2">
           {estado ? estado : "Selecciona tu estado"}
         </button>
         {isOpen && (

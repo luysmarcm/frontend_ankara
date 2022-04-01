@@ -47,7 +47,7 @@ const InfoTienda = ({ tienda }) => {
           </h2>
         </div>
       </section>
-      <div className="h-96 md:h-screen w-full">
+      <div className="h-96 w-full">
         <MapTienda coordenadas={coordenadas} />
       </div>
     </section>
