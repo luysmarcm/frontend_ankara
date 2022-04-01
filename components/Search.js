@@ -22,7 +22,7 @@ const Search = ({ search, setSearch }) => {
   };
 
   return (
-    <div onSubmit={onSubmit} className="col-span-2 hidden md:flex">
+    <div onSubmit={onSubmit} className="hidden md:flex">
       <input
         // onKeyDown={keyHandleChange}
         onChange={handleChange}

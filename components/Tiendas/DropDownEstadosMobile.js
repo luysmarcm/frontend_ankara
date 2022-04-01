@@ -15,7 +15,7 @@ const getEstados = gql`
   }
 `;
 
-const DropDownEstadosMobile = () => {
+const DropDownEstadosMobile = ({estado}) => {
   const { data, loading } = useQuery(getEstados);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +29,7 @@ const DropDownEstadosMobile = () => {
         <button
           onClick={toggling}
           className="bg-rosado text-black px-6 h-10 rounded-md focus:bg-rosado2 w-full">
-          Selecciona tu estado
+          {estado ? estado : "Selecciona tu estado"}
         </button>
         {isOpen && (
           <nav

@@ -15,7 +15,7 @@ const getEstados = gql`
   }
 `;
 
-const DropDownEstados = () => {
+const DropDownEstados = ({estado}) => {
   const { data, loading } = useQuery(getEstados);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,8 +28,8 @@ const DropDownEstados = () => {
       <div className="group relative">
         <button
           onClick={toggling}
-          className="bg-rosado text-black px-6 h-10 rounded-md focus:bg-rosado2 hover:bg-rosado2">
-          Selecciona tu estado
+          className="bg-rosado text-black px-6 h-10 w-40 rounded-md focus:bg-rosado2 hover:bg-rosado2">
+          {estado ? estado : "Selecciona tu estado"}
         </button>
         {isOpen && (
           <nav
