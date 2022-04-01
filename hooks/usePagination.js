@@ -2,12 +2,13 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 const usePagination = (pathname) => {
+
 	const router = useRouter();
 
 	const [page, setPage] = useState(1);
 	const [paginas, setPaginas] = useState(1);
 	const [start, setStart] = useState(1);
-	const [limit, setlimit] = useState(5);
+	const [limit, setlimit] = useState(6)
 
 	useEffect(() => {
 		setStart((page - 1) * limit);

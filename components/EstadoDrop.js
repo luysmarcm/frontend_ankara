@@ -4,7 +4,7 @@ import Link from "next/link";
 const EstadosDrop = ({estados}) => {
 
 	const [isSideMenuOpen, setisSideMenuOpen] = useState(false);
-	console.log(estados, "sjkdbkja")
+	// console.log(estados, "sjkdbkja")
 	const showSideMenu = () => {
 		setisSideMenuOpen(!isSideMenuOpen);
 	};

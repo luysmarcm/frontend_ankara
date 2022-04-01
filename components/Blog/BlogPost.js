@@ -10,8 +10,8 @@ const BlogPost = ({ post }) => {
 
   return (
     <section id="BlogPost">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 py-8 px-3 lg:px-20 space-y-5">
-        <div className="col-span-2 lg:px-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 drop-shadow-xl px-6 lg:px-16 mt-10">
+        <div className="grid col-span-2 drop-shadow-xl lg:mr-8">
           <p className="text-sm text-black font-bold text-left mb-2">
             {fecha}
           </p>
@@ -28,12 +28,12 @@ const BlogPost = ({ post }) => {
             height={400}
             unoptimized></Image>
 
-          <p className="text-black text-lg pt-4 text-justify">
+          <p className="text-black text-lg p-4 text-justify overflow-hidden">
             {descripcion_larga}
           </p>
         </div>
 
-        <div className="hidden lg:inline-block">
+        <div className="hidden lg:block">
           <SearchBarBlog />
           <CategoryList />
           <UltimosPost />

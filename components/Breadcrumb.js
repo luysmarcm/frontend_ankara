@@ -3,14 +3,16 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const convertBreadcrumb = (string) => {
-	return string
+  const split = string.split("?", 1)
+  
+	return split[0]
 		.replace(/-/g, " ")
 		.replace(/oe/g, "ö")
 		.replace(/ae/g, "ä")
 		.replace(/ue/g, "ü")
 		.replace("/", "")
 		.replace("/?", "")
-		.toUpperCase();
+		.toUpperCase()
 };
 
 const Breadcrumb = () => {
