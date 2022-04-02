@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = ({ search, setSearch }) => {
+const SearchMobile = ({ search, setSearch }) => {
   const [value, setValue] = useState("");
 
   // const handleChange = (e) => {
@@ -22,7 +22,7 @@ const Search = ({ search, setSearch }) => {
   };
 
   return (
-    <div onSubmit={onSubmit} className="hidden md:flex h-7">
+    <div onSubmit={onSubmit} className="col-span-2 flex md:hidden">
       <input
         // onKeyDown={keyHandleChange}
         onChange={handleChange}
@@ -36,10 +36,10 @@ const Search = ({ search, setSearch }) => {
 
       <button
         onClick={clickHandleChange}
-        className="bg-rosado2 rounded-r-md p-2">
+        className="bg-rosado2 rounded-r-md p-2 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-3.5 w-3.5 text-white"
+          className="h-5 w-5 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor">
@@ -55,4 +55,4 @@ const Search = ({ search, setSearch }) => {
   );
 };
 
-export default Search;
+export default SearchMobile;

@@ -12,8 +12,6 @@ const Tienda = (props) => {
 
 	const {tienda} = props
 
-	console.log(tienda.attributes);
-
 	return (
 		<Layout>
 			<SeoComponent
@@ -79,11 +77,8 @@ export async function getStaticProps({ params }) {
 		`,
 		variables: {
 			filters: { slug: { eq:  params.tienda } } 
-			// slug: params.tienda,
 		},
 	});
-
-	console.log(data, 'hola')
 	return {
 		props: {
 			params,
@@ -122,9 +117,8 @@ export async function getStaticPaths() {
 		},
 	}));
 
-	console.log(paths);
 	return {
 		paths,
-		fallback: true,
+		fallback: false,
 	};
 }

@@ -7,9 +7,13 @@ import HeadingPage from "components/HeadingPage";
 import Breadcrumb from "./../../components/Breadcrumb";
 import Layout from "./../../components/Layout/Index";
 import Pagination from "components/Pagination/Pagination";
-import {useEffect, useState} from "react";
-import {useRouter} from "next/router";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
+import LoadingBlogs from "components/Blog/LoadingBlogs";
+import BlogMenu from "components/Blog/BlogMenu";
+import DropDownBlog from 'components/Blog/DropdownBlog';
+import SearchMobile from 'components/SearchMobile';
 
 const getPostCategoria = gql`
   query getPostCategoria($filters: BlogFiltersInput, $start: Int, $limit: Int) {
@@ -71,7 +75,14 @@ const Posts = (props) => {
     variables: {
       limit,
       start: start,
-      filters: { categorias_blog: { slug: { eq: params.categoria } } },
+      filters: {
+        or: [
+          {
+            categorias_blog: { slug: { eq: params.categoria } },
+            and: { titulo: { containsi: filters } },
+          },
+        ],
+      },
     },
     onCompleted: (data) => {
       setPaginas(Math.ceil(parseInt(data.blogs.meta.pagination.total) / limit));
@@ -82,7 +93,7 @@ const Posts = (props) => {
     setPage(router.query.page ? parseInt(router.query.page) : 1);
   }, [router.query]);
 
-  if (loading) return null;
+  console.log(data);
 
   return (
     <Layout>
@@ -96,13 +107,40 @@ const Posts = (props) => {
         <div className="flex flex-col-2 place-content-between px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
         </div>
-        <Blog posts={data.blogs.data} search={filters} setSearch={setFilters} />
-        <Pagination
-          page={page}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          paginas={paginas}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-8 gap-y-5 lg:gap-5 drop-shadow-xl px-6 lg:px-16 mt-10">
+          <SearchMobile search={filters} setSearch={setFilters} />
+          <DropDownBlog />
+          {error && (
+            <div className="block md:col-start-1 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
+                <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+                  <p className="text-center">Ha ocurrido un error, refresque la pagina</p>
+              </div>
+            </div>
+          )}
+          {loading && <LoadingBlogs />}
+          {data && data.blogs.data.length === 0 && (
+            <div className="block md:col-start-1 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
+                <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+                  <p className="text-center">No se ha encontrado una coincidencia</p>
+              </div>
+            </div>
+          )}
+          {data && data.blogs.data.length !== 0 && (
+            <>
+              <Blog posts={data.blogs.data} />
+            </>
+          )}
+
+          <BlogMenu search={filters} setSearch={setFilters} />
+        </div>
+        {paginas > 1 ? (
+          <Pagination
+            page={page}
+            nextPage={nextPage}
+            prevPage={prevPage}
+            paginas={paginas}
+          />
+        ) : null}
       </section>
     </Layout>
   );
@@ -185,6 +223,6 @@ export async function getStaticPaths() {
   console.log(paths);
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }

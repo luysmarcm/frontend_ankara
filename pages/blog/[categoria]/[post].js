@@ -9,7 +9,6 @@ import Breadcrumb from "./../../../components/Breadcrumb";
 
 const Post = (props) => {
   const { blog } = props;
-  console.log(props.blog.attributes.titulo)
 
   return (
     <Layout>
@@ -75,8 +74,7 @@ export async function getStaticProps({ params }) {
       filters: { slug: { eq: params.post } },
     },
   });
-
-  console.log(data, "GetStaticProps");
+  
   return {
     props: {
       params,
@@ -115,7 +113,6 @@ export async function getStaticPaths() {
       post: post.attributes.slug,
     },
   }));
-
-  /* console.log(paths, "getstaticpaths"); */
-  return { paths, fallback: true };
+  
+  return { paths, fallback: false };
 }

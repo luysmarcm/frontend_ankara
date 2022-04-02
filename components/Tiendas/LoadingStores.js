@@ -2,13 +2,15 @@ import StoreLoading from "./StoreLoading";
 
 const LoadingStores = () => {
   return (
-    <div className="px-6 lg:px-16 my-10  grid grid-cols-3 gap-10 justify-around">
-      <StoreLoading />
-      <StoreLoading />
-      <StoreLoading />
-      <StoreLoading />
-      <StoreLoading />
-      <StoreLoading />
+    <div className="col-span-2 lg:col-span-5 ml-0 space-y-12 -z-50">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <StoreLoading />
+        <StoreLoading />
+        <StoreLoading />
+        <StoreLoading />
+        <StoreLoading />
+        <StoreLoading />
+      </div>
     </div>
   );
 };

@@ -7,12 +7,11 @@ import MapTienda from "./MapTienda";
 const InfoTienda = ({ tienda }) => {
   const { nombre, ciudad, telefono, direccion, imagen, horario, coordenadas } =
     tienda;
-
-  console.log(coordenadas, "infotienda");
+    
   return (
     <section>
       <section className="px-6 py-10 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
           <div className="w-full md:w-3/5 lg:w-full">
             <Image
               src={loader(imagen.data[0].attributes.url)}
@@ -30,7 +29,7 @@ const InfoTienda = ({ tienda }) => {
             <h2 className="text-black text-2xl lg:text-4xl font-bold">
               {nombre}
             </h2>
-            <div className=" w-ful	l border-t-2 border-primary" />
+            <div className=" w-full border-t-2 border-primary" />
             <div className="space-y-3">
               <p className="font-bold text-xl">Dirección:</p>
               <p className=" text-xl">{direccion}</p>
@@ -47,7 +46,7 @@ const InfoTienda = ({ tienda }) => {
           </h2>
         </div>
       </section>
-      <div className="h-screen w-full">
+      <div className="h-96 w-full">
         <MapTienda coordenadas={coordenadas} />
       </div>
     </section>
