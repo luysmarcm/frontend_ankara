@@ -30,7 +30,7 @@ const InfoTienda = ({ tienda }) => {
             <h2 className="text-black text-2xl lg:text-4xl font-bold">
               {nombre}
             </h2>
-            <div className=" w-ful	l border-t-2 border-primary" />
+            <div className=" w-full border-t-2 border-primary" />
             <div className="space-y-3">
               <p className="font-bold text-xl">Dirección:</p>
               <p className=" text-xl">{direccion}</p>

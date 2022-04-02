@@ -2,8 +2,8 @@ const MisionVision = () => {
   return (
     <section
       id="MisionVision"
-      className="w-full bg-rosado place-items-center px-3 sm:px-16 md:py-32 lg:py-10 lg:px-10 space-y-5">
-      <div className="grid grid-cols-1 md:grid-cols-2 p-10 items-center gap-10">
+      className="w-full bg-rosado place-items-center px-3 py-6 sm:px-16 md:py-24 lg:px-20 lg:py-20 space-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 md:gap-8 items-center lg:gap-12">
         <div className="h-72 bg-rosado2 rounded-lg"></div>
         <div className="grid h-72 rounded-lg place-items-center">
           <p className="text-black text-xl text-center max-w-3xl">
@@ -16,7 +16,7 @@ const MisionVision = () => {
         </div>
 
         <div className="grid h-72 rounded-lg items-center content-start">
-          <p className="text-black text-4xl lg:text-4xl text-center font-bold">
+          <p className="text-black text-4xl lg:text-4xl text-center font-bold p-2">
             Misión
           </p>
           <p className="text-black text-xl text-center max-w-3xl">
@@ -28,7 +28,7 @@ const MisionVision = () => {
           </p>
         </div>
         <div className="grid h-72 rounded-lg items-center content-start">
-          <p className="text-black text-4xl lg:text-4xl text-center font-bold">
+          <p className="text-black text-4xl lg:text-4xl text-center font-bold p-2">
             Visión
           </p>
           <p className="text-black text-xl text-center max-w-3xl">
