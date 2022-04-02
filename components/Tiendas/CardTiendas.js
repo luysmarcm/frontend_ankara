@@ -4,10 +4,8 @@ import React from "react";
 import { loader } from "utils/loader";
 
 const CardTiendas = ({ tienda }) => {
-  //  console.log(tienda.attributes.nombre);
 
   const { nombre, ciudad, direccion, imagen, slug, estado } = tienda.attributes;
-  //   console.log(estado.data.attributes.slug);
   return (
     <div className="bg-white rounded-xl overflow-hidden drop-shadow-xl flex flex-col flex-1 h-full">
       <div>

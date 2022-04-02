@@ -7,8 +7,7 @@ import MapTienda from "./MapTienda";
 const InfoTienda = ({ tienda }) => {
   const { nombre, ciudad, telefono, direccion, imagen, horario, coordenadas } =
     tienda;
-
-  console.log(coordenadas, "infotienda");
+    
   return (
     <section>
       <section className="px-6 py-10 lg:px-16">

@@ -20,9 +20,7 @@ const ListEstado = ({estados}) => {
     const { data, loading } = useQuery(getEstados);
 
 
-    if(loading) return null
-
-    console.log(data.estados.data,"estados")
+ if(loading) return null
 
   return (
 		<div className="bg-white bg-opacity-80 space-y-5 rounded-xl hidden md:block overflow-hidden drop-shadow-xl">

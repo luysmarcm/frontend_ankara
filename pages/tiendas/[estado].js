@@ -67,11 +67,7 @@ const getTiendasEstados = gql`
 const Tiendas = (props) => {
   const { estados, estado, params } = props;
 
-  console.log(estado.attributes.nombre);
-
-  //console.log(estado.attributes.nombre, "estado");
-  //  console.log(estados, "estadossss");
-  //  console.log(params.estado);
+  // console.log(estado)
 
   const router = useRouter();
   const [filters, setFilters] = useState("");
@@ -119,7 +115,6 @@ const Tiendas = (props) => {
 
   // console.log(data.tiendas.data[0].attributes.estado.data[0].attributes.nombre  , "adnabdk");
   // console.log(estado.attributes.nombre);
-  console.log(estado);
   return (
     <Layout>
       <SeoComponent
@@ -207,8 +202,6 @@ export async function getStaticProps({ params, preview = null }) {
     },
   });
 
-  console.log(data);
-
   if (!data && error) {
     return {
       props: {
@@ -216,8 +209,6 @@ export async function getStaticProps({ params, preview = null }) {
       },
     };
   }
-
-  console.log(data);
 
   return {
     props: {
@@ -244,14 +235,11 @@ export async function getStaticPaths() {
       }
     `,
   });
-
-  // console.log(data);
   const paths = data.estados.data.map((estado) => ({
     params: { estado: estado.attributes.slug },
   }));
-  console.log(paths);
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
