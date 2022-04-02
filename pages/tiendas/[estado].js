@@ -137,26 +137,22 @@ const Tiendas = (props) => {
             <Search search={filters} setSearch={setFilters} />
           </div>
         </div>
-        <div className="px-6 lg:px-16 my-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 lg:space-x-4 gap-5">
+        <div className="px-6 lg:px-16 my-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6  gap-y-5 md:gap-5">
           <SearchMobile search={filters} setSearch={setFilters} />
           <DropDownEstadosMobile estado={params.estado} />
           <ListEstado />
           {error && (
-            <div className="flex flex-col w-full md:col-start-2 md:col-end-4 lg:col-end-7 p-10 lg:flex-row items-start">
-              <div className="flex w-full flex-col">
-                <div className="p-20 text-3xl relative bg-center lg:h-auto text-black text-center space-y-3 ">
-                  Ha ocurrido un error, refresque la pagina
-                </div>
+            <div className="block md:col-start-2 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
+                <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+                  <p className="text-center">Ha ocurrido un error, refresque la pagina</p>
               </div>
             </div>
           )}
           {loading && <LoadingStores />}
           {data && data.tiendas.data.length === 0 && (
-            <div className="flex flex-col w-full md:col-start-2 md:col-end-4 lg:col-end-7 p-10 lg:flex-row items-start">
-              <div className="flex w-full flex-col">
-                <div className="p-20 text-3xl relative bg-center lg:h-auto text-black text-center space-y-3 ">
-                  No se ha encontrado una coincidencia
-                </div>
+            <div className="block md:col-start-2 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
+                <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+                  <p className="text-center">No se ha encontrado una coincidencia</p>
               </div>
             </div>
           )}

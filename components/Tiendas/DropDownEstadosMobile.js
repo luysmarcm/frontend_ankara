@@ -20,16 +20,17 @@ const DropDownEstadosMobile = ({estado}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggling = () => setIsOpen(!isOpen);
-
   if (loading) return null;
+  
+  const spaces = (string) => string.replace(/-/g, " ")
 
   return (
     <div className="md:hidden col-span-2 z-30">
       <div className="group relative w-full">
         <button
           onClick={toggling}
-          className="bg-rosado text-black px-6 h-10 rounded-md focus:bg-rosado2 w-full">
-          {estado ? estado : "Selecciona tu estado"}
+          className="bg-rosado text-black capitalize px-6 h-10 rounded-md focus:bg-rosado2 w-full">
+          {estado ? spaces(estado) : "Selecciona tu estado"}
         </button>
         {isOpen && (
           <nav

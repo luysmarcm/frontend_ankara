@@ -14,7 +14,7 @@ const CardBlog = ({ post }) => {
   } = post.attributes;
 
   return (
-    <div className="grid grid-cols-1 md:grid-col-2">
+    <div className="grid grid-cols-1 md:grid-col-2 ">
       <div className="overflow-hidden shadow-lg rounded-lg h-72 w-full cursor-pointer m-auto">
         <Link href={`/blog/${categorias_blog.data.attributes.slug}/${slug}`}>
           <a className="flex relative w-full h-full">

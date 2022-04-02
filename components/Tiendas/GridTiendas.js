@@ -17,3 +17,5 @@ const GridTiendas = ({tiendas}) => {
 }
 
 export default GridTiendas
+
+{}

@@ -12,6 +12,8 @@ import Search from "components/Search";
 import LoadingStores from "components/Tiendas/LoadingStores";
 import BlogMenu from "components/Blog/BlogMenu";
 import LoadingBlogs from "components/Blog/LoadingBlogs";
+import SearchMobile from "components/SearchMobile";
+import DropDownBlog from "components/Blog/DropdownBlog";
 
 const getPosts = gql`
   query getPosts($start: Int, $limit: Int, $filters: BlogFiltersInput) {
@@ -100,23 +102,21 @@ const Blogs = () => {
         <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 drop-shadow-xl px-6 lg:px-16 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-5 lg:grid-cols-8 gap-y-5 lg:gap-5 drop-shadow-xl px-6 lg:px-16 mt-10">
+        <SearchMobile search={filters} setSearch={setFilters} />
+        <DropDownBlog />
           {error && (
-            <div className="flex flex-col col-start-1 col-end-3 w-full p-10 lg:flex-row items-center mb-8">
-              <div className="flex w-full flex-col">
-                <div className="text-5xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
-                  Ha ocurrido un error, refresque la pagina
-                </div>
+            <div className="block md:col-start-1 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
+                <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+                  <p className="text-center">Ha ocurrido un error, refresque la pagina</p>
               </div>
             </div>
           )}
           {loading && <LoadingBlogs />}
           {data && data.blogs.data.length === 0 && (
-            <div className="flex flex-col col-start-1 col-end-3 w-full p-10 lg:flex-row items-center mb-11">
-              <div className="flex w-full flex-col">
-                <div className="p-20 text-3xl relative z-30  bg-center lg:h-auto text-black text-center space-y-3 ">
-                  No se ha encontrado una coincidencia
-                </div>
+            <div className="block md:col-start-1 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
+                <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+                  <p className="text-center">No se ha encontrado una coincidencia</p>
               </div>
             </div>
           )}

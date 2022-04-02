@@ -26,7 +26,7 @@ const UltimosPost = () => {
           return (
             <div className="h-24">
               <Link key={i} href={`/blog/${post.attributes.categorias_blog.data.attributes.slug}/${post.attributes.slug}`}>
-                <a className=" text-black font-light text-lg flex flex-row gap-x-2 hover:bg-rosado rounded-xl w-3/4 p-1 m-2 ml-0">
+                <a className=" text-black font-light text-lg flex flex-row gap-x-2 hover:bg-rosado rounded-xl p-2 -m-2">
                   <Image
                     alt={post.attributes.imagen_principal.data.attributes.name}
                     src={loader(post.attributes.imagen_principal.data.attributes.url)}
