@@ -10,8 +10,8 @@ const BlogPost = ({ post }) => {
 
   return (
     <section id="BlogPost">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-8 gap-5 drop-shadow-xl px-6 lg:px-16 my-10">
-        <div className="grid col-span-6 bg-white rounded-lg drop-shadow-xl h-full lg:flex lg:flex-col lg:h-auto flex-center">
+      <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-8 gap-5 drop-shadow-xl px-6 lg:px-16 my-10">
+        <div className="grid md:col-span-4 lg:col-span-6 bg-white rounded-lg drop-shadow-xl h-full lg:flex lg:flex-col lg:h-auto flex-center">
           <div className="p-4">
             <p className="text-sm text-black font-bold text-left mb-2">
               {fecha}
@@ -37,13 +37,13 @@ const BlogPost = ({ post }) => {
             </p>
           </div>
         </div>
-        <div className="col-start-7 col-end-9">
-          <div className="hidden bg-white rounded-lg drop-shadow-xl h-auto lg:flex lg:flex-col flex-center mb-4">
+        <div className="hidden md:block md:col-span-2">
+          <div className="hidden bg-white rounded-lg drop-shadow-xl h-auto md:flex md:flex-col flex-center mb-4">
             <div className="p-4">
               <CategoryList />
             </div>
           </div>
-          <div className="hidden bg-white rounded-lg drop-shadow-xl lg:flex lg:flex-col h-auto flex-center">
+          <div className="hidden bg-white rounded-lg drop-shadow-xl md:flex md:flex-col h-auto flex-center">
             <div className="p-4">
               <UltimosPost />
             </div>

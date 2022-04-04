@@ -77,6 +77,7 @@ export const OBTENER_BLOGCATEGORY = gql`
   query obtenerBlogsCategory {
     categoriasBlogs {
       data {
+        id
         attributes {
           nombre
           slug

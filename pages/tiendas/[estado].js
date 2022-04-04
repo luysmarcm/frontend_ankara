@@ -15,7 +15,6 @@ import { useRouter } from "next/router";
 import EstadosDrop from "components/EstadoDrop";
 import Pagination from "components/Pagination/Pagination";
 import ListEstado from "components/Tiendas/ListEstado";
-import DropDownEstados from "components/Tiendas/Dropdownestados";
 import DropDownEstadosMobile from "components/Tiendas/DropDownEstadosMobile";
 import SearchMobile from "components/SearchMobile";
 
@@ -55,6 +54,7 @@ const getTiendasEstados = gql`
               id
               attributes {
                 nombre
+                slug
               }
             }
           }
@@ -114,7 +114,7 @@ const Tiendas = (props) => {
   //  if (loading) return null;
 
   // console.log(data.tiendas.data[0].attributes.estado.data[0].attributes.nombre  , "adnabdk");
-  // console.log(estado.attributes.nombre);
+
   return (
     <Layout>
       <SeoComponent
@@ -128,7 +128,6 @@ const Tiendas = (props) => {
         <div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
           <div className="flex flex-row space-x-10 h">
-            <DropDownEstados estado={params.estado} />
             <Search search={filters} setSearch={setFilters} />
           </div>
         </div>

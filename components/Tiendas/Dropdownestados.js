@@ -26,7 +26,7 @@ const DropDownEstados = ({estado}) => {
   const spaces = (string) => string.replace(/-/g, " ")
 
   return (
-    <div className="hidden md:block z-30">
+    <div className=" z-30">
       <div className="group relative">
         <button
           onClick={toggling}
