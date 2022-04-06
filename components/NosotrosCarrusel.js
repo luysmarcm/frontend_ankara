@@ -18,21 +18,16 @@ let slideInterval;
 
 const NosotrosCarrusel = () => {
   const [index, setIndex] = useState(0);
-  const [count, setCount] = useState(0);
   const slideRef = useRef();
-  console.log(count, "count");
-  console.log(value, "value");
-  console.log(index, "index");
 
   const next = () => {
     value = (value + 1) % images.length;
-    setCount(value);
     setIndex(value);
     slideRef.current.classList.add("fade-anim");
   };
 
   const handleClick = (e) => {
-    setCount(e.target.value);
+    startSlider();
     setIndex(e.target.value);
     slideRef.current.classList.add("fade-anim");
   };
@@ -63,7 +58,7 @@ const NosotrosCarrusel = () => {
   };
 
   return (
-    <div className="h-90v w-full">
+    <div className="h-80v lg:h-90v w-full">
       <div ref={slideRef} className="w-full h-full relative select-none">
         <div className="object-cover h-full">
           <div className="absolute h-full w-full p-16">
