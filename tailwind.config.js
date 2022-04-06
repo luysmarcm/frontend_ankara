@@ -14,6 +14,7 @@ module.exports = {
 				fondo: "#F6F6F6",
 				rosado: "#FACBC6",
 				rosado2: "#F5867D",
+        progress: "rgba(155, 155, 155, 1)"
 			},
 			fontFamily: {
 				lato: ["Lato"],
@@ -46,5 +47,4 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
 };

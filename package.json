@@ -11,6 +11,7 @@
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@react-google-maps/api": "^2.7.0",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "google-map-react": "^2.1.10",
     "graphql": "^16.3.0",
     "keen-slider": "^5.5.1",

@@ -3,14 +3,27 @@ import GalleryTienda from "./GalleryTienda";
 import Image from "next/image";
 import { loader } from "utils/loader";
 import MapTienda from "./MapTienda";
+import Link from "next/link";
 
 const InfoTienda = ({ tienda }) => {
   const { nombre, ciudad, telefono, direccion, imagen, horario, coordenadas } =
     tienda;
 
+  //WhatsApp Link
+  const formatNumber = (number) => {
+    const format = number.slice(1);
+    return format.replace("-", "").replace(" ", "");
+  };
+
+  //Copiar a Clipboard
+  const copy = async () => {
+    await navigator.clipboard.writeText(telefono);
+    alert("Copiado en Portapapeles");
+  };
+
   return (
-    <section>
-      <div className="">
+    <section className="-z-50">
+      <div >
         <section className="px-6 py-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-white rounded-lg drop-shadow-xl h-auto p-4">
             <div className="w-full">
@@ -37,7 +50,37 @@ const InfoTienda = ({ tienda }) => {
                 <p className="font-bold text-xl ">Horario de Atencion: :</p>
                 <p className=" text-xl lg:text-xl">{horario}</p>
                 <p className="font-bold  text-4xl lg:text-xl">Contacto:</p>
-                <p className=" text-xl lg:text-base">{telefono}</p>
+                <div className="flex flex-row">
+                  <div className="h-8 w-8 bg-rosado hover:bg-rosado2 rounded-md p-1 items-center mr-4">
+                    <button>
+                      <Link href={`https://wa.me/+58${formatNumber(telefono)}`}>
+                        <Image
+                          src="/imagen/whatsappicon.svg"
+                          height={60}
+                          width={60}
+                        />
+                      </Link>
+                    </button>
+                  </div>
+                  <div className="h-8 w-8 bg-rosado hover:bg-rosado2 rounded-md p-0.5 items-center mr-4">
+                    <button>
+                      <Link href={`tel:+58${formatNumber(telefono)}`}>
+                        <Image
+                          src="/imagen/callicon.svg"
+                          height={60}
+                          width={60}
+                        />
+                      </Link>
+                    </button>
+                  </div>
+                  <div className="h-8 hover:bg-rosado2 rounded-md">
+                    <button>
+                      <a onClick={copy} className="text-2xl px-2">
+                        {telefono}
+                      </a>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

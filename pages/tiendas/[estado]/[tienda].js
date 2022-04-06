@@ -22,7 +22,7 @@ const Tienda = (props) => {
         <HeadingPage titulo={`${tienda.attributes.nombre}`} />
         <div className="flex flex-row place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
-          <div className="hidden md:block">
+          <div className="hidden md:block z-30">
             <DropDownEstados />
           </div>
         </div>

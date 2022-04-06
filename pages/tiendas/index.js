@@ -126,7 +126,7 @@ const Tiendas = () => {
 
           {error && (
             <div className="block md:col-start-2 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
-              <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+              <div className="text-3xl z-30 text center text-black text-center space-y-3 ">
                 <p className="text-center">
                   Ha ocurrido un error, refresque la pagina
                 </p>
@@ -136,7 +136,7 @@ const Tiendas = () => {
           {loading && <LoadingStores />}
           {data && data.tiendas.data.length === 0 && (
             <div className="block md:col-start-2 md:col-span-2 lg:col-end-7 w-full items-center mb-11 p-20">
-              <div className="text-3xl z-30 text centertext-black text-center space-y-3 ">
+              <div className="text-3xl z-30 text center text-black text-center space-y-3 ">
                 <p className="text-center">
                   No se ha encontrado una coincidencia
                 </p>

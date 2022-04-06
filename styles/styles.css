@@ -39,3 +39,44 @@ body {
 .content {
 	flex: 1 1 auto;
 }
+
+.fade-anim img {
+  animation: fadeAnim 3s ease-out;
+}
+@keyframes fadeAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.shim {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(155, 155, 155, 0.5);
+}
+.shim::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255,255,255, 1) 0,
+    rgba(255,255,255, 0.75) 50%,
+    rgba(255,255,255, 0.5) 100%
+  );
+  animation: shimmer 10s ease infinite;
+  content: "";
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(0%);
+    opacity: ;
+  }
+}
