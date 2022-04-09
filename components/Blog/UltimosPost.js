@@ -15,7 +15,6 @@ const UltimosPost = () => {
   if (loading) return null;
 
   const posts = data.blogs.data;
-  console.log(posts, "ultimos");
   return (
     <>
       <p className="text-black text-sm lg:text-2xl font-bold capitalize my-2 mb-4">

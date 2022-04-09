@@ -6,7 +6,6 @@ import SeoComponent from "components/SeoComponent";
 import DropDownEstados from "components/Tiendas/Dropdownestados";
 import InfoTienda from "components/Tiendas/InfoTienda";
 import client from "config/apollo-client";
-import MapTienda from "./../../../components/Tiendas/MapTienda";
 
 const Tienda = (props) => {
   const { tienda } = props;
@@ -46,6 +45,7 @@ export async function getStaticProps({ params }) {
               coordenadas
               direccion
               telefono
+              horario
               slug
               imagen {
                 data {

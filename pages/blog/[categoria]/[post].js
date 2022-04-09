@@ -81,7 +81,7 @@ export async function getStaticProps({ params }) {
       ...data,
       blog: data.blog.data[0],
     },
-    /* revalidate: 86400, */
+    revalidate: 86400, 
   };
 }
 

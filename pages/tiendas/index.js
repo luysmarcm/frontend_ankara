@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
 import LoadingStores from "./../../components/Tiendas/LoadingStores";
-import Estados from "components/Estados";
 import ListEstado from "components/Tiendas/ListEstado";
 
 import DropDownEstadosMobile from "components/Tiendas/DropDownEstadosMobile";

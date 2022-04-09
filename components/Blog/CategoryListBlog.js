@@ -19,7 +19,7 @@ const CategoryList = () => {
             return (
               <li className="text-black font-light text-lg">
                 <Link key={i} href={`/blog/${categoria.attributes.slug}`}>
-                  <a className="hover:bg-rosado rounded-lg p-1 m-2 ml-0">{categoria.attributes.nombre}</a>
+                  <a className="hover:text-primary rounded-lg p-1 m-2 ml-0">{categoria.attributes.nombre}</a>
                 </Link>
               </li>
             );

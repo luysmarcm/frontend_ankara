@@ -54,7 +54,6 @@ const getPostCategoria = gql`
 
 const Posts = (props) => {
   const { params } = props;
-  /* console.log(props, "props"); */
   const router = useRouter();
   const pathname = `/blog/${params.categoria}`;
   const [filters, setFilters] = useState("");
@@ -92,8 +91,6 @@ const Posts = (props) => {
   useEffect(() => {
     setPage(router.query.page ? parseInt(router.query.page) : 1);
   }, [router.query]);
-
-  console.log(data);
 
   return (
     <Layout>
@@ -178,8 +175,6 @@ export async function getStaticProps({ params, preview = null }) {
     },
   });
 
-  console.log(data);
-
   if (!data && error) {
     return {
       props: {
@@ -187,8 +182,6 @@ export async function getStaticProps({ params, preview = null }) {
       },
     };
   }
-
-  console.log(data, "GetStaticProps");
 
   return {
     props: {
@@ -216,11 +209,9 @@ export async function getStaticPaths() {
     `,
   });
 
-  console.log(data, "GetStaticPath");
   const paths = data.categoriasBlogs.data.map((categoria) => ({
     params: { categoria: categoria.attributes.slug },
   }));
-  console.log(paths);
   return {
     paths,
     fallback: false,
