@@ -8,8 +8,6 @@ import Pagination from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
-import Search from "components/Search";
-import LoadingStores from "components/Tiendas/LoadingStores";
 import BlogMenu from "components/Blog/BlogMenu";
 import LoadingBlogs from "components/Blog/LoadingBlogs";
 import SearchMobile from "components/SearchMobile";

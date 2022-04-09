@@ -2,7 +2,6 @@ import Layout from "components/Layout/Index";
 import SeoComponent from "components/SeoComponent";
 import Breadcrumb from "components/Breadcrumb";
 import Search from "components/Search";
-import Estados from "components/Estados";
 import GridTiendas from "components/Tiendas/GridTiendas";
 import HeadingTienda from "components/HeadingTienda";
 import LoadingStores from "components/Tiendas/LoadingStores";
@@ -12,7 +11,6 @@ import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
 import usePagination from "hooks/usePagination";
 import { useRouter } from "next/router";
-import EstadosDrop from "components/EstadoDrop";
 import Pagination from "components/Pagination/Pagination";
 import ListEstado from "components/Tiendas/ListEstado";
 import DropDownEstadosMobile from "components/Tiendas/DropDownEstadosMobile";
@@ -66,9 +64,6 @@ const getTiendasEstados = gql`
 
 const Tiendas = (props) => {
   const { estados, estado, params } = props;
-
-  // console.log(estado)
-
   const router = useRouter();
   const [filters, setFilters] = useState("");
   const pathname = `/tiendas/${params.estado}`;
@@ -107,13 +102,6 @@ const Tiendas = (props) => {
       );
     },
   });
-  // useEffect(() => {
-  // 	setPage(router.query.page ? parseInt(router.query.page) : 1);
-  // }, [router.query]);
-
-  //  if (loading) return null;
-
-  // console.log(data.tiendas.data[0].attributes.estado.data[0].attributes.nombre  , "adnabdk");
 
   return (
     <Layout>

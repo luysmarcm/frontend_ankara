@@ -49,7 +49,7 @@ const InfoTienda = ({ tienda }) => {
                 <p className=" text-xl">{direccion}</p>
                 <p className="font-bold text-xl ">Horario de Atencion: :</p>
                 <p className=" text-xl lg:text-xl">{horario}</p>
-                <p className="font-bold  text-4xl lg:text-xl">Contacto:</p>
+                <p className="font-bold  text-xl lg:text-xl">Contacto:</p>
                 <div className="flex flex-row">
                   <div className="h-8 w-8 bg-rosado hover:bg-rosado2 rounded-md p-1 items-center mr-4">
                     <button>
