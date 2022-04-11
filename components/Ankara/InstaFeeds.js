@@ -6,7 +6,7 @@ const InstaFeeds = ({...props}) => {
 
     useEffect(() => {
         fetch(
-					`https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink,caption&limit=${props.limit}&access_token=IGQVJXejdCbGVjajNEUzBjdHo2ZAGFnWllzNVdCSmFoR2tQcjFKcnhOMXdqZAnM2OFNrN2xQZAU02VFNUSU51S0pZAZAGFzTy1IeWtkS2lPZAWctM2JYOUhIQXJHdGJ6X2dIdE9WS1lFUjJ4M3hRa3ZAKaHVUegZDZD`
+					`https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink,caption&limit=${props.limit}&access_token=IGQVJYTVZAiRHV2djFReTc1QUVlR0VJMlJGY1lEWFF0M25pMWRlLWtnM2dUdlhzekQzSEdxa0VkQ3J0MWNBcHRkb185bVhncURBUTc1ZAGJMYVhLT1FpNzlnQTVBaUxhUklfZADhmX2cwQkpmZA1h3VEpQNgZDZD`
 				)
 					.then((res) => res.json())
 					.then((resp) => {

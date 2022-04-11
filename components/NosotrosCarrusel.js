@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const images = [
-  "/imagen/banner1.png",
-  "/imagen/banner2.png",
-  "/imagen/banner3.png",
+	"/imagen/nosotrosbanner4.jpeg",
+	"/imagen/nosotrosbanner.jpeg",
+	"/imagen/nosotrosbanner3.jpeg",
 ];
 
 const descripcion = [
-  "Descripcion numero 1",
-  "Descripcion numero 2",
-  "Descripcion numero 3",
+  "Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
+  "Ofrecer productos cosméticos de calidad para el bienestar, higiene y belleza integral de nuestros clientes. Así como también, guiarlos paso a paso a conocer el arte del maquillaje ofreciendo experiencias llenas de renovación, transformación y aprendizaje.",
+  "Ser referentes a nivel nacional en la distribución de productos cosméticos y de belleza, creando cambios que permitan el avance constante de todos nuestros clientes.",
 ];
 
 let value = 0;
@@ -58,57 +58,60 @@ const NosotrosCarrusel = () => {
   };
 
   return (
-    <div className="h-80v lg:h-90v w-full">
-      <div ref={slideRef} className="w-full h-full relative select-none">
-        <div className="object-cover h-full">
-          <div className="absolute h-full w-full p-16">
-            <div className="flex h-full justify-center items-center">
-              <p className="text-center font-cd text-3xl lg:text-5xl z-30">
-                {descripcion[index]}
-              </p>
-            </div>
-          </div>
-          <Image
-            alt="..."
-            src={images[index]}
-            className="z-0 object-cover"
-            layout="fill"
-            unoptimized
-          />
-        </div>
+		<div className="h-80v lg:h-90v w-full">
+			<div ref={slideRef} className="w-full h-full relative select-none">
+				<div className="object-cover h-full">
+					<div className="absolute h-full w-full p-16">
+						<div className="flex h-full justify-center items-center">
+							<p className="p-32 text-center text-white font-lato text-3xl lg:text-2xl z-30">
+								{descripcion[index]}
+							</p>
+						</div>
+					</div>
+					<Image
+						alt="..."
+						src={images[index]}
+						className="z-0 object-cover blur-lg"
+						layout="fill"
+						unoptimized
+					/>
+				</div>
 
-        <div className="grid grid-cols-3 relative w-11/12 bottom-6 gap-5 mx-auto">
-          <button
-            type="submit"
-            value={0}
-            onClick={handleClick}
-            className={
-              index === 0
-                ? "shim rounded-lg h-2"
-                : "bg-progress opacity-50 rounded-lg h-2"
-            }></button>
-          <button
-            type="submit"
-            value={1}
-            onClick={handleClick}
-            className={
-              index === 1
-                ? "shim   rounded-lg h-2"
-                : "bg-progress opacity-50 rounded-lg h-2"
-            }></button>
-          <button
-            type="submit"
-            value={2}
-            onClick={handleClick}
-            className={
-              index === 2
-                ? "shim  rounded-lg h-2"
-                : "bg-progress opacity-50 rounded-lg h-2"
-            }></button>
-        </div>
-      </div>
-    </div>
-  );
+				<div className="grid grid-cols-3 relative w-11/12 bottom-6 gap-5 mx-auto">
+					<button
+						type="submit"
+						value={0}
+						onClick={handleClick}
+						className={
+							index === 0
+								? "shim rounded-lg h-2"
+								: "bg-progress opacity-50 rounded-lg h-2"
+						}
+					></button>
+					<button
+						type="submit"
+						value={1}
+						onClick={handleClick}
+						className={
+							index === 1
+								? "shim   rounded-lg h-2"
+								: "bg-progress opacity-50 rounded-lg h-2"
+						}
+					></button>
+					<button
+						type="submit"
+						value={2}
+						onClick={handleClick}
+						className={
+							index === 2
+								? "shim  rounded-lg h-2"
+								: "bg-progress opacity-50 rounded-lg h-2"
+						}
+					></button>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default NosotrosCarrusel;
