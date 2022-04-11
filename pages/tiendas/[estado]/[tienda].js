@@ -3,7 +3,6 @@ import Breadcrumb from "components/Breadcrumb";
 import HeadingPage from "components/HeadingPage";
 import Layout from "components/Layout/Index";
 import SeoComponent from "components/SeoComponent";
-import DropDownEstados from "components/Tiendas/Dropdownestados";
 import InfoTienda from "components/Tiendas/InfoTienda";
 import client from "config/apollo-client";
 
@@ -22,7 +21,6 @@ const Tienda = (props) => {
         <div className="flex flex-row place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
           <Breadcrumb />
           <div className="hidden md:block z-30">
-            <DropDownEstados />
           </div>
         </div>
         <InfoTienda tienda={tienda.attributes} />

@@ -39,9 +39,13 @@ const Carrusel = ({ imagenes }) => {
 	}, [pause, slider]);
 
 	return (
-		<div ref={sliderRef} className="keen-slider">
+		<div className="keen-slider">
 			{imagenes.map((imagen) => (
-				<div key={imagen.id} className="bg-cover keen-slider__slide">
+				<div
+					key={imagen.id}
+					ref={sliderRef}
+					className="bg-cover keen-slider__slide"
+				>
 					<div className="relative">
 						<Image
 							src={imagen.imagen}

@@ -63,7 +63,7 @@ const NosotrosCarrusel = () => {
 				<div className="object-cover h-full">
 					<div className="absolute h-full w-full p-16">
 						<div className="flex h-full justify-center items-center">
-							<p className="p-32 text-center text-white font-lato text-3xl lg:text-2xl z-30">
+							<p className="p-32 text-center text-black font-lato text-3xl lg:text-2xl z-30">
 								{descripcion[index]}
 							</p>
 						</div>
@@ -71,7 +71,7 @@ const NosotrosCarrusel = () => {
 					<Image
 						alt="..."
 						src={images[index]}
-						className="z-0 object-cover blur-lg"
+						className="z-0 object-cover"
 						layout="fill"
 						unoptimized
 					/>
