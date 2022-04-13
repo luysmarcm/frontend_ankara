@@ -2,15 +2,17 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const images = [
-  "/imagen/banner1.png",
-  "/imagen/banner2.png",
-  "/imagen/banner3.png",
+  "/imagen/banner7.png",
+  "/imagen/banner7.png",
+  "/imagen/banner7.png",
 ];
 
+const titulo = ["Nosotros", "Misión", "Visión"];
+
 const descripcion = [
-  "Descripcion numero 1",
-  "Descripcion numero 2",
-  "Descripcion numero 3",
+  "Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
+  "Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
+  "Ser referentes a nivel nacional en la distribución de productos cosméticos y de belleza, creando cambios que permitan el avance constante de todos nuestros clientes.",
 ];
 
 let value = 0;
@@ -58,56 +60,61 @@ const NosotrosCarrusel = () => {
   };
 
   return (
-    <div className="h-80v lg:h-90v w-full">
-      <div ref={slideRef} className="w-full h-full relative select-none">
-        <div className="object-cover h-full">
-          <div className="absolute h-full w-full p-16">
-            <div className="flex h-full justify-center items-center">
-              <p className="text-center font-cd text-3xl lg:text-5xl z-30">
-                {descripcion[index]}
-              </p>
+    <section id="NosotrosCarrusel" className="py-8 lg:py-14">
+      <div className="h-60v lg:h-80v w-full">
+        <div ref={slideRef} className="w-full h-full relative select-none">
+          <div className="object-cover h-full">
+            <div className="absolute h-full w-full p-10 lg:p-20">
+              <div className="flex flex-col h-full justify-center items-center">
+                <p className="text-center font-pshoot text-white text-4xl lg:text-6xl z-30 pb-10">
+                  {titulo[index]}
+                </p>
+                <p className="text-center font-lato font-bold text-white text-lg lg:text-4xl z-30">
+                  {descripcion[index]}
+                </p>
+              </div>
             </div>
+            <Image
+              alt="..."
+              src={images[index]}
+              className="z-0 object-cover"
+              layout="fill"
+              unoptimized
+            />
           </div>
-          <Image
-            alt="..."
-            src={images[index]}
-            className="z-0 object-cover"
-            layout="fill"
-            unoptimized
-          />
-        </div>
 
-        <div className="grid grid-cols-3 relative w-11/12 bottom-6 gap-5 mx-auto">
-          <button
-            type="submit"
-            value={0}
-            onClick={handleClick}
-            className={
-              index === 0
-                ? "shim rounded-lg h-2"
-                : "bg-progress opacity-50 rounded-lg h-2"
-            }></button>
-          <button
-            type="submit"
-            value={1}
-            onClick={handleClick}
-            className={
-              index === 1
-                ? "shim   rounded-lg h-2"
-                : "bg-progress opacity-50 rounded-lg h-2"
-            }></button>
-          <button
-            type="submit"
-            value={2}
-            onClick={handleClick}
-            className={
-              index === 2
-                ? "shim  rounded-lg h-2"
-                : "bg-progress opacity-50 rounded-lg h-2"
-            }></button>
+          <div className="grid grid-cols-3 relative w-11/12 bottom-6 gap-5 mx-auto">
+            <button
+              type="submit"
+              value={0}
+              onClick={handleClick}
+              className={
+                index === 0
+                  ? "shim rounded-lg h-2"
+                  : "bg-progress opacity-50 rounded-lg h-2"
+              }></button>
+            <button
+              type="submit"
+              value={1}
+              onClick={handleClick}
+              className={
+                index === 1
+                  ? "shim   rounded-lg h-2"
+                  : "bg-progress opacity-50 rounded-lg h-2"
+              }></button>
+            <button
+              type="submit"
+              value={2}
+              onClick={handleClick}
+              className={
+                index === 2
+                  ? "shim  rounded-lg h-2"
+                  : "bg-progress opacity-50 rounded-lg h-2"
+              }></button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

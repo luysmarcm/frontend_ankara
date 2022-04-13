@@ -2,42 +2,50 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-*{
-	box-sizing: border-box;
+@font-face {
+  font-family: "Photoshoot";
+  src: url("/fonts/Photoshoot/Photoshoot.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	font-family: "Lato", sans-serif;
-	background-color: #F6F6F6;
+  font-family: "Lato", sans-serif;
+  background-color: #f6f6f6;
 }
 
 .imagen {
-	transition: all 500ms linear;
+  transition: all 500ms linear;
 }
 
 .imagen .hijo {
-	transition: all 500ms;
-	transform: translateY(100%);
+  transition: all 500ms;
+  transform: translateY(100%);
 }
 
 .imagen:hover .hijo {
-	transform: translateY(0);
+  transform: translateY(0);
 }
 
 .menu {
-	transition: all 500ms linear;
+  transition: all 500ms linear;
 }
 
 .textShadow {
-	text-shadow: 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .content {
-	flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .fade-anim img {
@@ -66,9 +74,9 @@ body {
   transform: translateX(-100%);
   background-image: linear-gradient(
     90deg,
-    rgba(255,255,255, 1) 0,
-    rgba(255,255,255, 0.75) 50%,
-    rgba(255,255,255, 0.5) 100%
+    rgba(255, 255, 255, 1) 0,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.5) 100%
   );
   animation: shimmer 10s ease infinite;
   content: "";
