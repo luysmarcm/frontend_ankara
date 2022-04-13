@@ -38,7 +38,7 @@ const Nosotros = () => {
 				id="nosotros"
 				className="bg-fondo bg-cover place-items-center py-24 px-3 sm:px-16 md:py-32 lg:py-36 lg:px-20 space-y-5"
 			>
-				<h1 className="text-black font-bold text-5xl pb-10 font-lato md:text-6xl lg:text-7xl text-center">
+				<h1 className="text-black font-bold italic text-5xl pb-10 font-lato md:text-6xl lg:text-7xl text-center">
 					Ankara es...
 				</h1>
 

@@ -4,7 +4,7 @@ import InstaFeeds from "./InstaFeeds";
 
 const Ankara = () => {
     return (
-			<section className="bg-gris place-items-center py-24 px-3 sm:px-16 md:py-32 lg:py-36 lg:px-20 space-y-5">
+			<section className="bg-white place-items-center py-24 px-3 sm:px-16 md:py-32 lg:py-36 lg:px-20 space-y-5">
 				<div className="flex justify-center mb-12">
 					<a
 						target="_blank"
