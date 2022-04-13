@@ -13,20 +13,20 @@ const marcas = [
 
 const NuestrasMarcas = () => {
     return (
-        <section
-            id='marcas'
-            className='px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20  space-y-5'
-        >
-            <h2 className='pb-10 text-black text-center text-4xl lg:text-5xl font-bold '>
-                Nuestras Marcas
-            </h2>
-            <div className='w-full grid grid-cols-1 gap-5 even:grid-flow-col-dense rounded-xl'>
-                {marcas.map((marca) => (
-                    <CardMarcas key={marca.id} marca={marca} />
-                ))}
-            </div>
-        </section>
-    );
+			<section
+				id="marcas"
+				className="bg-gris px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20  space-y-5"
+			>
+				<h2 className="pb-10 text-black text-center text-4xl lg:text-5xl font-extrabold italic ">
+					Nuestras Marcas
+				</h2>
+				<div className="w-full grid grid-cols-1 gap-5 even:grid-flow-col-dense rounded-xl">
+					{marcas.map((marca) => (
+						<CardMarcas key={marca.id} marca={marca} />
+					))}
+				</div>
+			</section>
+		);
 };
 
 export default NuestrasMarcas;

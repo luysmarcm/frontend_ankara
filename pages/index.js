@@ -6,6 +6,7 @@ import NuestrasMarcas from "/components/NuestrasMarcas";
 import NuestrosClientes from "/components/NuestrosClientes";
 import Ankara from "/components/Ankara/Ankara.js";
 import Layout from "/components/Layout/Index";
+import VideoBanner from "components/VideoBanner";
 
 export default function Home() {
     return (
@@ -16,6 +17,7 @@ export default function Home() {
                 image='/imagen/anka.png'
             />
             <main>
+                <VideoBanner/>
                 <Banner />
                 <Nosotros />
                 <Identidades />

@@ -102,7 +102,7 @@ const NuestrosClientes = () => {
     }, [pause, slider]);
 
     return (
-			<section className="bg-secundary place-items-center px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20">
+			<section className="bg-fondo place-items-center px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20">
 				<div className="pb-20 space-y-5">
 					<h2 className="text-black text-center text-3xl md:text-4xl lg:text-5xl font-bold">
 						¿Qué dicen nuestros aliados?
