@@ -1,42 +1,44 @@
-import React, {useEffect, useState}from "react";
+import React, {useEffect, useState} from "react";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 
 
 const Carrusel = ({ imagenes }) => {
-	
-	const [pause, setPause] = useState(false);
-	const timer = React.useRef();
-	const [sliderRef, slider] = useKeenSlider({
-		loop: true,
-		duration: 1000,
-		dragStart: () => {
-			setPause(true);
+	const [sliderRef] = useKeenSlider(
+		{
+			loop: true,
 		},
-		dragEnd: () => {
-			setPause(false);
-		},
-	});
-
-	useEffect(() => {
-		sliderRef.current.addEventListener("mouseover", () => {
-			setPause(true);
-		});
-		sliderRef.current.addEventListener("mouseout", () => {
-			setPause(false);
-		});
-	}, [sliderRef]);
-
-	useEffect(() => {
-		timer.current = setInterval(() => {
-			if (!pause && slider) {
-				slider.next();
-			}
-		}, 8000);
-		return () => {
-			clearInterval(timer.current);
-		};
-	}, [pause, slider]);
+		[
+			(slider) => {
+				let timeout;
+				let mouseOver = false;
+				function clearNextTimeout() {
+					clearTimeout(timeout);
+				}
+				function nextTimeout() {
+					clearTimeout(timeout);
+					if (mouseOver) return;
+					timeout = setTimeout(() => {
+						slider.next();
+					}, 2000);
+				}
+				slider.on("created", () => {
+					slider.container.addEventListener("mouseover", () => {
+						mouseOver = true;
+						clearNextTimeout();
+					});
+					slider.container.addEventListener("mouseout", () => {
+						mouseOver = false;
+						nextTimeout();
+					});
+					nextTimeout();
+				});
+				slider.on("dragStarted", clearNextTimeout);
+				slider.on("animationEnded", nextTimeout);
+				slider.on("updated", nextTimeout);
+			},
+		]
+	);
 
 	return (
 		<div ref={sliderRef} className="keen-slider">

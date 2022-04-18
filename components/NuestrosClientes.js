@@ -54,52 +54,52 @@ const clientes = [
 const NuestrosClientes = () => {
     const [pause, setPause] = useState(false);
     const timer = React.useRef();
-    const [sliderRef, slider] = useKeenSlider({
-        slidesPerView: 3,
-        spacing: 15,
-        loop: true,
-        duration: 1000,
-        breakpoints: {
-            "(min-width: 150px)": {
-                slidesPerView: 1,
-                mode: "free-snap",
-            },
-            "(min-width: 768px)": {
-                slidesPerView: 2,
-                mode: "free-snap",
-            },
-            "(min-width: 1200px)": {
-                slidesPerView: 3,
-                mode: "free-snap",
-            },
-        },
-        dragStart: () => {
-            setPause(true);
-        },
-        dragEnd: () => {
-            setPause(false);
-        },
-    });
+    const [sliderRef, slider] = useKeenSlider(
+			{
+				loop: true,
+				breakpoints: {
+					"(min-width: 400px)": {
+						slides: { perView: 2, spacing: 5 },
+					},
+					"(min-width: 1000px)": {
+						slides: { perView: 3, spacing: 10 },
+					},
+				},
+				slides: { perView: 1 },
+			},
+			[
+				(slider) => {
+					let timeout;
+					let mouseOver = false;
+					function clearNextTimeout() {
+						clearTimeout(timeout);
+					}
+					function nextTimeout() {
+						clearTimeout(timeout);
+						if (mouseOver) return;
+						timeout = setTimeout(() => {
+							slider.next();
+						}, 2000);
+					}
+					slider.on("created", () => {
+						slider.container.addEventListener("mouseover", () => {
+							mouseOver = true;
+							clearNextTimeout();
+						});
+						slider.container.addEventListener("mouseout", () => {
+							mouseOver = false;
+							nextTimeout();
+						});
+						nextTimeout();
+					});
+					slider.on("dragStarted", clearNextTimeout);
+					slider.on("animationEnded", nextTimeout);
+					slider.on("updated", nextTimeout);
+				},
+			]
+		);
 
-    useEffect(() => {
-        sliderRef.current.addEventListener("mouseover", () => {
-            setPause(true);
-        });
-        sliderRef.current.addEventListener("mouseout", () => {
-            setPause(false);
-        });
-    }, [sliderRef]);
-
-    useEffect(() => {
-        timer.current = setInterval(() => {
-            if (!pause && slider) {
-                slider.next();
-            }
-        }, 5000);
-        return () => {
-            clearInterval(timer.current);
-        };
-    }, [pause, slider]);
+    
 
     return (
 			<section className="bg-fondo place-items-center px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20">

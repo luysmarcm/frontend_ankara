@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-sync-scripts */
 /* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
+import Script from "next/script";
 
 const SeoComponent = ({ title, description, image }) => (
 	<Head>
@@ -17,7 +18,7 @@ const SeoComponent = ({ title, description, image }) => (
 		<meta property="og:image" content={`${image}`} />
 		<meta property="og:image:width" content="176" />
 		<meta property="og:image:height" content="167" />
-		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+		<Script src="https://apps.elfsight.com/p/platform.js" defer></Script>
 		
 	</Head>
 );

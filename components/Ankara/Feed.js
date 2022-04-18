@@ -19,7 +19,7 @@ const Feed = (props) => {
 						src={media_url}
 						type="video/mp4"
 						controls
-						playsinline
+						playsInline
 					></video>
 				</a>
 			);
