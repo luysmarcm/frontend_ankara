@@ -2,10 +2,18 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const images = [
+<<<<<<< HEAD
 	"/imagen/nosotrosbanner4.jpeg",
 	"/imagen/nosotrosbanner.jpeg",
 	"/imagen/nosotrosbanner3.jpeg",
+=======
+  "/imagen/banner7.png",
+  "/imagen/banner7.png",
+  "/imagen/banner7.png",
+>>>>>>> a05033c2bd8f3d63c2f73f56c2a9a81b6bcd0a56
 ];
+
+const titulo = ["Nosotros", "Misión", "Visión"];
 
 const descripcion = [
   "Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
