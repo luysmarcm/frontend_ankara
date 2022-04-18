@@ -1,4 +1,3 @@
-import React from "react";
 import CardMarcas from "./Card/CardMarcas";
 
 const marcas = [

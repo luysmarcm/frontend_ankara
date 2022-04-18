@@ -1,11 +1,13 @@
-import React from "react";
-import client from "config/apollo-client";
+
 import { gql } from "@apollo/client";
-import BlogPost from "components/Blog/BlogPost";
-import Layout from "./../../../components/Layout/Index";
-import SeoComponent from "./../../../components/SeoComponent";
-import HeadingPage from "components/HeadingPage";
-import Breadcrumb from "./../../../components/Breadcrumb";
+import client from "config/apollo-client";
+import {
+	Layout,
+	SeoComponent,
+	HeadingPage,
+	Breadcrumb,
+	BlogPost,
+} from "components/index";
 
 const Post = (props) => {
   const { blog } = props;

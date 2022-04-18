@@ -1,4 +1,3 @@
-import React from "react";
 import CardNosotros from "./Card/CardNosotros";
 
 const nosotros = [

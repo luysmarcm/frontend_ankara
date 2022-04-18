@@ -1,8 +1,8 @@
-import { OBTENER_BLOGS } from "query/query";
-import { useQuery } from "@apollo/client";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useQuery } from "@apollo/client";
 import { loader } from "utils/loader";
+import { OBTENER_BLOGS } from "query/query";
 
 const UltimosPost = () => {
   const { loading, error, data } = useQuery(OBTENER_BLOGS, {
@@ -23,7 +23,7 @@ const UltimosPost = () => {
       <div className="flex flex-col">
         {posts.map(function (post, i) {
           return (
-            <div className="h-24">
+            <div className="h-24" key={i}>
               <Link key={i} href={`/blog/${post.attributes.categorias_blog.data.attributes.slug}/${post.attributes.slug}`}>
                 <a className=" text-black font-light text-lg flex flex-row gap-x-2 hover:bg-rosado rounded-xl p-2 -m-2">
                   <Image

@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
-import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
+import { useKeenSlider } from "keen-slider/react";
 
 
 const Carrusel = ({ imagenes }) => {

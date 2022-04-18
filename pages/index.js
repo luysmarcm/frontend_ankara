@@ -1,12 +1,12 @@
-import Banner from "/components/Banner";
-import Nosotros from "/components/Nosotros";
-import SeoComponent from "/components/SeoComponent";
-import Identidades from "/components/Identidades";
-import NuestrasMarcas from "/components/NuestrasMarcas";
-import NuestrosClientes from "/components/NuestrosClientes";
-import Ankara from "/components/Ankara/Ankara.js";
-import Layout from "/components/Layout/Index";
-import VideoBanner from "components/VideoBanner";
+import{Layout,
+	SeoComponent,
+    Banner,
+    Nosotros,
+    Identidades,
+    NuestrasMarcas,
+    NuestrosClientes,
+    Ankara,
+    VideoBanner, } from "components/index"
 
 export default function Home() {
     return (

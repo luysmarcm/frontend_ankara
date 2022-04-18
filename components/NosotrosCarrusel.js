@@ -3,7 +3,6 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import CardMisionVision from "./Card/CardMisionVision";
 
-
 const nosotros = [
 	{
 		id: 1,
@@ -16,14 +15,14 @@ const nosotros = [
 		id: 2,
 		titulo: "Misión",
 		descripcion:
-			"Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
+			"Ofrecer productos cosméticos de calidad para el bienestar, higiene y belleza integral de nuestros clientes. Así como también, guiarlos paso a paso a conocer el arte del maquillaje ofreciendo experiencias llenas de renovación, transformación y aprendizaje.",
 		imagen: "/imagen/banner7.png",
 	},
 	{
 		id: 3,
 		titulo: "Visión",
 		descripcion:
-			"Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
+			"Ser referentes a nivel nacional en la distribución de productos cosméticos y de belleza, creando cambios que permitan el avance constante de todos nuestros clientes. Apostamos por desarrollar lazos de amistad, confianza y fidelidad que inspiren a cualquier persona o marca a sentirse seguros al momento de adquirir nuestros productos, prestando siempre una atención distintiva y de calidad.",
 		imagen: "/imagen/banner7.png",
 	},
 ];
@@ -54,7 +53,7 @@ const NosotrosCarrusel = () => {
 					if (mouseOver) return;
 					timeout = setTimeout(() => {
 						slider.next();
-					}, 4500);
+					}, 3000);
 				}
 				slider.on("created", () => {
 					slider.container.addEventListener("mouseover", () => {
@@ -109,24 +108,3 @@ const NosotrosCarrusel = () => {
 };
 
 export default NosotrosCarrusel;
-
-function Arrow(props) {
-	const disabeld = props.disabled ? " arrow--disabled" : "";
-	return (
-		<svg
-			onClick={props.onClick}
-			className={`arrow ${
-				props.left ? "arrow--left" : "arrow--right"
-			} ${disabeld}`}
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 24 24"
-		>
-			{props.left && (
-				<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-			)}
-			{!props.left && (
-				<path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-			)}
-		</svg>
-	);
-}

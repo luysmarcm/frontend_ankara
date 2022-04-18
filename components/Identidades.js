@@ -1,5 +1,4 @@
-import React from "react";
-import CardIdentidades from "../components/Card/CardIdentidades";
+import CardIdentidades from "/components/Card/CardIdentidades";
 
 const identidades = [
 	{

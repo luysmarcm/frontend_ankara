@@ -1,19 +1,20 @@
-import Layout from "components/Layout/Index";
-import SeoComponent from "components/SeoComponent";
-import Breadcrumb from "components/Breadcrumb";
-import Search from "components/Search";
-import GridTiendas from "components/Tiendas/GridTiendas";
-import HeadingTienda from "components/HeadingTienda";
-import { gql, useQuery } from "@apollo/client";
-import Pagination from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
+import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import usePagination from "hooks/usePagination";
-import LoadingStores from "./../../components/Tiendas/LoadingStores";
-import ListEstado from "components/Tiendas/ListEstado";
-
-import DropDownEstadosMobile from "components/Tiendas/DropDownEstadosMobile";
-import SearchMobile from "components/SearchMobile";
+import {
+	Layout,
+	SeoComponent,
+	Search,
+  Pagination,
+	GridTiendas,
+	HeadingTienda,
+	LoadingStores,
+	ListEstado,
+	DropDownEstadosMobile,
+	SearchMobile,
+	Breadcrumb,
+} from "components/index";
 
 const getTiendas = gql`
   query getTiendas($limit: Int, $start: Int, $filters: TiendaFiltersInput) {

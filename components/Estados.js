@@ -1,6 +1,5 @@
-import { gql, useQuery } from "@apollo/client";
-import client from "config/apollo-client";
 import Link from "next/link";
+import { gql, useQuery } from "@apollo/client";
 
 const getEstados = gql`
 	query getEstados {

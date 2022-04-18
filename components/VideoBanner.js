@@ -1,8 +1,5 @@
-import React from 'react'
-
 const VideoBanner = () => {
   return (
-	
 			<video
 				width={2000}
 				height={900}
@@ -13,7 +10,6 @@ const VideoBanner = () => {
 				muted
 				className='cover'
 			></video>
-	
 	);
 }
 

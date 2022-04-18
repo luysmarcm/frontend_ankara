@@ -1,19 +1,20 @@
-import React from "react";
-import { gql, useQuery } from "@apollo/client";
-import client from "config/apollo-client";
-import Blog from "../../components/Blog/Blog";
-import SeoComponent from "./../../components/SeoComponent";
-import HeadingPage from "components/HeadingPage";
-import Breadcrumb from "./../../components/Breadcrumb";
-import Layout from "./../../components/Layout/Index";
-import Pagination from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { gql, useQuery } from "@apollo/client";
+import client from "config/apollo-client";
+import {
+	Layout,
+	SeoComponent,
+	HeadingPage,
+	Breadcrumb,
+	Pagination,
+	Blog,
+	BlogMenu,
+	LoadingBlogs,
+	SearchMobile,
+	DropDownBlog,
+} from "components/index";
 import usePagination from "hooks/usePagination";
-import LoadingBlogs from "components/Blog/LoadingBlogs";
-import BlogMenu from "components/Blog/BlogMenu";
-import DropDownBlog from 'components/Blog/DropdownBlog';
-import SearchMobile from 'components/SearchMobile';
 
 const getPostCategoria = gql`
   query getPostCategoria($filters: BlogFiltersInput, $start: Int, $limit: Int) {

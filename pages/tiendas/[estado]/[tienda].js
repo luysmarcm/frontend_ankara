@@ -1,12 +1,16 @@
-import { gql } from "@apollo/client";
-import Breadcrumb from "components/Breadcrumb";
-import HeadingPage from "components/HeadingPage";
-import Layout from "components/Layout/Index";
-import SeoComponent from "components/SeoComponent";
-import InfoTienda from "components/Tiendas/InfoTienda";
 import client from "config/apollo-client";
+import { gql } from "@apollo/client";
+import {
+	Layout,
+	SeoComponent,
+	Breadcrumb,
+	HeadingPage,
+	InfoTienda,
+} from "components/index";
 
 const Tienda = (props) => {
+
+  if (props.statusCode) return <Error statusCode={500} />;
   const { tienda } = props;
 
   return (
@@ -78,14 +82,23 @@ export async function getStaticProps({ params }) {
       filters: { slug: { eq: params.tienda } },
     },
   });
+
+  if (!data || error) {
+		return {
+			redirect: {
+				destination: "/500",
+				permanent: false,
+			},
+		};
+	}
   return {
-    props: {
-      params,
-      ...data,
-      tienda: data.tienda.data[0],
-    },
-    // revalidate: 120,
-  };
+		props: {
+			params,
+			...data,
+			tienda: data.tienda.data[0],
+		},
+		revalidate: 86400,
+	};
 }
 
 export async function getStaticPaths() {

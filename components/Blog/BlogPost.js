@@ -1,9 +1,6 @@
-import React from "react";
 import Image from "next/image";
-import SearchBarBlog from "./SearchBarBlog";
-import CategoryList from "./CategoryListBlog";
 import { loader } from "utils/loader";
-import UltimosPost from "./UltimosPost";
+import { CategoryList, UltimosPost } from "components/index";
 
 const BlogPost = ({ post }) => {
   const { titulo, descripcion_larga, imagen_principal, fecha } = post;

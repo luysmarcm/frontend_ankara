@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
-import CardClientes from "./Card/CardClientes";
 import {useKeenSlider} from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import CardClientes from "./Card/CardClientes";
 
 const clientes = [
 	{
@@ -52,16 +51,18 @@ const clientes = [
 ];
 
 const NuestrosClientes = () => {
-    const [pause, setPause] = useState(false);
-    const timer = React.useRef();
+
     const [sliderRef, slider] = useKeenSlider(
 			{
 				loop: true,
 				breakpoints: {
-					"(min-width: 400px)": {
+					"(min-width: 120px)": {
+						slides: { perView: 1, spacing: 5 },
+					},
+					"(min-width: 768px)": {
 						slides: { perView: 2, spacing: 5 },
 					},
-					"(min-width: 1000px)": {
+					"(min-width: 1200px)": {
 						slides: { perView: 3, spacing: 10 },
 					},
 				},

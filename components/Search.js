@@ -3,10 +3,6 @@ import { useState } from "react";
 const Search = ({ search, setSearch }) => {
   const [value, setValue] = useState("");
 
-  // const handleChange = (e) => {
-  //   setValue(e.target.value);
-  // };
-
   const handleChange = (e) => {
 		setSearch(e.target.value);
 	};
@@ -24,9 +20,7 @@ const Search = ({ search, setSearch }) => {
   return (
     <div onSubmit={onSubmit} className="hidden md:flex h-7">
       <input
-        // onKeyDown={keyHandleChange}
         onChange={handleChange}
-        // value={value}
         type="text"
         placeholder="Buscar..."
         name="buscar"

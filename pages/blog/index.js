@@ -1,17 +1,18 @@
-import SeoComponent from "/components/SeoComponent";
-import Layout from "/components/Layout/Index";
-import HeadingPage from "components/HeadingPage";
-import Breadcrumb from "components/Breadcrumb";
-import Blog from "../../components/Blog/Blog";
-import { gql, useQuery } from "@apollo/client";
-import Pagination from "components/Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { gql, useQuery } from "@apollo/client";
+import {	
+  Layout,
+	SeoComponent,
+	HeadingPage,
+	Breadcrumb,
+	Pagination,
+	Blog,
+	BlogMenu,
+	LoadingBlogs,
+	SearchMobile,
+	DropDownBlog,} from "components/index";
 import usePagination from "hooks/usePagination";
-import BlogMenu from "components/Blog/BlogMenu";
-import LoadingBlogs from "components/Blog/LoadingBlogs";
-import SearchMobile from "components/SearchMobile";
-import DropDownBlog from "components/Blog/DropdownBlog";
 
 const getPosts = gql`
   query getPosts($start: Int, $limit: Int, $filters: BlogFiltersInput) {
