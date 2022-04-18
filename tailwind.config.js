@@ -20,6 +20,7 @@ module.exports = {
 				lato: ["Lato"],
 				ps: ["Photograph Signature"],
 				cd: ["Cinzel Decorative"],
+				pshoot: ["Photoshoot"],
 			},
 			backgroundImage: (theme) => ({
 				heading: "url('/imagen/heading.png')",

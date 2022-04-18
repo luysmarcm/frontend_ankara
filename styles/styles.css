@@ -85,6 +85,6 @@ body {
 @keyframes shimmer {
   100% {
     transform: translateX(0%);
-    opacity: ;
+    /* opacity: ; */
   }
 }
