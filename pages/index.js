@@ -23,7 +23,7 @@ export default function Home() {
                 <Identidades />
                 <NuestrasMarcas />
                 <NuestrosClientes />
-                <Ankara />
+                {/* <Ankara /> */}
             </main>
         </Layout>
     );
