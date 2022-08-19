@@ -1,6 +1,4 @@
-import {useKeenSlider} from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import CardClientes from "./Card/CardClientes";
+import CarruselClientes from "./Card/CarruselClientes";
 
 const clientes = [
 	{
@@ -51,75 +49,38 @@ const clientes = [
 ];
 
 const NuestrosClientes = () => {
+	return (
+		<section className="bg-rosado4 place-items-center px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20 ">
+			<div className="pb-20 space-y-5">
+				{/* <h2 className="text-black italic text-center text-3xl md:text-4xl lg:text-5xl font-bold">
+					¿Qué dicen nuestros aliados?
+				</h2> */}
 
-    const [sliderRef, slider] = useKeenSlider(
-			{
-				loop: true,
-				breakpoints: {
-					"(min-width: 120px)": {
-						slides: { perView: 1, spacing: 5 },
-					},
-					"(min-width: 768px)": {
-						slides: { perView: 2, spacing: 5 },
-					},
-					"(min-width: 1200px)": {
-						slides: { perView: 3, spacing: 10 },
-					},
-				},
-				slides: { perView: 1 },
-			},
-			[
-				(slider) => {
-					let timeout;
-					let mouseOver = false;
-					function clearNextTimeout() {
-						clearTimeout(timeout);
-					}
-					function nextTimeout() {
-						clearTimeout(timeout);
-						if (mouseOver) return;
-						timeout = setTimeout(() => {
-							slider.next();
-						}, 2000);
-					}
-					slider.on("created", () => {
-						slider.container.addEventListener("mouseover", () => {
-							mouseOver = true;
-							clearNextTimeout();
-						});
-						slider.container.addEventListener("mouseout", () => {
-							mouseOver = false;
-							nextTimeout();
-						});
-						nextTimeout();
-					});
-					slider.on("dragStarted", clearNextTimeout);
-					slider.on("animationEnded", nextTimeout);
-					slider.on("updated", nextTimeout);
-				},
-			]
-		);
-
-    
-
-    return (
-			<section className="bg-fondo place-items-center px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20">
-				<div className="pb-20 space-y-5">
-					<h2 className="text-black italic text-center text-3xl md:text-4xl lg:text-5xl font-bold">
-						¿Qué dicen nuestros aliados?
-					</h2>
-				</div>
-				<div className="flex ">
-					<div ref={sliderRef} className="keen-slider">
-					{clientes.map((cliente) => (
-						<div className="keen-slider__slide" key={cliente.id}>
-							<CardClientes cliente={cliente} />
+				<div className="flex space-x-4 justify-center ">
+					<div className="">
+						<div
+							className=" relative z-20 bg-contain bg-center bg-no-repeat h-auto items-center md:flex "
+							style={{
+								backgroundImage: "url('./imagen/qdna.png')",
+								width: "100%",
+							}}
+						>
+							<figure className=" z-10 md:flex rounded-xl md:p-0">
+								<div className="pt-6 md:p-20 text-center md:text-left space-y-2">
+									<h3>
+										<span className="block notranslate text-black font-lato text-4xl translate-y-6 font-extrabold lg:text-5xl lg:-translate-x-2 lg:translate-y-8">
+											¿Qué dicen nuestros aliados?
+										</span>
+									</h3>
+								</div>
+							</figure>
 						</div>
-					))}
 					</div>
 				</div>
-			</section>
-		);
+			</div>
+			<CarruselClientes clientes={clientes} />
+		</section>
+	);
 };
 
 export default NuestrosClientes;

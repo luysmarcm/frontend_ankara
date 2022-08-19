@@ -4,8 +4,8 @@ const CardMarcas = ({marca}) => {
     const {nombre, description, imagen} = marca;
 
     return (
-        <section className='bg-morado rounded-xl lg:flex lg:even:flex-row-reverse overflow-hidden py-5  '>
-            <div className='relative flex-1'>
+        <section className=' rounded-xl lg:flex lg:flex-col overflow-hidden py-5  justify-items-center '>
+            <div className='relative flex-1 w-2/4'>
                 <Image
                     src={imagen}
                     alt={nombre}
@@ -16,9 +16,10 @@ const CardMarcas = ({marca}) => {
                     className='block'
                 />
             </div>
+            
 
             <div className='space-y-4 lg:w-7/12 xl:w-8/12 p-12 my-auto'>
-                <p className='mt-2 text-white text-lg md:text-xl text-center lg:text-xl lg:text-left'>
+                <p className='mt-2 text-black text-lg md:text-xl text-center lg:text-xl'>
                     {description}
                 </p>
             </div>

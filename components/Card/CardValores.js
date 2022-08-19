@@ -1,11 +1,36 @@
+import Image from "next/image";
+
+
 const CardValores = ({ info }) => {
-	const { titulo} = info;
+	const { titulo, imagen, descripcion} = info;
 	return (
 		<>
-			<div className="flex justify-center items-center z-30 w-full h-12 bg-rosado2 rounded-md ">
-				<p className="text-white text-center font-bold">{titulo}</p>
+			<div className="carta-box mx-auto w-full h-full pb-36">
+				<div class="carta">
+					<div class="cara">
+						<div className="relative">
+							<Image
+								src={imagen}
+								alt={titulo}
+								width={318}
+								height={483}
+								// layout="responsive"
+								className="rounded-xl"
+								objectFit="cover"
+							/>
+						</div>
+					</div>
+					<div className="cara detras">
+						<div className="flex flex-wrap items-baseline space-y-6 pt-24">
+							<h3 className="space-y-6">
+								<p className="block notranslate text-xl leading-7 font-bold  md:2xl lg:text-base text-center  ">
+									{/* {description} */}
+								</p>
+							</h3>
+						</div>
+					</div>
+				</div>
 			</div>
-
 		</>
 	);
 };

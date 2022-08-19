@@ -18,12 +18,12 @@ export default function Home() {
             />
             <main>
                 <VideoBanner/>
-                <Banner />
+                {/* <Banner /> */}
                 <Nosotros />
                 <Identidades />
                 <NuestrasMarcas />
                 <NuestrosClientes />
-                {/* <Ankara /> */}
+                <Ankara />
             </main>
         </Layout>
     );

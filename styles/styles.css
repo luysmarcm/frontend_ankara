@@ -2,13 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@font-face {
+/* @font-face {
   font-family: "Photoshoot";
   src: url("/fonts/Photoshoot/Photoshoot.ttf");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -20,7 +20,7 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #f6f6f6;
+  background-color: #ffffff;
 }
 
 .imagen {
@@ -29,11 +29,13 @@ body {
 
 .imagen .hijo {
   transition: all 500ms;
-  transform: translateY(100%);
+  transform: translateX(100%);
+  width: 100%;
+  height: 100%;
 }
 
 .imagen:hover .hijo {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .menu {
@@ -143,3 +145,78 @@ body {
   min-height: auto !important;
 }
 
+
+/*Slider productos*/
+
+.navigation-wrapper {
+	position: relative;
+  }
+  
+  .arrow {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	fill: #F5867D;
+	cursor: pointer;
+  }
+  
+  .arrow--left {
+	left: 5px;
+  }
+  
+  .arrow--right {
+	left: auto;
+	right: 5px;
+  }
+  
+  .arrow--disabled {
+	fill: rgba(255, 255, 255, 0.5);
+  }
+
+  /*Slider productos*/
+
+
+
+  .carta-box {
+  /* margin: 10px; */
+  width: 250px;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+  /* overflow: hidden; */
+  justify-content: center;
+  
+}
+
+.carta-box:hover .carta {
+    transform: rotateY(180deg);
+}
+
+.carta {
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+}
+
+.cara {
+  position: absolute;
+  backface-visibility: hidden;
+  
+ 
+}
+
+.cara.detras {
+  transform: rotateY(180deg); 
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  background:rgba(250, 203, 198);
+  width: 258px;
+  height: 383px;
+  border-radius: 10px;
+
+}

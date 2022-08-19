@@ -8,16 +8,16 @@ const CardIdentidades = ({ identidad }) => {
 				<Image
 					src={imagen}
 					alt={nombre}
-					width={460}
-					height={200}
+					width={450}
+					height={215}
 					layout="responsive"
 				/>
 			</div>
-			<div className="absolute text-black bottom-0 bg-white bg-opacity-90 hijo px-3 py-3 text-sm space-y-3">
-				<h2 className="text-black text-xl text-center md:text-2xl italic font-bold">
+			<div className="absolute text-black bottom-0 bg-white bg-opacity-90 hijo px-3 py-3 text-sm space-y-3 lg:pt-24">
+				<h2 className="text-black text-xl md:text-2xl italic font-bold">
 					{nombre}
 				</h2>
-				<p className="text-md md:text-lg text-center lg:px-32">{descripcion}</p>
+				<p className="text-md md:text-lg">{descripcion}</p>
 			</div>
 		</div>
 	);

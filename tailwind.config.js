@@ -15,6 +15,8 @@ module.exports = {
 				rosado: "#FACBC6",
 				rosado2: "#F5867D",
 				progress: "rgba(155, 155, 155, 1)",
+				rosado3: "rgba(250, 203, 198)",
+				rosado4: "#FDECEC",
 			},
 			fontFamily: {
 				lato: ["Lato"],
