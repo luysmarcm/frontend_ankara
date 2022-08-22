@@ -1,5 +1,5 @@
 
-import { gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
 import {
 	Layout,
@@ -8,113 +8,128 @@ import {
 	Breadcrumb,
 	BlogPost,
 } from "components/index";
+import { Children } from "react/cjs/react.production.min";
 
-const Post = (props) => {
-  const { blog } = props;
 
-  return (
-    <Layout>
-      <SeoComponent
-        title="Ankara"
-        description="Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal"
-        image="/imagen/anka.png"
-      />
-      <section>
-        <HeadingPage titulo={`${blog.attributes.titulo}`} />
-        <div className="flex flex-col-2 place-content-between px-6 lg:px-16 bg-white shadow-lg p-5">
-          <Breadcrumb />
-        </div>
-        <BlogPost post={blog.attributes} />
-      </section>
-    </Layout>
-  );
+const Post = ({ params, post, categorias }) => {
+
+	const blog = post;
+	return (
+		<Layout>
+			<SeoComponent
+				title={`Ankara Venezuela | ${blog.titulo}`}
+				description={`${blog.descripcion_corta}`}
+				image={`${blog.imagen_principal.url}`}
+			/>
+			<section>
+				<HeadingPage titulo={`${blog.titulo}`} />
+				<div className="flex flex-col-2 place-content-between px-6 lg:px-16 bg-white shadow-lg p-5">
+					<Breadcrumb />
+				</div>
+				<BlogPost post={blog} categorias={categorias} />
+			</section>
+		</Layout>
+	);
 };
 
 export default Post;
 
 export async function getStaticProps({ params }) {
-  const { data, error } = await client.query({
-    query: gql`
-      query getPost ($filters: BlogFiltersInput) {
-        blog: blogs(filters: $filters) {
-          data {
-            attributes {
-              titulo
-              slug
-              imagen_principal {
-                data {
-                  attributes {
-                    url
-                    name
-                  }
-                }
-              }
-              categorias_blog {
-                data {
-                  attributes {
-                    nombre
-                  }
-                }
-              }
-              descripcion_corta
-              descripcion_larga
-              fecha
-            }
-          }
-        }
-        categoriasBlogs {
-          data {
-            attributes {
-              nombre
-              slug
-            }
-          }
-        }
-      }
-    `,
-    variables: {
-      filters: { slug: { eq: params.post } },
-    },
-  });
-  
-  return {
-    props: {
-      params,
-      ...data,
-      blog: data.blog.data[0],
-    },
-    revalidate: 86400, 
-  };
+	const { data, error } = await client.query({
+		query: gql`
+			query getTiendas($slug: String) {
+				app {
+					imagen_logo {
+						url
+						width
+						height
+					}
+					link_apple
+					link_android
+				}
+				empresa {
+					Direccion
+					Correo
+					Telefono
+					Logo_header {
+						url
+						formats
+						width
+						height
+					}
+					Logo_footer {
+						url
+						formats
+						width
+						height
+					}
+				}
+				categorias: categoriasBlogs {
+					_id
+					slug
+					nombre
+					imagen {
+						url
+					}
+				}
+				post: blogs(where: { slug: $slug }, limit: 1) {
+					_id
+					published_at
+					imagen_principal {
+						url
+					}
+					titulo
+					slug
+					categorias_blog {
+						nombre
+						slug
+					}
+					descripcion_corta
+					descripcion_larga
+				}
+			}
+		`,
+		variables: {
+			slug: params.post,
+		},
+	});
+	if (!data || error) {
+		return {
+			redirect: {
+				destination: "/500",
+				permanent: false,
+			},
+		};
+	}
+	return {
+		props: {
+			params,
+			...data,
+			post: data.post[0],
+		},
+		revalidate: 86400,
+	};
 }
 
 export async function getStaticPaths() {
-  const { data } = await client.query({
-    query: gql`
-      query getPost {
-        blogs {
-          data {
-            attributes {
-              slug
-              categorias_blog {
-                data {
-                  attributes {
-                    slug
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-  });
+	const { data } = await client.query({
+		query: gql`
+			query getTiendas {
+				posts: blogs {
+					slug
+					categorias_blog {
+						slug
+					}
+				}
+			}
+		`,
+	});
+	const paths = data.posts.map((post) => ({
+		params: { categoria: post.categorias_blog.slug, post: post.slug },
+	}));
 
-  const paths = data.blogs.data.map((post) => ({
-    params: {
-      categoria: post.attributes.categorias_blog.data.attributes.slug,
-      post: post.attributes.slug,
-    },
-  }));
-  
-  return { paths, fallback: false };
+	return {
+		paths,
+		fallback: false,
+	};
 }

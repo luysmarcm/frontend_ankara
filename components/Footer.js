@@ -10,8 +10,8 @@ const links = [
 		path: "/nosotros",
 	},
 	{
-		title: "Tiendas",
-		path: "/tiendas",
+		title: "Puntos Ankara",
+		path: "/puntos-ankara",
 	},
 	{
 		title: "Blog",

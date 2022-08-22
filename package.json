@@ -16,13 +16,17 @@
     "graphql": "^16.3.0",
     "keen-slider": "^6.6.3",
     "next": "latest",
+    "next-mdx-remote": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-ig-feed": "^1.0.4"
+    "react-ig-feed": "^1.0.4",
+    "react-markdown": "^7.1.2",
+    "remark-gfm": "^3.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }

@@ -18,7 +18,7 @@ const CardMisionVision = ({info}) => {
 			</div>
 			<Image
 				alt={titulo}
-				src={imagen}
+				src="/imagen/negro.png"
 				className="z-0 object-cover"
 				layout="responsive"
 				priority

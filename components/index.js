@@ -4,17 +4,9 @@ import Banner from "/components/Banner";
 import HeadingPage from "components/HeadingPage";
 import Pagination from "components/Pagination/Pagination";
 import SearchMobile from "components/SearchMobile";
-import Nosotros from "/components/Nosotros";
-import Identidades from "/components/Identidades";
-import NuestrasMarcas from "/components/NuestrasMarcas";
-import NuestrosClientes from "/components/NuestrosClientes";
-import Ankara from "/components/Ankara/Ankara.js";
-import VideoBanner from "components/VideoBanner";
 
 //Nosotros
-import NosotrosVideoBanner from "components/NosotrosVideoBanner";
-import NosotrosCarrusel from "components/NosotrosCarrusel";
-import Valores from "components/Valores";
+
 
 // Blog
 import Breadcrumb from "components/Breadcrumb";
@@ -39,12 +31,6 @@ export {
 	Layout,
 	SeoComponent,
     Banner,
-    Nosotros,
-    Identidades,
-    NuestrasMarcas,
-    NuestrosClientes,
-    Ankara,
-    VideoBanner, 
 	HeadingPage,
 	Breadcrumb,
 	Pagination,
@@ -63,7 +49,4 @@ export {
 	ListEstado,
 	DropDownEstadosMobile,
 	InfoTienda,
-	NosotrosVideoBanner,
-	NosotrosCarrusel,
-	Valores,
 };

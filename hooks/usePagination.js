@@ -8,7 +8,7 @@ const usePagination = (pathname) => {
 	const [page, setPage] = useState(1);
 	const [paginas, setPaginas] = useState(1);
 	const [start, setStart] = useState(1);
-	const [limit, setlimit] = useState(6)
+	const [limit, setlimit] = useState(9)
 
 	useEffect(() => {
 		setStart((page - 1) * limit);

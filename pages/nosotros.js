@@ -1,10 +1,7 @@
-import {
-	Layout,
-	SeoComponent,
-	NosotrosVideoBanner,
-	NosotrosCarrusel,
-	Valores,
-} from "components/index";
+import Valores from "components/Nosotros/Valores";
+import { Layout, SeoComponent } from "components";
+import NosotrosCarrusel from "components/Nosotros/NosotrosCarrusel";
+import BannerNosotros from "components/Nosotros/BannerNosotros";
 
 const valores = [
 	{
@@ -49,11 +46,12 @@ const nosotros = () => {
 	return (
 		<Layout>
 			<SeoComponent
-				title="Ankara | Nosotros"
+				title="Ankara Venezuela | Nosotros"
 				description="Nosotros"
 				image="/imagen/anka.png"
 			/>
 			<section>
+				<BannerNosotros/>
 				<NosotrosCarrusel/>
 				<Valores valores={valores} />
 			</section>

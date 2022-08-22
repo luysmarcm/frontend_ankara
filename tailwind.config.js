@@ -25,7 +25,7 @@ module.exports = {
 				pshoot: ["Photoshoot"],
 			},
 			backgroundImage: (theme) => ({
-				heading: "url('/imagen/heading.png')",
+				heading: "url('/imagen/heading-new.png')",
 				fondo: "url('/imagen/fondo.png')",
 			}),
 			maxWidth: {
@@ -48,6 +48,9 @@ module.exports = {
 			},
 		},
 	},
+	plugins: [
+		require("@tailwindcss/typography"),
+	],
 	variants: {
 		extend: {},
 	},

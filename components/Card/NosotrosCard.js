@@ -6,8 +6,8 @@ const NosotrosCard = ({ info }) => {
 	 const { titulo, imagen, description } = info;
 		return (
 			<div className="carta-box mx-auto w-full h-full">
-				<div class="carta">
-					<div class="cara">
+				<div className="carta">
+					<div className="cara">
 						<div className="relative">
 							<Image
 								src={imagen}
