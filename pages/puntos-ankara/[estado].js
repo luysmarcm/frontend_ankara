@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import ErrorPage from "next/error";
 import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
 import usePagination from "hooks/usePagination";
-import ErrorPage from "next/error";
 import {
 	Layout,
 	SeoComponent,
@@ -17,53 +17,6 @@ import {
 	SearchMobile,
 	Breadcrumb,
 } from "components/index";
-
-// const getTiendasEstados = gql`
-//   query getTiendasEstados(
-//     $filters: TiendaFiltersInput
-//     $limit: Int
-//     $start: Int
-//   ) {
-//     tiendas(filters: $filters, pagination: { start: $start, limit: $limit }) {
-//       meta {
-//         pagination {
-//           total
-//           page
-//           pageSize
-//           pageCount
-//         }
-//       }
-//       data {
-//         attributes {
-//           nombre
-//           ciudad
-//           coordenadas
-//           direccion
-//           telefono
-//           slug
-//           imagen {
-//             data {
-//               attributes {
-//                 url
-//                 name
-//               }
-//             }
-//           }
-//           estado {
-//             data {
-//               id
-//               attributes {
-//                 nombre
-//                 slug
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
 
 const getTiendasEstados = gql`
 	query getTiendasEstados(
@@ -93,53 +46,11 @@ const getTiendasEstados = gql`
 `;
 
 const Tiendas = (props) => {
-  // const { estados, estado, params } = props;
-  // const router = useRouter();
-  // const [filters, setFilters] = useState("");
-  // const pathname = `/tiendas/${params.estado}`;
-
-  // const {
-  //   start,
-  //   limit,
-  //   page,
-  //   paginas,
-  //   setPaginas,
-  //   setStart,
-  //   setPage,
-  //   nextPage,
-  //   prevPage,
-  // } = usePagination(pathname);
-
-  // useEffect(() => {
-  //   setPage(router.query.page ? parseInt(router.query.page) : 1);
-  // }, [router.query]);
-
-  // const { data, loading, error } = useQuery(getTiendasEstados, {
-  //   variables: {
-  //     filters: {
-  //       estado: { slug: { eq: params.estado } },
-  //       or: [
-  //         { nombre: { containsi: filters } },
-  //         { estado: { nombre: { containsi: filters } } },
-  //         { ciudad: { containsi: filters } },
-  //         { direccion: { containsi: filters } },
-  //       ],
-  //     },
-  //   },
-  //   onCompleted: (data) => {
-  //     setPaginas(
-  //       Math.ceil(parseInt(data.tiendas.meta.pagination.total) / limit)
-  //     );
-  //   },
-  // });
-
   if (!props.params) return <ErrorPage statusCode={404} />;
 	const { estados, estado, empresa, app, params } = props;
-
 	const router = useRouter();
 	const [search, setSearch] = useState("");
 	const pathname = `/puntos-canguro/${params.estado}`;
-
 	const {
 		start,
 		limit,
@@ -179,13 +90,12 @@ const Tiendas = (props) => {
   return (
 		<Layout>
 			<SeoComponent
-				title={`Ankara | Tiendas en ${estado.nombre}`}
+				title={`Ankara Venezuela | Tiendas en ${estado.nombre}`}
 				description={`Tiendas en el estado ${estado.nombre}`}
 				image="/imagen/anka.png"
 			/>
 			<section>
 				<HeadingTienda titulo={estado.nombre} />
-
 				<div className="flex flex-col-2 place-content-between  px-6 lg:px-16 bg-white shadow-lg p-5">
 					<Breadcrumb />
 					<div className="flex flex-row space-x-10 h">
@@ -235,7 +145,6 @@ const Tiendas = (props) => {
 };
 
 export default Tiendas;
-
 
 export async function getStaticProps({ params }) {
 	const { data, error } = await client.query({

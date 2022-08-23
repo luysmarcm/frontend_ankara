@@ -8,12 +8,10 @@ import VideoBanner from "components/Home/VideoBanner";
 import Ankara from "components/Home/Ankara/Ankara";
 
 export default function Home() {
-
-
     return (
 			<Layout>
 				<SeoComponent
-					title="Ankara"
+					title="Ankara Venezuela"
 					description="Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal"
 					image="/imagen/anka.png"
 				/>

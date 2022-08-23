@@ -1,4 +1,3 @@
-import { useState } from "react";
 import NosotrosCard from "components/Card/NosotrosCard";
 
 const nosotros = [
@@ -54,13 +53,6 @@ const Nosotros = () => {
 					</div>
 				</div>
 			</div>
-
-			{/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-around  drop-shadow-xl py-10">
-					{nosotros.map((item) => (
-						<CardNosotros key={item.id} info={item} />
-					))}
-
-				</div> */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-40 lg:gap-10 justify-between drop-shadow-xl pb-10 lg:pb-0 pt-24">
 				{nosotros.map((item) => (
 					<NosotrosCard key={item.id} info={item} />

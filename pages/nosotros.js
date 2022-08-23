@@ -7,37 +7,37 @@ const valores = [
 	{
 		id: 1,
 		titulo: "Evolucion",
-		imagen: "/imagen/1.png",
+		imagen: "/imagen/evolucion.png",
 		description: "",
 	},
 	{
 		id: 2,
 		titulo: "Familiaridad",
-		imagen: "/imagen/1.png",
+		imagen: "/imagen/familiaridad.png",
 		description: "",
 	},
 	{
 		id: 3,
 		titulo: "Espiritualidad",
-		imagen: "/imagen/1.png",
+		imagen: "/imagen/espiritu.png",
 		description: "",
 	},
 	{
 		id: 4,
 		titulo: "Compromiso",
-		imagen: "/imagen/1.png",
+		imagen: "/imagen/compromiso.png",
 		description: "",
 	},
 	{
 		id: 5,
 		titulo: "Trabajo en equipo ",
-		imagen: "/imagen/1.png",
+		imagen: "/imagen/trabajo-en-equipo.png",
 		description: "",
 	},
 	{
 		id: 6,
 		titulo: "Oportunidad",
-		imagen: "/imagen/1.png",
+		imagen: "/imagen/oportunidad.png",
 		description: "",
 	},
 ];

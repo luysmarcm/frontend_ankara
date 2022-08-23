@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
 import ErrorPage from "next/error";
@@ -15,7 +13,6 @@ import {
 	SearchMobile,
 	DropDownBlog,
 } from "components/index";
-import usePagination from "hooks/usePagination";
 
 const getPostCategoria = gql`
 	query getBlogCategorias($slug: String, $search: String) {
@@ -49,21 +46,18 @@ const getPostCategoria = gql`
 const Posts = (props) => {
 
   if (props.statusCode) return <ErrorPage statusCode={500} />;
-
   const {empresa, app, categoria, categorias, params } = props
   const [search, setSearch] = useState("");
-
   const { data, loading, error } = useQuery(getPostCategoria, {
 		variables: {
 			slug: params.categoria,
 			search: search
 		},
 	});
-
 	return (
 		<Layout>
 			<SeoComponent
-				title={`Ankara | Blog | Categoria ${params.categoria}`}
+				title={`Ankara Venezuela | Blog | Categoria ${params.categoria}`}
 				description={`Post en la categoria ${params.categoria}`}
 				image="/imagen/anka.png"
 			/>

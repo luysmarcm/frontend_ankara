@@ -4,22 +4,15 @@ import "keen-slider/keen-slider.min.css";
 import CardMisionVision from "../Card/CardMisionVision";
 
 const nosotros = [
-	// {
-	// 	id: 1,
-	// 	titulo: "Nosotros",
-	// 	descripcion:
-	// 		"Desde hace 10 años despertamos tus sentidos con productos y accesorios de belleza para hombres y mujeres. Con presencia en más de 20 estados venezolanos nos hemos consolidado en el mercado nacional para brindarle bienestar y calidad a clientes mayoristas y al detal.",
-	// 	imagen: "/imagen/banner7.png",
-	// },
 	{
-		id: 2,
+		id: 1,
 		titulo: "Misión",
 		descripcion:
 			"Ofrecer productos cosméticos de calidad para el bienestar, higiene y belleza integral de nuestros clientes. Así como también, guiarlos paso a paso a conocer el arte del maquillaje ofreciendo experiencias llenas de renovación, transformación y aprendizaje.",
 		imagen: "/imagen/banner7.png",
 	},
 	{
-		id: 3,
+		id: 2,
 		titulo: "Visión",
 		descripcion:
 			"Ser referentes a nivel nacional en la distribución de productos cosméticos y de belleza, creando cambios que permitan el avance constante de todos nuestros clientes. Apostamos por desarrollar lazos de amistad, confianza y fidelidad que inspiren a cualquier persona o marca a sentirse seguros al momento de adquirir nuestros productos, prestando siempre una atención distintiva y de calidad.",
@@ -74,7 +67,7 @@ const NosotrosCarrusel = () => {
 	);
 
   return (
-		<section id="NosotrosCarrusel" className="bg-black">
+		<section id="NosotrosCarrusel" className="">
 			<div ref={sliderRef} className="keen-slider">
 				{nosotros.map((item) => (
 					<div className="keen-slider__slide" key={item.id}>

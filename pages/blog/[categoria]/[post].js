@@ -1,5 +1,5 @@
 
-import { gql, useQuery } from "@apollo/client";
+import { gql} from "@apollo/client";
 import client from "config/apollo-client";
 import {
 	Layout,
@@ -8,11 +8,8 @@ import {
 	Breadcrumb,
 	BlogPost,
 } from "components/index";
-import { Children } from "react/cjs/react.production.min";
 
-
-const Post = ({ params, post, categorias }) => {
-
+const Post = ({ post, categorias }) => {
 	const blog = post;
 	return (
 		<Layout>

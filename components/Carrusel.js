@@ -38,7 +38,6 @@ const Carrusel = ({ imagenes }) => {
 			},
 		]
 	);
-
 	return (
 		<div ref={sliderRef} className="keen-slider">
 			{imagenes.map((imagen) => (

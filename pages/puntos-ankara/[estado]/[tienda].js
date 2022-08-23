@@ -7,17 +7,14 @@ import {
 	HeadingPage,
 	InfoTienda,
 } from "components/index";
-import ErrorPage from "next/error";
 
 const Tienda = (props) => {
-
-//   if (props.statusCode) return <ErrorPage statusCode={500} />;
   const { tienda } = props;
   
   return (
     <Layout>
       <SeoComponent
-        title={`Ankara | ${tienda.tienda}`}
+        title={`Ankara Venezuela | ${tienda.tienda}`}
         description={`${tienda.tienda}`}
         image="/imagen/anka.png"
       />

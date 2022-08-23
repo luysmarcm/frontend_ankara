@@ -1,8 +1,5 @@
 import Image from "next/image";
-
-
 const NosotrosCard = ({ info }) => {
-    	
 	 const { titulo, imagen, description } = info;
 		return (
 			<div className="carta-box mx-auto w-full h-full">
@@ -14,7 +11,6 @@ const NosotrosCard = ({ info }) => {
 								alt={titulo}
 								width={318}
 								height={483}
-								// layout="responsive"
 								className="rounded-xl"
 								objectFit="cover"
 							/>

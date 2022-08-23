@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import CardClientes from "./CardClientes";
 import CardValores from "./CardValores";
 
 const CarruselValores = ({valores}) => {
         const [currentSlide, setCurrentSlide] = useState(0);
-				const [loaded, setLoaded] = useState(false);
-				const [sliderRef, instanceRef] = useKeenSlider({
+		const [loaded, setLoaded] = useState(false);
+		const [sliderRef, instanceRef] = useKeenSlider({
 					initial: 0,
 					slideChanged(slider) {
 						setCurrentSlide(slider.track.details.rel);
@@ -82,7 +81,6 @@ export default CarruselValores;
 
 
 function Arrow(props) {
-	// const disabeld = props.disabled ? " arrow--disabled" : "";
 	return (
 		<svg
 			onClick={props.onClick}

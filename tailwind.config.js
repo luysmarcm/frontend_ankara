@@ -20,6 +20,7 @@ module.exports = {
 				progress: "rgba(155, 155, 155, 1)",
 				rosado3: "rgba(250, 203, 198)",
 				rosado4: "#FDECEC",
+				rosado5: "#f9bab4",
 			},
 			fontFamily: {
 				lato: ["Lato"],
@@ -28,7 +29,7 @@ module.exports = {
 				pshoot: ["Photoshoot"],
 			},
 			backgroundImage: (theme) => ({
-				heading: "url('/imagen/heading-new.png')",
+				heading: "url('/imagen/new-heading.png')",
 				fondo: "url('/imagen/fondo.png')",
 			}),
 			maxWidth: {

@@ -27,7 +27,6 @@ const Search = ({ search, setSearch }) => {
         id="buscar"
         className="w-full h-full p-2 text-base font-normal text-black bg-rosado bg-clip-padding bg-no-repeat border-solid focus:outline-none rounded-l-md placeholder-black m-0 hover:bg-rosado2"
       />
-
       <button
         onClick={clickHandleChange}
         className="bg-rosado2 rounded-r-md p-2">

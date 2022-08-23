@@ -59,7 +59,6 @@ const Marcas = () => {
 							alt="Amelow"
 							width={440}
 							height={110}
-							// layout="responsive"
 							className="block object-center w-2/5 rounded-xl"
 						/>
 					</div>
@@ -72,11 +71,6 @@ const Marcas = () => {
 					y pedicura llena de glamour.
 				</p>
 			</div>
-			{/* <div className="w-full grid grid-cols-1 gap-5 even:grid-flow-col-dense rounded-xl">
-					{marcas.map((marca) => (
-						<CardMarcas key={marca.id} marca={marca} />
-					))}
-				</div> */}
 		</section>
 	);
 };

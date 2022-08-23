@@ -1,6 +1,5 @@
 import CarruselClientes from "components/Card/CarruselClientes";
 
-
 const clientes = [
 	{
 		id: 1,
@@ -53,10 +52,6 @@ const Aliados= () => {
 	return (
 		<section className="bg-rosado4 place-items-center px-3 py-20 md:py-32  md:px-16 lg:py-36 lg:px-20 ">
 			<div className="pb-20 space-y-5">
-				{/* <h2 className="text-black italic text-center text-3xl md:text-4xl lg:text-5xl font-bold">
-					¿Qué dicen nuestros aliados?
-				</h2> */}
-
 				<div className="flex space-x-4 justify-center ">
 					<div className="flex flex-col justify-center justify-items-center">
 						<div className="relative z-20 text-3xl lg:text-5xl text-center font-pshoot text-opacity-80 text-gray-300 ">

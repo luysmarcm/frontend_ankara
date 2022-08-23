@@ -41,7 +41,6 @@ const NavBar = () => {
 							key={item.title}
 							href={item.path}
 							className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
-							// aria-current={item.current ? "page" : undefined}
 						>
 							{item.title}
 						</a>
@@ -73,7 +72,6 @@ const NavBar = () => {
 								<a
 									href={item.path}
 									className="px-3 py-2 rounded-md text-md lg:text-lg text-white hover:text-primary"
-									// aria-current={item.current ? "page" : undefined}
 								>
 									{item.title}
 								</a>

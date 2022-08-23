@@ -3,7 +3,6 @@ import Image from 'next/image';
 const CardMisionVision = ({info}) => {
 
   const {titulo, descripcion, imagen } = info;
-  
   return (
 		<div className="object-cover h-96 lg:h-full lg:w-full">
 			<div className="absolute h-full w-full p-10 lg:p-20">
@@ -18,7 +17,7 @@ const CardMisionVision = ({info}) => {
 			</div>
 			<Image
 				alt={titulo}
-				src="/imagen/negro.png"
+				src="/imagen/fondo.png"
 				className="z-0 object-cover"
 				layout="responsive"
 				priority

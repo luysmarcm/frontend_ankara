@@ -1,29 +1,10 @@
-import { gql, useQuery } from "@apollo/client";
-import Link from "next/link";
 import { useState } from 'react';
-
-// const getEstados = gql`
-//   query getEstados {
-//     estados(sort: "nombre:asc") {
-//       data {
-//         attributes {
-//           nombre
-//           slug
-//         }
-//       }
-//     }
-//   }
-// `;
+import Link from "next/link";
 
 const DropDownEstadosMobile = ({estado, estados}) => {
-  // const { data, loading } = useQuery(getEstados);
   const [isOpen, setIsOpen] = useState(false);
-
   const toggling = () => setIsOpen(!isOpen);
-  // if (loading) return null;
-  
   const spaces = (string) => string.replace(/-/g, " ")
-
   return (
     <div className="md:hidden col-span-2 z-30">
       <div className="group relative w-full">

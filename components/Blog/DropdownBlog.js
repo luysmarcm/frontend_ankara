@@ -1,13 +1,9 @@
 import { useState } from "react";
 import Link from "next/link";
-import { gql, useQuery } from "@apollo/client";
 
 const DropDownBlog = ({ categorias }) => {
- 
   const [isOpen, setIsOpen] = useState(false);
-
   const toggling = () => setIsOpen(!isOpen);
-
   return (
     <div className="md:hidden col-span-2 z-30">
       <div className="group relative w-full">

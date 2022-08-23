@@ -1,4 +1,3 @@
-import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
@@ -8,14 +7,11 @@ const containerStyle = {
 
 const MapTienda = ({ coordenadas }) => {
   const c = coordenadas.split(" ");
-
   const center = {
     lat: parseFloat(c[0]),
     lng: parseFloat(c[1]),
   };
-
   return (
-
       <LoadScript googleMapsApiKey="AIzaSyA9BSI8Xb8o-_UE4IuMOhI9Z3TrA-qBKHA">
         <GoogleMap
           id="Ankara Venezuela"

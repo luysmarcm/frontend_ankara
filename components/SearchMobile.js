@@ -2,11 +2,9 @@ import { useState } from "react";
 
 const SearchMobile = ({ search, setSearch }) => {
   const [value, setValue] = useState("");
-
   const handleChange = (e) => {
 		setSearch(e.target.value);
 	};
-
   const keyHandleChange = (e) => {
     if (e.keyCode == 13) setSearch(value);
   };
@@ -16,7 +14,6 @@ const SearchMobile = ({ search, setSearch }) => {
   const clickHandleChange = (e) => {
     setSearch(value);
   };
-
   return (
     <div onSubmit={onSubmit} className="col-span-2 flex md:hidden">
       <input

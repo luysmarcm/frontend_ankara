@@ -6,7 +6,6 @@ const CardTiendas = ({ tienda }) => {
   return (
 		<div className="bg-white rounded-xl overflow-hidden drop-shadow-xl flex flex-col flex-1 h-full">
 			<div>
-
 			{tienda.galeria === null ? (
 					<Image
 						src="/imagen/fondo.jpeg"
@@ -24,8 +23,6 @@ const CardTiendas = ({ tienda }) => {
 						<Image
 							src={loader(tienda.galeria.formats.large.url)}
 							layout="responsive"
-							// width={tienda.galeria[0].width}
-							// height={tienda.galeria[0].height}
 							alt={tienda.tienda}
 							width={750}
 							height={500}
@@ -49,11 +46,6 @@ const CardTiendas = ({ tienda }) => {
 					<span className="w-full text-center">Visitar</span>
 				</button>
 			</Link>
-			{/* <Link href={`/puntos-ankara/${tienda.estado.slug}/${tienda.slug}`} passHref>
-				<button className="mx-5 mb-5 flex flex-start w-1/2 rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black ">
-					<span className="w-full text-center">Visitar</span>
-				</button>
-			</Link> */}
 		</div>
 	);
 };

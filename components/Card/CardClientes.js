@@ -1,15 +1,11 @@
 import Image from "next/image";
-import { useState } from "react";
-
 
 const CardClientes = ({cliente}) => {
     const {nombre, comentario, imagen, profesion} = cliente;
-	const [showModal, setshowModal] = useState(false);
-
     return (
 			<div className="bg-rosado3 content bg-opacity-80 rounded-xl shadow-lg overflow-hidden md:max-w-2xl relative imagen">
 				<div className="p-5 flex md:flex justify-center relative transition duration-500 transform hover:translate-y hover:scale-110">
-					<button type="button" onClick={() => setshowModal(true)}>
+					
 						<Image
 							src={imagen}
 							alt={nombre}
@@ -17,7 +13,7 @@ const CardClientes = ({cliente}) => {
 							height={250}
 							className="block mx-auto h-24 rounded-full sm:mx-0 sm:flex-shrink-0 justify-center"
 						/>
-					</button>
+					
 				</div>
 
 				<div className="p-4 lg:p-8">

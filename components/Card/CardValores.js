@@ -1,20 +1,17 @@
 import Image from "next/image";
 
-
 const CardValores = ({ info }) => {
 	const { titulo, imagen, descripcion} = info;
 	return (
-		<>
 			<div className="carta-box mx-auto w-full h-full pb-36">
-				<div class="carta">
-					<div class="cara">
+				<div className="carta">
+					<div className="cara">
 						<div className="relative">
 							<Image
 								src={imagen}
 								alt={titulo}
 								width={318}
 								height={483}
-								// layout="responsive"
 								className="rounded-xl"
 								objectFit="cover"
 							/>
@@ -31,7 +28,6 @@ const CardValores = ({ info }) => {
 					</div>
 				</div>
 			</div>
-		</>
 	);
 };
 

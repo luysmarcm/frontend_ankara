@@ -7,7 +7,7 @@ import {
 	Layout,
 	SeoComponent,
 	Search,
-  Pagination,
+  	Pagination,
 	HeadingTienda,
 	LoadingStores,
 	ListEstado,
@@ -51,11 +51,9 @@ const getTiendas = gql`
 `;
 
 const Tiendas = (props) => {
-
-    const { estados, empresa, app } = props;
+    const { estados} = props;
 	const router = useRouter();
 	const [search, setSearch] = useState("");
-
 	const {
 		start,
 		limit,
@@ -91,7 +89,7 @@ const Tiendas = (props) => {
   return (
 		<Layout>
 			<SeoComponent
-				title="Ankara | Puntos Ankara"
+				title="Ankara Venezuela | Puntos Ankara"
 				description="Directorio de tiendas"
 				image="/imagen/anka.png"
 			/>

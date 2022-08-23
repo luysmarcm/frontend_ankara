@@ -3,9 +3,6 @@ import { loader } from "utils/loader";
 import MapTienda from "./MapTienda";
 
 const InfoTienda = ({ tienda }) => {
-//   const { nombre, ciudad, telefono, direccion, imagen, horario, coordenadas } =
-//     tienda;
-
   //WhatsApp Link
   const formatNumber = (number) => {
     const format = number.slice(1);
@@ -42,8 +39,6 @@ const InfoTienda = ({ tienda }) => {
 									<Image
 										src={loader(tienda.galeria.formats.large.url)}
 										layout="responsive"
-										// width={tienda.galeria.width}
-										// height={tienda.galeria.height}
 										alt={tienda.tienda}
 										width={750}
 										height={500}

@@ -1,6 +1,6 @@
-import { gql, useQuery } from "@apollo/client";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
+import { gql, useQuery } from "@apollo/client";
 
 const getEstados = gql`
   query getEstados {

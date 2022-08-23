@@ -15,7 +15,6 @@ const CardLastPost = ({post}) => {
 	};
 
 	const tiempo = useDateTime(published_at);
-
 	return (
 		<div className="h-24 block">
 			<Link href={`/blog/${categorias_blog.slug}/${slug}`}>
@@ -28,11 +27,9 @@ const CardLastPost = ({post}) => {
 						height={73}
 						unoptimized
 					/>
-					
 						<div className="text-black self-end overflow-hidden">
 							<p className="text-md font-bold">{titulo}</p>
 							<p className="text-sm font-light">{tiempo}</p>
-						
 					</div>
 				</a>
 			</Link>

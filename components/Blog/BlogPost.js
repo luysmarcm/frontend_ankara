@@ -1,10 +1,8 @@
 import Image from "next/image";
-
-import { loader } from "utils/loader";
-import { CategoryList, UltimosPost } from "components/index";
-import { url } from "config/url";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
+import { loader } from "utils/loader";
+import { CategoryList, UltimosPost } from "components/index";
 
 
 

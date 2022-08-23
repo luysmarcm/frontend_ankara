@@ -89,9 +89,6 @@ const Footer = () => {
 									<a
 										href={item.path}
 										className="px-3 rounded-md text-md lg:text-lg text-white hover:text-primary"
-										// aria-current={
-										//     item.current ? "page" : undefined
-										// }
 									>
 										{item.title}
 									</a>

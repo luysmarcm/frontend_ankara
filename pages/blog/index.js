@@ -56,9 +56,6 @@ const getPosts = gql`
 	}
 `;
 
-
-
-
 const Blogs = ({ empresa, app, categorias, statusCode }) => {
 	if (statusCode) return <Error statusCode={500} />;
 

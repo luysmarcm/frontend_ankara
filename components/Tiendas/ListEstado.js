@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const ListEstado = ({estados}) => {
-
   return (
 		<div className="bg-white bg-opacity-80 space-y-5 rounded-xl hidden md:block overflow-hidden drop-shadow-xl">
 			<h3 className="text-primary p-1 font-bold text-2xl text-center ">
