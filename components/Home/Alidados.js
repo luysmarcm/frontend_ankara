@@ -69,7 +69,7 @@ const Aliados= () => {
 					</div>
 				</div>
 			</div>
-			<div className="lg:pt-24">
+			<div className="pt-10 lg:pt-24">
 				<CarruselClientes clientes={clientes} />
 			</div>
 		</section>

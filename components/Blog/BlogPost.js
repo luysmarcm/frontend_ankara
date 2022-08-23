@@ -22,7 +22,7 @@ const BlogPost = ({ post, categorias }) => {
 						<p className="text-sm text-black font-bold text-left mb-2">
 							{tiempo}
 						</p>
-						<p className="text-black text-left text-5xl font-bold mb-4">
+						<p className="text-black text-left text-4xl lg:text-5xl font-bold mb-4">
 							{titulo}
 						</p>
 						<div>

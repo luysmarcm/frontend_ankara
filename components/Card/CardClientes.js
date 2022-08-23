@@ -25,7 +25,7 @@ const CardClientes = ({cliente}) => {
 						{profesion}
 					</p>
 				</div>
-				<div className="absolute text-black bottom-0 bg-rosado bg-opacity-90 hijo px-3 py-2 text-md sm:text-lg">
+				<div className="absolute text-black bottom-0 bg-rosado bg-opacity-90 hijo px-10 lg:px-3 py-28 lg:py-32 text-md sm:text-lg">
 					{comentario}
 				</div>
 			</div>

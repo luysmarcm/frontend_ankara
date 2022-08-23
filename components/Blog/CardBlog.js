@@ -22,44 +22,30 @@ const CardBlog = ({ post }) => {
   return (
 		<div className="grid grid-cols-1 md:grid-col-2 ">
 			<Link href={`/blog/${categorias_blog.slug}/${slug}`} passHref>
-				<div className="card">
-					<div className="card__image">
-						<Image
-							src={loader(imagen_principal.url)}
-							alt={titulo}
-							width={750}
-							height={500}
-							layout="responsive"
-							priority
-							objectFit="cover"
-							className="rounded-md"
-							unoptimized
-						/>
-						<div className="card__overlay card__overlay--blue">
-							<div className="card__overlay-content">
-								<ul className="">
-									<li>
-										<a className="text-white text-base" href="#0">
-											{tiempo}
-										</a>
-									</li>
-								</ul>
-
-								<a href="#0" className="text-white text-2xl font-bold">
-									{titulo}
-								</a>
-
-								<ul className="">
-									<li>
-										<a className="text-white text-base" href="#0">
-											{descripcion_corta}
-										</a>
-									</li>
-								</ul>
+				<a>
+					<div className="card rounded-xl">
+						<div className="card__image">
+							<Image
+								src={loader(imagen_principal.url)}
+								alt={titulo}
+								width={750}
+								height={500}
+								layout="responsive"
+								priority
+								objectFit="cover"
+								className="rounded-md"
+								unoptimized
+							/>
+							<div className="card__overlay card__overlay--blue">
+								<div className="card__overlay-content">
+									<p className="text-white text-base">{tiempo}</p>
+									<p className="text-white text-2xl font-bold">{titulo}</p>
+									<p className="text-white text-base">{descripcion_corta}</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			</Link>
 		</div>
 	);

@@ -9,14 +9,14 @@ const nosotros = [
 		titulo: "Misión",
 		descripcion:
 			"Ofrecer productos cosméticos de calidad para el bienestar, higiene y belleza integral de nuestros clientes. Así como también, guiarlos paso a paso a conocer el arte del maquillaje ofreciendo experiencias llenas de renovación, transformación y aprendizaje.",
-		imagen: "/imagen/banner7.png",
+		imagen: "/imagen/negro.png",
 	},
 	{
 		id: 2,
 		titulo: "Visión",
 		descripcion:
 			"Ser referentes a nivel nacional en la distribución de productos cosméticos y de belleza, creando cambios que permitan el avance constante de todos nuestros clientes. Apostamos por desarrollar lazos de amistad, confianza y fidelidad que inspiren a cualquier persona o marca a sentirse seguros al momento de adquirir nuestros productos, prestando siempre una atención distintiva y de calidad.",
-		imagen: "/imagen/banner7.png",
+		imagen: "/imagen/negro.png",
 	},
 ];
 const NosotrosCarrusel = () => {
