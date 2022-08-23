@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
 import ErrorPage from "next/error";
@@ -41,7 +42,6 @@ const getPostCategoria = gql`
 		}
 	}
 `;
-
 
 const Posts = (props) => {
 

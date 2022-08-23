@@ -9,7 +9,6 @@ import {
 	SeoComponent,
 	Search,
 	Pagination,
-	GridTiendas,
 	HeadingTienda,
 	LoadingStores,
 	ListEstado,
@@ -17,6 +16,7 @@ import {
 	SearchMobile,
 	Breadcrumb,
 } from "components/index";
+import GridTiendas from "components/Tiendas/GridTiendas";
 
 const getTiendasEstados = gql`
 	query getTiendasEstados(
