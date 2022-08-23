@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
 import usePagination from "hooks/usePagination";
-
+import ErrorPage from "next/error";
 import {
 	Layout,
 	SeoComponent,
@@ -237,7 +237,7 @@ const Tiendas = (props) => {
 export default Tiendas;
 
 
-export async function getStaticProps({ params, preview = null }) {
+export async function getStaticProps({ params }) {
 	const { data, error } = await client.query({
 		query: gql`
 			query getTiendasEstados($where: JSON) {
@@ -296,7 +296,6 @@ export async function getStaticProps({ params, preview = null }) {
 	return {
 		props: {
 			params,
-			preview,
 			...data,
 			estado: data.estado[0],
 		},
@@ -319,6 +318,6 @@ export async function getStaticPaths() {
 	}));
 	return {
 		paths,
-		fallback: true,
+		fallback: false,
 	};
 }

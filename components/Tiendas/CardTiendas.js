@@ -1,30 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { loader } from "utils/loader";
 
 const CardTiendas = ({ tienda }) => {
- 
-//   const { tienda, ciudad, direccion, galeria, slug, estado } = tienda; 
-
-	
-
   return (
 		<div className="bg-white rounded-xl overflow-hidden drop-shadow-xl flex flex-col flex-1 h-full">
 			<div>
-				{/* <Image
-          src={loader(imagen.data[0].url)}
-          alt={nombre}
-          width={750}
-          height={500}
-          layout="responsive"
-          priority
-          objectFit="cover"
-          className="object-center"
-          unoptimized
-        /> */}
 
-				{tienda.galeria === null ? (
+			{tienda.galeria === null ? (
 					<Image
 						src="/imagen/fondo.jpeg"
 						alt={tienda.tienda}
@@ -66,6 +49,11 @@ const CardTiendas = ({ tienda }) => {
 					<span className="w-full text-center">Visitar</span>
 				</button>
 			</Link>
+			{/* <Link href={`/puntos-ankara/${tienda.estado.slug}/${tienda.slug}`} passHref>
+				<button className="mx-5 mb-5 flex flex-start w-1/2 rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black ">
+					<span className="w-full text-center">Visitar</span>
+				</button>
+			</Link> */}
 		</div>
 	);
 };

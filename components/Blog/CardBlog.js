@@ -12,14 +12,12 @@ const CardBlog = ({ post }) => {
     slug,
   } = post;
 
-  console.log(imagen_principal);
-
-  const options = { year: "numeric", month: "long", day: "numeric" };
+    const options = { year: "numeric", month: "long", day: "numeric" };
 	const useDateTime = (time) => {
 		const date = new Date(time);
 		return date.toLocaleDateString("es-ES", options);
 	};
-
+	
   const tiempo = useDateTime(published_at);
   return (
 		<div className="grid grid-cols-1 md:grid-col-2 ">

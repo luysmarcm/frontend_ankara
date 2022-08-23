@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { gql, useQuery } from "@apollo/client";
 import client from "config/apollo-client";
+import ErrorPage from "next/error";
 import {
 	Layout,
 	SeoComponent,
@@ -45,9 +46,11 @@ const getPostCategoria = gql`
 `;
 
 
-const Posts = ({ empresa, app, categoria, categorias, params }) => {
+const Posts = (props) => {
 
+  if (props.statusCode) return <ErrorPage statusCode={500} />;
 
+  const {empresa, app, categoria, categorias, params } = props
   const [search, setSearch] = useState("");
 
   const { data, loading, error } = useQuery(getPostCategoria, {
@@ -213,5 +216,5 @@ export async function getStaticPaths() {
 		params: { categoria: categoria.slug },
 	}));
 
-	return { paths, fallback: true };
+	return { paths, fallback: false };
 }

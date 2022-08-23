@@ -8,7 +8,6 @@ import {
 	SeoComponent,
 	Search,
   Pagination,
-	GridTiendas,
 	HeadingTienda,
 	LoadingStores,
 	ListEstado,
@@ -16,6 +15,7 @@ import {
 	SearchMobile,
 	Breadcrumb,
 } from "components/index";
+import GridTiendas from "components/Tiendas/GridTiendas";
 
 
 const getTiendas = gql`
@@ -52,7 +52,7 @@ const getTiendas = gql`
 
 const Tiendas = (props) => {
 
-  const { estados, empresa, app } = props;
+    const { estados, empresa, app } = props;
 	const router = useRouter();
 	const [search, setSearch] = useState("");
 
@@ -194,7 +194,6 @@ export async function getStaticProps() {
 			},
 		};
 	}
-
 	return {
 		props: {
 			...data,

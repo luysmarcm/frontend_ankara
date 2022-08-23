@@ -7,14 +7,13 @@ import {
 	HeadingPage,
 	InfoTienda,
 } from "components/index";
+import ErrorPage from "next/error";
 
 const Tienda = (props) => {
 
-  if (props.statusCode) return <Error statusCode={500} />;
+//   if (props.statusCode) return <ErrorPage statusCode={500} />;
   const { tienda } = props;
-
   
-
   return (
     <Layout>
       <SeoComponent
@@ -109,7 +108,6 @@ export async function getStaticProps({ params }) {
 			slug: params.tienda,
 		},
 	});
-	// console.log(data, error)
 	if (!data || error) {
 		return {
 			redirect: {
@@ -118,7 +116,6 @@ export async function getStaticProps({ params }) {
 			},
 		};
 	}
-	console.log(data)
 	return {
 		props: {
 			params,
@@ -148,6 +145,6 @@ export async function getStaticPaths() {
 	
 	return {
 		paths,
-		fallback: true,
+		fallback: false,
 	};
 }

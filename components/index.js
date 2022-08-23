@@ -21,7 +21,6 @@ import UltimosPost from "components/Blog/UltimosPost";
 //Tienda
 import InfoTienda from "components/Tiendas/InfoTienda";
 import Search from "components/Search";
-import GridTiendas from "components/Tiendas/GridTiendas";
 import HeadingTienda from "components/HeadingTienda";
 import LoadingStores from "components/Tiendas/LoadingStores";
 import ListEstado from "components/Tiendas/ListEstado";
@@ -43,7 +42,6 @@ export {
 	CategoryList,
 	UltimosPost,
 	Search,
-	GridTiendas,
 	HeadingTienda,
 	LoadingStores,
 	ListEstado,
