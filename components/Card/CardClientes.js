@@ -13,11 +13,8 @@ const CardClientes = ({cliente}) => {
 							height={250}
 							className="block mx-auto h-24 rounded-full sm:mx-0 sm:flex-shrink-0 justify-center"
 						/>
-					
 				</div>
-
 				<div className="p-4 lg:p-8">
-					{/* <p className="mt-2 text-black text-center text-1xl">{comentario}</p> */}
 					<p className="mt-2 text-black text-center font-bold text-xl">
 						{nombre}
 					</p>
@@ -25,7 +22,7 @@ const CardClientes = ({cliente}) => {
 						{profesion}
 					</p>
 				</div>
-				<div className="absolute text-black bottom-0 bg-rosado bg-opacity-90 hijo px-10 lg:px-3 py-28 lg:py-32 text-md sm:text-lg">
+				<div className="absolute text-black bottom-0 bg-rosado bg-opacity-90 hijo px-10 lg:px-3 py-20 lg:py-32 text-xl sm:text-lg text-center">
 					{comentario}
 				</div>
 			</div>

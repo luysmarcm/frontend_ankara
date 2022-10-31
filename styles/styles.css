@@ -159,7 +159,7 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
-	fill: #F5867D;
+	fill: #fed403;
 	cursor: pointer;
   }
   
@@ -177,8 +177,6 @@ body {
   }
 
   /*Slider productos*/
-
-
 
   .carta-box {
   /* margin: 10px; */
@@ -221,12 +219,7 @@ body {
 
 }
 
-
-
-
-
-
-
+/* Card Blog */
 img {
   height: auto;
   max-width: 100%;
@@ -261,7 +254,6 @@ img {
 .card__title {
   color: white;
   display: inline-block;
-  /* font-family: "Montserrat"; */
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.2;
@@ -271,10 +263,6 @@ img {
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* .card__title:hover {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-} */
 
 .card__overlay {
   content: "";
@@ -314,23 +302,27 @@ img {
 .card__meta.card__meta--last {
   margin-bottom: 0;
 }
-/* .card__meta li {
-  color: #f8f8f8;
-  display: inline;
-  list-style-type: none;
-  margin-bottom: 0;
-  padding-right: 1em;
-  font-size: 0.85em;
-  font-variant: small-caps;
-  letter-spacing: 1px;
+/* Card Blog */
+
+
+.map-div{
+  width: 30%;
+  margin: auto;
+}
+
+.map-div path{
+  fill: #fed403;
+  stroke: #000;
+  stroke-width: 3px;
+
+}
+
+.map-div :hover{
+  fill: #000;
+  /* stroke: #cacaca; */
+}
+
+/* map-div path img{
+  src: local("/imagen/logoMapa.png");
 } */
-/* .card__meta li:not(:last-child):after {
-  content: "●";
-  font-style: normal;
-  position: relative;
-  color: rgba(255, 255, 255, 0.25);
-  right: -0.6em;
-} */
-/* .card__meta li > a {
-  color: #f8f8f8;
-} */
+

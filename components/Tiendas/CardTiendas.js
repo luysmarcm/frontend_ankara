@@ -6,7 +6,7 @@ const CardTiendas = ({ tienda }) => {
   return (
 		<div className="bg-white rounded-xl overflow-hidden drop-shadow-xl flex flex-col flex-1 h-full">
 			<div>
-			{tienda.galeria === null ? (
+				{tienda.galeria === null ? (
 					<Image
 						src="/imagen/fondo.jpeg"
 						alt={tienda.tienda}
@@ -35,13 +35,16 @@ const CardTiendas = ({ tienda }) => {
 				)}
 			</div>
 			<div className="flex flex-col text-black text-left p-5 space-y-2 h-full">
-				<h2 className="tracking-wide text-sm lg:text-2xl font-bold">
+				<h2 className="tracking-wide text-xl lg:text-2xl font-bold">
 					{tienda.tienda}
 				</h2>
-				<p>{tienda.ciudad}</p>
-				<p className=" text-black text-opacity-75">{tienda.direccion}</p>
+				<p className="text-base font-bold">{tienda.ciudad}</p>
+				<p className=" text-black ">{tienda.direccion}</p>
 			</div>
-			<Link href={`/puntos-ankara/${tienda.estado.slug}/${tienda.slug}`} passHref>
+			<Link
+				href={`/puntos-ankara/${tienda.estado.slug}/${tienda.slug}`}
+				passHref
+			>
 				<button className="mx-5 mb-5 flex flex-start w-1/2 rounded-md bg-rosado2 p-2 hover:bg-rosado hover:text-black ">
 					<span className="w-full text-center">Visitar</span>
 				</button>

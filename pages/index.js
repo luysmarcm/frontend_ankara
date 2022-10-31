@@ -6,6 +6,7 @@ import Marcas from "components/Home/Marcas";
 import Identidades from "components/Home/Identidades";
 import VideoBanner from "components/Home/VideoBanner";
 import Ankara from "components/Home/Ankara/Ankara";
+import Map from "components/Map";
 
 export default function Home() {
     return (
@@ -21,7 +22,7 @@ export default function Home() {
 					<Identidades />
 					<Marcas/>
 					<Aliados/>
-					<Ankara />
+					{/* <Ankara /> */}
 				</main>
 			</Layout>
 		);

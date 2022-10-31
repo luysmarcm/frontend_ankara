@@ -17,7 +17,6 @@ import {
 } from "components/index";
 import GridTiendas from "components/Tiendas/GridTiendas";
 
-
 const getTiendas = gql`
 	query tiendas($limit: Int, $start: Int, $search: String, $csearch: JSON) {
 		tiendas: nuestrasTiendas(
@@ -49,7 +48,6 @@ const getTiendas = gql`
 		tiendasCount(where: $csearch)
 	}
 `;
-
 const Tiendas = (props) => {
     const { estados} = props;
 	const router = useRouter();
@@ -144,7 +142,6 @@ const Tiendas = (props) => {
 	);
 };
 
-
 export async function getStaticProps() {
 	const { data, error } = await client.query({
 		query: gql`
@@ -199,8 +196,6 @@ export async function getStaticProps() {
 		revalidate: 86400,
 	};
 }
-
-
 export default Tiendas;
 
 

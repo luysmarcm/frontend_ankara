@@ -33,7 +33,7 @@ const Feed = (props) => {
 						src={media_url}
 						alt={caption}
 						objectFit="cover"
-						className="relative rounded-xl overflow-hidden shadow-lg "
+						className="relative rounded-xl overflow-hidden shadow-lg"
 						unoptimized={true}
 					/>
 				</a>
@@ -49,7 +49,7 @@ const Feed = (props) => {
 						src={media_url}
 						alt={caption}
 						objectFit="cover"
-						// layout="responsive"
+						layout="responsive"
 						className="relative rounded-xl overflow-hidden "
 						unoptimized={true}
 					/>
